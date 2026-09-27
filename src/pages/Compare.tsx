@@ -1,0 +1,195 @@
+import { useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
+import {
+  extractMeasurements,
+  SAGITTAL_MEASUREMENT_IDS_LEFT,
+  SAGITTAL_MEASUREMENT_IDS_RIGHT
+} from '@/assessment/angleCalculations'
+import { runAssessment } from '@/assessment/assessmentEngine'
+import MeasurementOverlay from '@/components/MeasurementOverlay'
+import { useAppState } from '@/state/AppState'
+import type { AngleMeasurement, ObservationArea } from '@/types'
+
+const AREAS: ObservationArea[] = ['어깨', '골반', '허리/몸통', '머리/목', '무릎', '발']
+
+export default function Compare() {
+  const { results, captures, beforeSummary, beforeCaptures, beforeResults, clearBefore, manualSideLandmarks } =
+    useAppState()
+  const navigate = useNavigate()
+
+  const afterSummary = useMemo(() => runAssessment(results, manualSideLandmarks), [results, manualSideLandmarks])
+  const afterHasData = Object.values(results).some((r) => r && r.landmarks.length > 0)
+
+  const beforeSagittalLeft = useMemo(
+    () => (beforeSummary ? extractMeasurements(beforeSummary, SAGITTAL_MEASUREMENT_IDS_LEFT) : []),
+    [beforeSummary]
+  )
+  const beforeSagittalRight = useMemo(
+    () => (beforeSummary ? extractMeasurements(beforeSummary, SAGITTAL_MEASUREMENT_IDS_RIGHT) : []),
+    [beforeSummary]
+  )
+  const afterSagittalLeft = useMemo(
+    () => extractMeasurements(afterSummary, SAGITTAL_MEASUREMENT_IDS_LEFT),
+    [afterSummary]
+  )
+  const afterSagittalRight = useMemo(
+    () => extractMeasurements(afterSummary, SAGITTAL_MEASUREMENT_IDS_RIGHT),
+    [afterSummary]
+  )
+
+  if (!beforeSummary) {
+    return (
+      <div className="mx-auto max-w-md px-4 py-8">
+        <p className="text-sm text-clinical-600">
+          저장된 Before 결과가 없습니다. 자세 평가 결과 화면에서 먼저 "이 결과를 Before로 저장"을 눌러주세요.
+        </p>
+        <button onClick={() => navigate('/result')} className="btn-primary mt-4 w-full py-3">
+          평가 결과로 이동
+        </button>
+      </div>
+    )
+  }
+
+  return (
+    <div className="mx-auto max-w-md px-4 py-8">
+      <h2 className="mb-1 text-lg font-semibold text-clinical-900">Before / After 비교</h2>
+      <p className="mb-2 text-sm text-clinical-600">
+        Before: {new Date(beforeSummary.generatedAt).toLocaleDateString('ko-KR')} · After:{' '}
+        {afterHasData ? new Date(afterSummary.generatedAt).toLocaleDateString('ko-KR') : '아직 새 사진이 분석되지 않음'}
+      </p>
+      <p className="mb-6 text-xs text-clinical-400">
+        촬영 각도·자세 차이에 따른 측정 오차가 있을 수 있어, 참고용 변화 추이로만 활용해주세요.
+      </p>
+
+      {!afterHasData && (
+        <div className="mb-6 rounded-lg bg-clinical-100 p-3 text-xs text-clinical-600">
+          After로 비교하려면 새로 촬영 후 분석을 진행해주세요.{' '}
+          <button onClick={() => navigate('/capture')} className="underline">
+            다시 촬영하기
+          </button>
+        </div>
+      )}
+
+      {beforeCaptures['side-left'] && (
+        <div className="card mb-6 p-4">
+          <h3 className="mb-1 text-sm font-semibold text-clinical-900">측면 사진 비교 (좌측)</h3>
+          <p className="mb-3 text-xs text-clinical-500">
+            같은 방식으로 촬영해도 각도·자세 차이에 따른 측정 오차가 있을 수 있습니다.
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <p className="label-caption mb-1 text-center">Before</p>
+              <MeasurementOverlay
+                imageDataUrl={beforeCaptures['side-left']}
+                result={beforeResults['side-left']}
+                measurements={beforeSagittalLeft}
+              />
+            </div>
+            <div>
+              <p className="label-caption mb-1 text-center">After</p>
+              {captures['side-left'] && afterHasData ? (
+                <MeasurementOverlay
+                  imageDataUrl={captures['side-left'].dataUrl}
+                  result={results['side-left']}
+                  measurements={afterSagittalLeft}
+                />
+              ) : (
+                <div className="flex h-full min-h-[120px] items-center justify-center rounded-lg border border-dashed border-clinical-200 p-3 text-center text-xs text-clinical-400">
+                  아직 새 측면(좌측) 사진이 없습니다
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {beforeCaptures['side-right'] && (
+        <div className="card mb-6 p-4">
+          <h3 className="mb-1 text-sm font-semibold text-clinical-900">측면 사진 비교 (우측)</h3>
+          <p className="mb-3 text-xs text-clinical-500">
+            같은 방식으로 촬영해도 각도·자세 차이에 따른 측정 오차가 있을 수 있습니다.
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <p className="label-caption mb-1 text-center">Before</p>
+              <MeasurementOverlay
+                imageDataUrl={beforeCaptures['side-right']}
+                result={beforeResults['side-right']}
+                measurements={beforeSagittalRight}
+              />
+            </div>
+            <div>
+              <p className="label-caption mb-1 text-center">After</p>
+              {captures['side-right'] && afterHasData ? (
+                <MeasurementOverlay
+                  imageDataUrl={captures['side-right'].dataUrl}
+                  result={results['side-right']}
+                  measurements={afterSagittalRight}
+                />
+              ) : (
+                <div className="flex h-full min-h-[120px] items-center justify-center rounded-lg border border-dashed border-clinical-200 p-3 text-center text-xs text-clinical-400">
+                  아직 새 측면(우측) 사진이 없습니다
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      <div className="space-y-4">
+        {AREAS.map((area) => {
+          const beforeM = beforeSummary.areaResults.find((r) => r.area === area)?.measurements ?? []
+          const afterM = afterHasData
+            ? afterSummary.areaResults.find((r) => r.area === area)?.measurements ?? []
+            : []
+          const ids = Array.from(new Set([...beforeM.map((m) => m.id), ...afterM.map((m) => m.id)]))
+          const rows = ids
+            .map((id) => ({
+              before: beforeM.find((m) => m.id === id),
+              after: afterM.find((m) => m.id === id)
+            }))
+            .filter((r) => r.before || r.after)
+
+          if (rows.length === 0) return null
+
+          return (
+            <div key={area} className="card p-4">
+              <h3 className="mb-3 text-sm font-semibold text-clinical-900">{area}</h3>
+              <div className="space-y-2 text-sm">
+                {rows.map((r, i) => (
+                  <ComparisonRow key={i} before={r.before} after={r.after} />
+                ))}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      <button onClick={clearBefore} className="btn-secondary mt-6 w-full py-2 text-sm text-alert-red">
+        Before 기록 삭제하고 새로 시작
+      </button>
+    </div>
+  )
+}
+
+function ComparisonRow({ before, after }: { before?: AngleMeasurement; after?: AngleMeasurement }) {
+  const label = before?.label ?? after?.label ?? ''
+  const b = before?.valueDeg
+  const a = after?.valueDeg
+  const delta = b !== undefined && b !== null && a !== undefined && a !== null ? Math.round((a - b) * 10) / 10 : null
+
+  return (
+    <div className="flex items-center justify-between border-b border-clinical-100 pb-2 last:border-0 last:pb-0">
+      <span className="text-clinical-700">{label}</span>
+      <span className="text-right text-clinical-600">
+        {b !== undefined && b !== null ? `${b}°` : '—'} → {a !== undefined && a !== null ? `${a}°` : '측정 전'}
+        {delta !== null && (
+          <span className={`ml-1 font-medium ${delta < 0 ? 'text-clinical-600' : 'text-alert-amber'}`}>
+            ({delta > 0 ? '+' : ''}
+            {delta}°)
+          </span>
+        )}
+      </span>
+    </div>
+  )
+}
