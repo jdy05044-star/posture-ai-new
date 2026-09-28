@@ -6,6 +6,8 @@ import ExercisePicker from '@/components/ExercisePicker'
 import ProgramExerciseRow from '@/components/ProgramExerciseRow'
 import { useAppState } from '@/state/AppState'
 import { CONDITION_GUIDANCE } from '@/data/conditionGuidance'
+import SpecialTestPanel from '@/components/SpecialTestPanel'
+import { CONDITION_SPECIAL_TESTS } from '@/data/specialTests'
 import { CONDITION_TAG_OPTIONS } from '@/types'
 import type { ConditionTag, Exercise, ExerciseCategory, PatientIntake, ProgramExercise } from '@/types'
 
@@ -30,6 +32,9 @@ export default function Program() {
   const priorityAreas = useMemo(
     () => Array.from(new Set(summary.priorityAreas.map((p) => p.area))),
     [summary]
+  )
+  const hasSpecialTests = symptomTags.some(
+    (tag) => (CONDITION_SPECIAL_TESTS[tag as Exclude<ConditionTag, 'general'>]?.length ?? 0) > 0
   )
 
   const [cautionConditions, setCautionConditions] = useState<ConditionTag[]>([])
@@ -141,6 +146,8 @@ export default function Program() {
             </div>
           )}
 
+          <SpecialTestPanel symptomTags={symptomTags} />
+
           <div>
             <p className="label-caption mb-2">주의가 필요한 기존 질환 (해당 시 선택 — 운동에 주의 표시가 붙습니다)</p>
             <div className="flex flex-wrap gap-2">
@@ -219,6 +226,20 @@ export default function Program() {
               <p className="mt-2 text-xs text-clinical-400">
                 일반적인 운동 가이드 참고 정보이며, 개별 환자에 맞춘 처방이 아닙니다.
               </p>
+            </details>
+          )}
+
+          {hasSpecialTests && (
+            <details className="card group mb-4 p-4">
+              <summary className="cursor-pointer list-none">
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-clinical-800">증상별 참고 — 특수검사(special test)</span>
+                  <span className="text-xs text-clinical-400 group-open:rotate-180">▾</span>
+                </div>
+              </summary>
+              <div className="mt-3">
+                <SpecialTestPanel symptomTags={symptomTags} />
+              </div>
             </details>
           )}
 
