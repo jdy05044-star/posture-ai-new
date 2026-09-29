@@ -133,6 +133,7 @@ export default function AssessmentSummaryPanel({ summary }: Props) {
           <p className="mt-1 text-xs text-clinical-400">
             편차가 관찰된 영역에서 일반적으로 함께 언급되는 근육을 참고로 모은 것이며, 이 환자에게 실제로 해당
             근육의 문제가 있다고 확정하는 것이 아닙니다. 정확한 근력·유연성 평가는 PT의 직접 평가가 필요합니다.
+            그림으로 정리한 근육 평가는 위쪽 &quot;01 근육 평가&quot; 섹션에서 볼 수 있습니다.
           </p>
         </div>
       )}
