@@ -11,6 +11,9 @@ import muscleKnee from '@/assets/muscles/muscle-knee.png'
 import muscleFoot from '@/assets/muscles/muscle-foot.png'
 import pelvisRotationImg from '@/assets/pelvis-rotation.png'
 import pelvisTiltImg from '@/assets/pelvis-tilt.png'
+import landmarksUpper from '@/assets/landmarks-upper.png'
+import landmarksPelvis from '@/assets/landmarks-pelvis.png'
+import landmarksLower from '@/assets/landmarks-lower.png'
 import type { AreaAssessmentResult } from '@/types'
 
 /** 영역별 근육 해부도. 사용자가 직접 생성한 참고용 일러스트로, 실제 측정된 근육 상태가 아니라
@@ -22,6 +25,17 @@ const MUSCLE_ILLUSTRATION: Record<AreaAssessmentResult['area'], string> = {
   골반: musclePelvis,
   무릎: muscleKnee,
   발: muscleFoot
+}
+
+/** 영역별로 "측정값이 어느 지점을 기준으로 계산됐는지"를 보여주는 참고용 기준점 그림.
+ *  사용자가 직접 생성한 이미지이며, 실제 측정값이 아니라 위치 이해를 돕는 참고 자료다. */
+const LANDMARK_ILLUSTRATION: Record<AreaAssessmentResult['area'], string> = {
+  '머리/목': landmarksUpper,
+  어깨: landmarksUpper,
+  '허리/몸통': landmarksUpper,
+  골반: landmarksPelvis,
+  무릎: landmarksLower,
+  발: landmarksLower
 }
 
 function confidenceColor(conf: number | null) {
@@ -106,8 +120,16 @@ export default function PostureResultCard({ result }: { result: AreaAssessmentRe
                   </li>
                 ))}
             </ul>
+            <div className="mt-3">
+              <IllustrationSlot
+                src={LANDMARK_ILLUSTRATION[result.area]}
+                label={`${result.area} 측정 기준점`}
+                caption="위 측정값을 계산할 때 기준으로 삼는 지점을 보여주는 참고 그림입니다"
+                aspect="16/9"
+              />
+            </div>
             {result.area === '골반' && (
-              <div className="mt-3 grid grid-cols-2 gap-2">
+              <div className="mt-2 grid grid-cols-2 gap-2">
                 <IllustrationSlot
                   src={pelvisTiltImg}
                   label="골반 전후 경사"

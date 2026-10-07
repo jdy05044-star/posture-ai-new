@@ -1,7 +1,19 @@
 import { useState } from 'react'
-import { AREA_COLORS } from '@/lib/areaColors'
 import { TIER_LABEL, type AreaMuscleTendency } from '@/assessment/muscleTendency'
 import type { ObservationArea } from '@/types'
+
+/** 긴장(과사용)/약화(저사용) 상태를 색으로 구분 — 실제 색상값은 디자인 토큰(코랄/딥네이비)과 통일 */
+const TIGHT_COLOR = '#c2503c' // alert.red
+const WEAK_COLOR = '#142d3e' // clinical.700 (딥네이비)
+
+function dotColor(t: AreaMuscleTendency) {
+  const hasTight = t.tightMuscles.length > 0
+  const hasWeak = t.weakMuscles.length > 0
+  if (hasTight && hasWeak) return TIGHT_COLOR // 둘 다 있으면 링 색(아래)과 함께 구분되므로 채움은 긴장색
+  if (hasTight) return TIGHT_COLOR
+  if (hasWeak) return WEAK_COLOR
+  return '#8798a8'
+}
 
 interface Props {
   tendencies: AreaMuscleTendency[]
@@ -82,12 +94,15 @@ export default function MuscleMapSVG({ tendencies }: Props) {
           aria-label={`${t.area} 근육 경향 보기`}
           style={{ cursor: 'pointer' }}
         >
-          {isSel && <circle cx={pos.x} cy={pos.y} r={6.5} fill="none" stroke={AREA_COLORS[t.area]} strokeWidth={0.7} />}
+          {isSel && <circle cx={pos.x} cy={pos.y} r={6.5} fill="none" stroke={dotColor(t)} strokeWidth={0.7} />}
+          {t.tightMuscles.length > 0 && t.weakMuscles.length > 0 && (
+            <circle cx={pos.x} cy={pos.y} r={isSel ? 5.2 : 4.4} fill="none" stroke={WEAK_COLOR} strokeWidth={1.1} opacity={tierOpacity(t.tier)} />
+          )}
           <circle
             cx={pos.x}
             cy={pos.y}
             r={isSel ? 4 : 3.2}
-            fill={AREA_COLORS[t.area]}
+            fill={dotColor(t)}
             opacity={tierOpacity(t.tier)}
             stroke="white"
             strokeWidth={0.9}
@@ -99,6 +114,14 @@ export default function MuscleMapSVG({ tendencies }: Props) {
 
   return (
     <div>
+      <div className="mb-2 flex items-center justify-center gap-4 text-[11px] text-clinical-600">
+        <span className="flex items-center gap-1.5">
+          <span className="legend-dot" style={{ backgroundColor: TIGHT_COLOR }} /> 긴장된 근육 (과사용 경향)
+        </span>
+        <span className="flex items-center gap-1.5">
+          <span className="legend-dot" style={{ backgroundColor: WEAK_COLOR }} /> 약화된 근육 (저사용 경향)
+        </span>
+      </div>
       <div className="flex items-start justify-center gap-6 rounded-lg bg-clinical-50 py-3">
         <div className="text-center">
           <svg viewBox="0 0 100 100" className="h-44 w-auto">
@@ -150,7 +173,7 @@ export default function MuscleMapSVG({ tendencies }: Props) {
               <li key={t.area} className="flex items-start gap-2 text-xs">
                 <span
                   className="mt-0.5 h-2 w-2 flex-none rounded-full"
-                  style={{ backgroundColor: AREA_COLORS[t.area], opacity: tierOpacity(t.tier) }}
+                  style={{ backgroundColor: dotColor(t), opacity: tierOpacity(t.tier) }}
                 />
                 <button onClick={() => setSelected(t.area)} className="text-left decoration-dotted hover:underline">
                   <span className="font-medium text-clinical-800">{t.area}</span>{' '}

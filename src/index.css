@@ -51,6 +51,14 @@
   .tab-btn-inactive {
     @apply text-clinical-500 hover:bg-clinical-100;
   }
+  /* 섹션 헤더 번호 배지 (01, 02 ... 스타일) */
+  .section-badge {
+    @apply flex h-7 w-7 flex-none items-center justify-center rounded-full bg-clinical-700 text-xs font-bold text-white;
+  }
+  /* 긴장(과사용)/약화(저사용) 근육 범례용 색상 점 */
+  .legend-dot {
+    @apply inline-block h-2.5 w-2.5 flex-none rounded-full;
+  }
 }
 
 /* STEP11: PDF 리포트 인쇄용 스타일. window.print()로 저장할 때 불필요한 UI를 숨기고 여백을 정리한다. */

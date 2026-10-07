@@ -54,6 +54,14 @@ export default function Result() {
 
   const anyAnalyzed = Object.values(results).some((r) => r && r.landmarks.length > 0)
   const muscleTendencies = useMemo(() => computeMuscleTendencies(summary), [summary])
+  const weakMuscleNames = useMemo(
+    () => Array.from(new Set(muscleTendencies.flatMap((t) => t.weakMuscles))),
+    [muscleTendencies]
+  )
+  const tightMuscleNames = useMemo(
+    () => Array.from(new Set(muscleTendencies.flatMap((t) => t.tightMuscles))),
+    [muscleTendencies]
+  )
 
   // 결과가 계산될 때마다 "최신 평가"로 기록해둔다 (STEP10/11에서 Before/After·리포트에 사용)
   useEffect(() => {
@@ -110,7 +118,10 @@ export default function Result() {
       {tab === 'A' && (
         <div className="space-y-6">
           <div className="card p-4">
-            <h3 className="mb-3 text-sm font-semibold text-clinical-900">가장 중요한 자세 문제 3가지</h3>
+            <div className="mb-3 flex items-center gap-2">
+              <span className="section-badge">01</span>
+              <h3 className="text-sm font-semibold text-clinical-900">가장 중요한 자세 문제 3가지</h3>
+            </div>
             {summary.priorityAreas.length > 0 ? (
               <ol className="space-y-3">
                 {summary.priorityAreas.map((p, idx) => (
@@ -148,7 +159,10 @@ export default function Result() {
           </div>
 
           <div className="card p-4">
-            <h3 className="mb-1 text-sm font-semibold text-clinical-900">정면·후면·측면 체형 시각화</h3>
+            <div className="mb-1 flex items-center gap-2">
+              <span className="section-badge">02</span>
+              <h3 className="text-sm font-semibold text-clinical-900">정면·후면·측면 체형 시각화</h3>
+            </div>
             <p className="mb-3 text-xs text-clinical-500">
               배경 그림은 참고용 일러스트이며, 화살표 각도는 실제 사진 측정 결과입니다. 등급·순위는 비교
               데이터베이스가 없어 표시하지 않습니다.
@@ -285,7 +299,10 @@ export default function Result() {
       {tab === 'C' && (
         <div className="space-y-6">
           <div className="card p-4">
-            <h3 className="mb-1 text-sm font-semibold text-clinical-900">관련 근육을 강조한 참고 그림</h3>
+            <div className="mb-1 flex items-center gap-2">
+              <span className="section-badge">01</span>
+              <h3 className="text-sm font-semibold text-clinical-900">관련 근육을 강조한 참고 그림</h3>
+            </div>
             <p className="mb-3 text-xs text-clinical-500">
               측정된 편차가 관찰된 영역만 그림 위에 표시됩니다. 부위를 눌러보면 실제 측정 근거와 인식 명확도,
               참고 근육을 볼 수 있습니다.
@@ -293,8 +310,56 @@ export default function Result() {
             <MuscleMapSVG tendencies={muscleTendencies} />
           </div>
 
+          {muscleTendencies.length > 0 && (
+            <div className="card p-4">
+              <div className="mb-1 flex items-center gap-2">
+                <span className="section-badge">02</span>
+                <h3 className="text-sm font-semibold text-clinical-900">근육 균형 한눈에 보기</h3>
+              </div>
+              <p className="mb-3 text-xs text-clinical-500">
+                측정된 편차가 관찰된 영역에서 참고로 언급되는 근육만 모은 것입니다. 실제로 약하거나 긴장되어
+                있다고 확정하는 것이 아니라, 이런 패턴과 함께 흔히 거론되는 근육을 정리한 일반 참고 정보입니다.
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-xl bg-clinical-50 p-3">
+                  <p className="mb-2 text-xs font-semibold text-clinical-700">약화된 근육 (강화 참고)</p>
+                  {weakMuscleNames.length > 0 ? (
+                    <ul className="space-y-1 text-xs text-clinical-600">
+                      {weakMuscleNames.map((name) => (
+                        <li key={name} className="flex items-center gap-1.5">
+                          <span className="legend-dot" style={{ backgroundColor: '#142d3e' }} />
+                          {name}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-xs text-clinical-400">해당 없음</p>
+                  )}
+                </div>
+                <div className="rounded-xl bg-alert-coral/10 p-3">
+                  <p className="mb-2 text-xs font-semibold text-alert-red">긴장된 근육 (이완 참고)</p>
+                  {tightMuscleNames.length > 0 ? (
+                    <ul className="space-y-1 text-xs text-clinical-600">
+                      {tightMuscleNames.map((name) => (
+                        <li key={name} className="flex items-center gap-1.5">
+                          <span className="legend-dot" style={{ backgroundColor: '#c2503c' }} />
+                          {name}
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-xs text-clinical-400">해당 없음</p>
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+
           <div className="card p-4 text-sm text-clinical-600">
-            <p className="label-caption mb-2">가능한 원인 · 확정된 검사 결과 구분</p>
+            <div className="mb-2 flex items-center gap-2">
+              <span className="section-badge">{muscleTendencies.length > 0 ? '03' : '02'}</span>
+              <p className="label-caption">가능한 원인 · 확정된 검사 결과 구분</p>
+            </div>
             <p>
               각 부위 카드(B. 부위별 분석)의 "가능한 원인"은 사진 관찰만을 근거로 한 일반 참고 정보이며, 확정된
               검사 결과가 아닙니다. PT가 직접 실시한 근력·가동범위·한 발 서기 검사 등의 결과를 입력하면 그
