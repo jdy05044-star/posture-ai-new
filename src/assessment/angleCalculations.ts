@@ -303,3 +303,29 @@ export function extractMeasurements(summary: AssessmentSummary, ids: string[]): 
     .map((id) => all.find((m) => m.id === id))
     .filter((m): m is AngleMeasurement => !!m)
 }
+
+/**
+ * 측정값을 화면에 표시할 때 쓰는 문구를 만든다. 대부분의 각도는 raw valueDeg를 그대로 "N°"로
+ * 보여주면 되지만, knee-flex-angle은 180°(완전히 편 상태)를 기준으로 하는 각도라 "179.6°"처럼
+ * raw 값만 보여주면 "거의 다 굽힌 상태"로 오해하기 쉽다. 그래서 이 측정값만 "180° 기준 몇 도
+ * 차이인지"로 바꿔서 보여준다 — 내부에 저장된 실제 측정값(valueDeg)은 그대로 유지하고,
+ * 화면 표시 문구만 사람이 읽기 쉬운 형태로 바꾸는 것이다(측정값과 표시 해석의 분리).
+ */
+export function formatMeasurementValue(m: AngleMeasurement): string {
+  if (m.valueDeg === null) return '측정 불확실'
+  if (m.id.startsWith('knee-flex-angle')) {
+    const deviation = Math.round(Math.abs(m.valueDeg - 180) * 10) / 10
+    return `완전 신전(180°) 대비 ${deviation}° 차이 (측정값 ${m.valueDeg}°)`
+  }
+  return `${m.valueDeg}°`
+}
+
+/** 사진 위 작은 라벨처럼 공간이 좁은 곳에서 쓰는 축약형 — knee-flex-angle만 "180° 기준 N°"로 줄여서 보여준다. */
+export function formatMeasurementValueShort(m: AngleMeasurement): string {
+  if (m.valueDeg === null) return '측정 불확실'
+  if (m.id.startsWith('knee-flex-angle')) {
+    const deviation = Math.round(Math.abs(m.valueDeg - 180) * 10) / 10
+    return `180° 기준 ${deviation}°`
+  }
+  return `${m.valueDeg}°`
+}

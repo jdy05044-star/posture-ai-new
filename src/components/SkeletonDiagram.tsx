@@ -1,3 +1,4 @@
+import { formatMeasurementValueShort } from '@/assessment/angleCalculations'
 import { AREA_COLORS } from '@/lib/areaColors'
 import { anchorFor } from '@/components/MeasurementOverlay'
 import skeletonFront from '@/assets/skeleton-front.png'
@@ -156,7 +157,7 @@ export default function SkeletonDiagram({ result, measurements, view }: Props) {
                 fill={color}
                 textAnchor={goRight ? 'end' : 'start'}
               >
-                {m.valueDeg}°
+                {formatMeasurementValueShort(m)}
               </text>
             </g>
           )

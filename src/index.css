@@ -21,16 +21,35 @@
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-lg bg-clinical-700 px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-clinical-800 disabled:cursor-not-allowed disabled:bg-clinical-300;
+    @apply inline-flex items-center justify-center rounded-xl bg-clinical-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-clinical-800 disabled:cursor-not-allowed disabled:bg-clinical-300;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-lg border border-clinical-300 bg-white px-5 py-3 text-sm font-medium text-clinical-700 transition-colors hover:bg-clinical-100;
+    @apply inline-flex items-center justify-center rounded-xl border border-clinical-200 bg-white px-5 py-3 text-sm font-semibold text-clinical-700 transition-colors hover:bg-clinical-50;
+  }
+  .btn-mint {
+    @apply inline-flex items-center justify-center rounded-xl bg-mint-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-mint-600;
   }
   .card {
-    @apply rounded-xl border border-clinical-200 bg-white shadow-sm;
+    @apply rounded-2xl border border-clinical-100 bg-white;
   }
   .label-caption {
-    @apply text-xs font-medium text-clinical-500;
+    @apply text-xs font-semibold uppercase tracking-wide text-clinical-400;
+  }
+  .pill-mint {
+    @apply rounded-full bg-mint-50 px-2.5 py-1 text-xs font-medium text-mint-700;
+  }
+  .pill-coral {
+    @apply rounded-full bg-alert-coral/15 px-2.5 py-1 text-xs font-medium text-alert-red;
+  }
+  /* 결과 화면 A~E 탭 */
+  .tab-btn {
+    @apply flex-1 rounded-full px-3 py-2 text-center text-xs font-semibold transition-colors;
+  }
+  .tab-btn-active {
+    @apply bg-clinical-700 text-white;
+  }
+  .tab-btn-inactive {
+    @apply text-clinical-500 hover:bg-clinical-100;
   }
 }
 

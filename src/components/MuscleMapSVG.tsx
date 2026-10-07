@@ -121,7 +121,7 @@ export default function MuscleMapSVG({ tendencies }: Props) {
           <div className="mb-1 flex items-center justify-between gap-2">
             <p className="font-medium text-clinical-800">{selectedT.area}</p>
             <span className="flex-none text-xs text-clinical-400">
-              {selectedT.confidencePct != null ? `신뢰도 ${selectedT.confidencePct}%` : '신뢰도 —'} ·{' '}
+              {selectedT.confidencePct != null ? `인식 명확도 ${selectedT.confidencePct}%` : '인식 명확도 —'} ·{' '}
               {TIER_LABEL[selectedT.tier]}
             </span>
           </div>
@@ -167,7 +167,8 @@ export default function MuscleMapSVG({ tendencies }: Props) {
 
       <p className="mt-2 text-xs text-clinical-400">
         실제 근육의 정확한 해부학적 위치가 아니라, 측정된 편차를 근거로 참고 근육을 정리해 그림 위 대략적인
-        위치에 표시한 것입니다. 점의 진하기는 신뢰도(landmark 인식 명확도)를 나타내며, 진단이 아닙니다.
+        위치에 표시한 것입니다. 점의 진하기는 인식 명확도(landmark가 얼마나 또렷하게 인식됐는지)를 나타낼 뿐,
+        임상적 확실성이나 진단을 의미하지 않습니다.
       </p>
     </div>
   )

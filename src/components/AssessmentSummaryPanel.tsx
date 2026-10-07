@@ -154,7 +154,8 @@ export default function AssessmentSummaryPanel({ summary }: Props) {
 
       <p className="mt-4 border-t border-clinical-100 pt-3 text-xs text-clinical-400">
         이 분석은 사진을 기반으로 한 참고용 결과입니다. 정확한 평가와 맞춤 운동을 위해서는 담당 PT와의 상담이
-        필요합니다.
+        필요합니다. 화면에 표시되는 "인식 명확도"는 관절 landmark가 사진에서 얼마나 또렷하게 인식됐는지를
+        뜻하는 수치일 뿐, 분석 내용이 의학적으로 확실하다는 의미가 아닙니다.
       </p>
     </div>
   )

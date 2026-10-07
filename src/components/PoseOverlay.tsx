@@ -65,12 +65,12 @@ export default function PoseOverlay({ imageDataUrl, result }: Props) {
       <canvas ref={canvasRef} className="w-full" />
       {result && result.landmarks.length === 0 && (
         <p className="bg-alert-red/10 p-2 text-center text-sm text-alert-red">
-          분석 신뢰도가 낮습니다. 다시 촬영해주세요. (인물이 인식되지 않았습니다)
+          사람이 인식되지 않았습니다. 다시 촬영해주세요.
         </p>
       )}
       {result && result.overallConfidence !== null && (
         <p className="label-caption p-2 text-center">
-          분석 신뢰도 {Math.round(result.overallConfidence * 100)}%
+          인식 명확도 {Math.round(result.overallConfidence * 100)}%
         </p>
       )}
     </div>

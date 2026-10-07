@@ -1,3 +1,4 @@
+import { formatMeasurementValueShort } from '@/assessment/angleCalculations'
 import { AREA_COLORS } from '@/lib/areaColors'
 import type { AngleMeasurement, Landmark, PoseAnalysisResult } from '@/types'
 
@@ -130,7 +131,7 @@ export default function MeasurementOverlay({ imageDataUrl, result, measurements,
                   style={{ backgroundColor: `${dotColor}d9` }}
                 >
                   {m.label}
-                  {m.valueDeg !== null ? ` (${m.valueDeg}°)` : ''}
+                  {m.valueDeg !== null ? ` (${formatMeasurementValueShort(m)})` : ''}
                   <br />
                   <span className="font-normal text-white/90">{description}</span>
                 </span>
@@ -140,7 +141,7 @@ export default function MeasurementOverlay({ imageDataUrl, result, measurements,
 
         {!hasLandmarks && (
           <p className="bg-alert-red/10 p-2 text-center text-sm text-alert-red">
-            분석 신뢰도가 낮습니다. 다시 촬영해주세요. (인물이 인식되지 않았습니다)
+            사람이 인식되지 않았습니다. 다시 촬영해주세요.
           </p>
         )}
       </div>

@@ -26,6 +26,39 @@ function areaConfidence(measurements: AngleMeasurement[]): number | null {
   return vals.reduce((a, b) => a + b, 0) / vals.length
 }
 
+/**
+ * 정면과 후면 측정값 중 같은 항목(어깨/골반 좌우 기울기)의 방향이 서로 반대로 나오면 경고 문구를
+ * 만든다. MediaPipe는 얼굴이 보이지 않는 후면 사진에서 좌우 landmark를 반대로 인식하는 경우가
+ * 정면보다 잦을 수 있어, 두 결과가 모순되면 "둘 중 하나는 좌우가 바뀌었을 수 있다"는 것을 PT가
+ * 참고할 수 있게 알려준다 — 어느 쪽이 맞는지 임의로 판단하지 않는다.
+ */
+function buildConsistencyWarnings(allMeasurements: AngleMeasurement[]): string[] {
+  const warnings: string[] = []
+  const byId = new Map(allMeasurements.map((m) => [m.id, m]))
+
+  const pairs: { frontId: string; backId: string; label: string }[] = [
+    { frontId: 'shoulder-tilt', backId: 'shoulder-tilt-back', label: '어깨 좌우 기울기' },
+    { frontId: 'pelvis-tilt', backId: 'pelvis-tilt-back', label: '골반 좌우 기울기' }
+  ]
+
+  for (const { frontId, backId, label } of pairs) {
+    const front = byId.get(frontId)
+    const back = byId.get(backId)
+    if (!front?.direction || !back?.direction) continue
+    const frontSide = front.direction.includes('우측') ? '우측' : front.direction.includes('좌측') ? '좌측' : null
+    const backSide = back.direction.includes('우측') ? '우측' : back.direction.includes('좌측') ? '좌측' : null
+    if (frontSide && backSide && frontSide !== backSide) {
+      warnings.push(
+        `${label}: 정면 사진은 "${front.direction}", 후면 사진은 "${back.direction}"로 서로 반대 방향입니다. ` +
+          `후면 사진은 얼굴이 보이지 않아 좌우 인식이 정면보다 부정확할 수 있으니, 이 항목은 참고용으로만 보고 ` +
+          `필요하면 다시 촬영하거나 PT가 직접 확인해주세요.`
+      )
+    }
+  }
+
+  return warnings
+}
+
 /** 관찰 문구를 생성한다. 원인·진단을 단정하지 않고 "관찰이 필요한 영역" 수준으로 표현한다. */
 function buildObservation(measurements: AngleMeasurement[]): string {
   const available = measurements.filter((m) => m.direction !== null)
@@ -104,9 +137,12 @@ export function runAssessment(
     .slice(0, 3)
     .map((s) => s.entry)
 
+  const consistencyWarnings = buildConsistencyWarnings(allMeasurements)
+
   return {
     areaResults,
     priorityAreas: scored,
+    consistencyWarnings,
     generatedAt: new Date().toISOString()
   }
 }

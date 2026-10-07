@@ -115,7 +115,7 @@ export default function Report() {
                     <p className="mb-1 text-sm font-medium text-clinical-800">
                       {r.area}{' '}
                       <span className="font-normal text-clinical-400">
-                        (신뢰도 {r.confidence !== null ? `${Math.round(r.confidence * 100)}%` : '—'})
+                        (인식 명확도 {r.confidence !== null ? `${Math.round(r.confidence * 100)}%` : '—'})
                       </span>
                     </p>
                     <p className="text-xs text-clinical-600">{r.observation}</p>

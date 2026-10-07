@@ -253,6 +253,12 @@ export interface PriorityAreaEntry {
 export interface AssessmentSummary {
   areaResults: AreaAssessmentResult[]
   priorityAreas: PriorityAreaEntry[]
+  /**
+   * 정면·후면 사진이 둘 다 있을 때, 같은 항목(어깨/골반 좌우 기울기)의 방향이 서로 모순되면 담기는
+   * 경고 문구. MediaPipe는 얼굴이 보이지 않는 후면 사진에서 좌우를 더 자주 혼동할 수 있어, 두 결과가
+   * 반대 방향을 가리키면 둘 중 하나(주로 후면)가 좌우를 반대로 인식했을 가능성을 참고용으로 알려준다.
+   */
+  consistencyWarnings: string[]
   generatedAt: string
 }
 

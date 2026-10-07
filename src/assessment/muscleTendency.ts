@@ -9,9 +9,9 @@ import type { AssessmentSummary, ObservationArea } from '@/types'
 export type ConfidenceTier = 'high' | 'moderate' | 'low'
 
 export const TIER_LABEL: Record<ConfidenceTier, string> = {
-  high: '신뢰도 높음',
-  moderate: '신뢰도 보통 (경향으로 참고)',
-  low: '신뢰도 낮음 (참고용, 단정 아님)'
+  high: '인식 명확도 높음',
+  moderate: '인식 명확도 보통 (경향으로 참고)',
+  low: '인식 명확도 낮음 (참고용, 단정 아님)'
 }
 
 function tierOf(confidence: number | null): ConfidenceTier {
