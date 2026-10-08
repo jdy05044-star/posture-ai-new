@@ -7,24 +7,28 @@ import {
   SAGITTAL_MEASUREMENT_IDS_LEFT,
   SAGITTAL_MEASUREMENT_IDS_RIGHT
 } from '@/assessment/angleCalculations'
+import { buildAreaReportRows } from '@/assessment/areaReport'
 import { runAssessment } from '@/assessment/assessmentEngine'
 import { computeMuscleTendencies } from '@/assessment/muscleTendency'
+import AnatomyViewer from '@/components/AnatomyViewer'
+import AreaReportList from '@/components/AreaReportList'
 import AssessmentSummaryPanel from '@/components/AssessmentSummaryPanel'
 import ManualSideLandmarkEditor from '@/components/ManualSideLandmarkEditor'
 import MeasurementOverlay from '@/components/MeasurementOverlay'
 import MuscleMapSVG from '@/components/MuscleMapSVG'
-import PostureResultCard from '@/components/PostureResultCard'
+import ReportSummary from '@/components/ReportSummary'
 import SkeletonDiagram from '@/components/SkeletonDiagram'
 import { useAppState } from '@/state/AppState'
 
-type TabId = 'A' | 'B' | 'C' | 'D' | 'E'
+type TabId = 'A' | 'B' | 'C' | 'D' | 'E' | 'F'
 
 const TABS: { id: TabId; label: string }[] = [
   { id: 'A', label: '종합 평가' },
-  { id: 'B', label: '부위별 분석' },
+  { id: 'B', label: '측정 근거' },
   { id: 'C', label: '원인·근육' },
   { id: 'D', label: '맞춤 운동' },
-  { id: 'E', label: '변화 비교' }
+  { id: 'E', label: '변화 비교' },
+  { id: 'F', label: '해부도' }
 ]
 
 export default function Result() {
@@ -51,6 +55,8 @@ export default function Result() {
   )
   const frontalMeasurements = useMemo(() => extractMeasurements(summary, FRONTAL_MEASUREMENT_IDS), [summary])
   const backMeasurements = useMemo(() => extractMeasurements(summary, BACK_MEASUREMENT_IDS), [summary])
+
+  const reportRows = useMemo(() => buildAreaReportRows(summary), [summary])
 
   const anyAnalyzed = Object.values(results).some((r) => r && r.landmarks.length > 0)
   const muscleTendencies = useMemo(() => computeMuscleTendencies(summary), [summary])
@@ -81,26 +87,7 @@ export default function Result() {
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-8">
-      <h2 className="mb-1 text-lg font-semibold text-clinical-900">자세 평가 결과</h2>
-      <p className="mb-4 text-sm text-clinical-600">
-        아래 내용은 자세 스크리닝 참고 정보이며, 통증의 원인을 확정하거나 질환을 진단하지 않습니다.
-      </p>
-
-      {!captures['side-left'] && !captures['side-right'] && (
-        <div className="mb-4 rounded-lg bg-clinical-100 p-3 text-xs text-clinical-600">
-          측면 사진이 없어 머리·몸통·무릎의 전후 정렬 지표는 계산되지 않았습니다.
-        </div>
-      )}
-
-      {summary.consistencyWarnings.length > 0 && (
-        <div className="mb-4 space-y-2 rounded-lg bg-alert-coral/15 p-3 text-xs text-alert-red">
-          {summary.consistencyWarnings.map((w) => (
-            <p key={w}>⚠ {w}</p>
-          ))}
-        </div>
-      )}
-
+    <div className="mx-auto max-w-md px-4 py-6 md:max-w-2xl">
       {/* 탭 네비게이션 (A~E) */}
       <div className="sticky top-0 z-10 -mx-4 mb-6 flex gap-1 overflow-x-auto bg-clinical-50/95 px-4 py-2 backdrop-blur">
         {TABS.map((t) => (
@@ -117,50 +104,16 @@ export default function Result() {
       {/* A. 종합 평가 */}
       {tab === 'A' && (
         <div className="space-y-6">
-          <div className="card p-4">
-            <div className="mb-3 flex items-center gap-2">
-              <span className="section-badge">01</span>
-              <h3 className="text-sm font-semibold text-clinical-900">가장 중요한 자세 문제 3가지</h3>
-            </div>
-            {summary.priorityAreas.length > 0 ? (
-              <ol className="space-y-3">
-                {summary.priorityAreas.map((p, idx) => (
-                  <li key={`${p.area}-${p.basedOnMeasurement}`} className="flex gap-3">
-                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-clinical-700 text-xs font-semibold text-white">
-                      {idx + 1}
-                    </span>
-                    <div className="text-sm">
-                      <p className="font-medium text-clinical-800">
-                        {p.area} — {p.basedOnMeasurement}
-                      </p>
-                      <p className="text-clinical-600">
-                        {p.valueDeg !== null
-                          ? `${
-                              p.basedOnMeasurement.startsWith('무릎 굽힘/폄 각도')
-                                ? `완전 신전(180°) 대비 ${Math.round(Math.abs(p.valueDeg - 180) * 10) / 10}°`
-                                : `${p.valueDeg}°`
-                            } · `
-                          : ''}
-                        {p.reason}
-                      </p>
-                      <p className="text-xs text-clinical-400">
-                        {p.confidence !== null ? `인식 명확도 ${Math.round(p.confidence * 100)}%` : '인식 명확도 —'}
-                      </p>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            ) : (
-              <p className="text-sm text-clinical-500">
-                뚜렷한 자세 불균형이 확인되지 않았습니다. 측정된 편차가 크게 두드러지는 영역이 없었습니다.
-              </p>
-            )}
-            <p className="mt-3 text-xs text-clinical-400">측정된 편차가 큰 순서입니다. 의료적 진단 우선순위가 아닙니다.</p>
-          </div>
+          <ReportSummary
+            summary={summary}
+            rows={reportRows}
+            hasSidePhoto={!!captures['side-left'] || !!captures['side-right']}
+          />
+
+          <AreaReportList rows={reportRows} />
 
           <div className="card p-4">
             <div className="mb-1 flex items-center gap-2">
-              <span className="section-badge">02</span>
               <h3 className="text-sm font-semibold text-clinical-900">정면·후면·측면 체형 시각화</h3>
             </div>
             <p className="mb-3 text-xs text-clinical-500">
@@ -202,12 +155,10 @@ export default function Result() {
               )}
             </div>
           </div>
-
-          <AssessmentSummaryPanel summary={summary} />
         </div>
       )}
 
-      {/* B. 부위별 정밀 분석 */}
+      {/* B. 측정 근거 (사진 위 측정 표시 · 기준점 직접 표시) — 부위별 상세는 A의 리스트에서 펼쳐 본다 */}
       {tab === 'B' && (
         <div className="space-y-6">
           {captures.front && (
@@ -283,15 +234,6 @@ export default function Result() {
               />
             </div>
           )}
-
-          <div>
-            <h3 className="mb-3 text-sm font-semibold text-clinical-900">부위별 정밀 분석 (8개 항목)</h3>
-            <div className="space-y-4">
-              {summary.areaResults.map((r) => (
-                <PostureResultCard key={r.area} result={r} />
-              ))}
-            </div>
-          </div>
         </div>
       )}
 
@@ -366,6 +308,8 @@ export default function Result() {
               내용까지 반영해서 해석하는 기능은 다음 업데이트에서 지원할 예정입니다 (아직 입력 폼이 없습니다).
             </p>
           </div>
+
+          <AssessmentSummaryPanel summary={summary} />
         </div>
       )}
 
@@ -388,6 +332,9 @@ export default function Result() {
           </button>
         </div>
       )}
+
+      {/* F. 해부학 모델 (Skeleton / Muscle) */}
+      {tab === 'F' && <AnatomyViewer summary={summary} />}
 
       {/* E. 변화 비교 및 기록 */}
       {tab === 'E' && (

@@ -26,6 +26,15 @@ export default function Home() {
       <button onClick={() => navigate('/capture')} className="btn-primary w-full py-4 text-base">
         자세 평가 시작
       </button>
+
+      <div className="mt-4 grid grid-cols-2 gap-3">
+        <button onClick={() => navigate('/library')} className="btn-secondary py-3">
+          운동 라이브러리
+        </button>
+        <button onClick={() => navigate('/tests')} className="btn-secondary py-3">
+          기능검사 기록
+        </button>
+      </div>
     </div>
   )
 }

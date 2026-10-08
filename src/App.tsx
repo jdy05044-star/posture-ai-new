@@ -7,6 +7,8 @@ import Result from '@/pages/Result'
 import Program from '@/pages/Program'
 import Compare from '@/pages/Compare'
 import Report from '@/pages/Report'
+import ExerciseLibrary from '@/pages/ExerciseLibrary'
+import AssessmentTests from '@/pages/AssessmentTests'
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         <Route path="/program" element={<Program />} />
         <Route path="/compare" element={<Compare />} />
         <Route path="/report" element={<Report />} />
+        <Route path="/library" element={<ExerciseLibrary />} />
+        <Route path="/tests" element={<AssessmentTests />} />
       </Routes>
     </AppStateProvider>
   )

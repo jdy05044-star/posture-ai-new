@@ -1,0 +1,2100 @@
+{
+ "atlasVersion": "0.1.0",
+ "anatomicalReview": "pending",
+ "assets": {
+  "skeleton-front": {
+   "file": "skeleton_front.svg",
+   "view": "front",
+   "kind": "skeleton",
+   "reviewStatus": "schematic_pending_anatomical_review",
+   "anchors": {
+    "right_shoulder": {
+     "x": 173,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "right_hip": {
+     "x": 219,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "right_knee": {
+     "x": 240,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "right_ankle": {
+     "x": 247,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "right_acromion": {
+     "x": 176,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "right_asis": {
+     "x": 185,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "right_iliac_crest": {
+     "x": 205,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "left_shoulder": {
+     "x": 427,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "left_hip": {
+     "x": 381,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "left_knee": {
+     "x": 360,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "left_ankle": {
+     "x": 353,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "left_acromion": {
+     "x": 424,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "left_asis": {
+     "x": 415,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "left_iliac_crest": {
+     "x": 395,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "head_center": {
+     "x": 300,
+     "y": 126,
+     "type": "display_only"
+    },
+    "pelvis_center": {
+     "x": 300,
+     "y": 612,
+     "type": "display_only"
+    }
+   },
+   "regions": [
+    {
+     "id": "cranium_midline",
+     "muscleId": null,
+     "nameKo": "두개골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "mandible_midline",
+     "muscleId": null,
+     "nameKo": "하악골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "cervical_spine_midline",
+     "muscleId": null,
+     "nameKo": "경추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "thoracic_spine_midline",
+     "muscleId": null,
+     "nameKo": "흉추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "lumbar_spine_midline",
+     "muscleId": null,
+     "nameKo": "요추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "scapula_right",
+     "muscleId": null,
+     "nameKo": "견갑골",
+     "side": "right",
+     "layer": "deep",
+     "kind": "bone"
+    },
+    {
+     "id": "scapula_left",
+     "muscleId": null,
+     "nameKo": "견갑골",
+     "side": "left",
+     "layer": "deep",
+     "kind": "bone"
+    },
+    {
+     "id": "clavicle_right",
+     "muscleId": null,
+     "nameKo": "쇄골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "clavicle_left",
+     "muscleId": null,
+     "nameKo": "쇄골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ribs_right",
+     "muscleId": null,
+     "nameKo": "늑골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ribs_left",
+     "muscleId": null,
+     "nameKo": "늑골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "sternum_midline",
+     "muscleId": null,
+     "nameKo": "흉골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "pelvis_right",
+     "muscleId": null,
+     "nameKo": "골반뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "pelvis_left",
+     "muscleId": null,
+     "nameKo": "골반뼈",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "sacrum_midline",
+     "muscleId": null,
+     "nameKo": "천골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "humerus_right",
+     "muscleId": null,
+     "nameKo": "상완골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "humerus_left",
+     "muscleId": null,
+     "nameKo": "상완골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "radius_right",
+     "muscleId": null,
+     "nameKo": "요골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "radius_left",
+     "muscleId": null,
+     "nameKo": "요골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ulna_right",
+     "muscleId": null,
+     "nameKo": "척골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ulna_left",
+     "muscleId": null,
+     "nameKo": "척골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "hand_bones_right",
+     "muscleId": null,
+     "nameKo": "손뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "hand_bones_left",
+     "muscleId": null,
+     "nameKo": "손뼈",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "femur_right",
+     "muscleId": null,
+     "nameKo": "대퇴골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "femur_left",
+     "muscleId": null,
+     "nameKo": "대퇴골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "patella_right",
+     "muscleId": null,
+     "nameKo": "슬개골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "patella_left",
+     "muscleId": null,
+     "nameKo": "슬개골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "tibia_right",
+     "muscleId": null,
+     "nameKo": "경골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "tibia_left",
+     "muscleId": null,
+     "nameKo": "경골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "fibula_right",
+     "muscleId": null,
+     "nameKo": "비골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "fibula_left",
+     "muscleId": null,
+     "nameKo": "비골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "foot_bones_right",
+     "muscleId": null,
+     "nameKo": "발뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "foot_bones_left",
+     "muscleId": null,
+     "nameKo": "발뼈",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    }
+   ]
+  },
+  "skeleton-back": {
+   "file": "skeleton_back.svg",
+   "view": "back",
+   "kind": "skeleton",
+   "reviewStatus": "schematic_pending_anatomical_review",
+   "anchors": {
+    "left_shoulder": {
+     "x": 173,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "left_hip": {
+     "x": 219,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "left_knee": {
+     "x": 240,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "left_ankle": {
+     "x": 247,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "left_acromion": {
+     "x": 176,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "left_asis": {
+     "x": 185,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "left_iliac_crest": {
+     "x": 205,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "right_shoulder": {
+     "x": 427,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "right_hip": {
+     "x": 381,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "right_knee": {
+     "x": 360,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "right_ankle": {
+     "x": 353,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "right_acromion": {
+     "x": 424,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "right_asis": {
+     "x": 415,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "right_iliac_crest": {
+     "x": 395,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "head_center": {
+     "x": 300,
+     "y": 126,
+     "type": "display_only"
+    },
+    "pelvis_center": {
+     "x": 300,
+     "y": 612,
+     "type": "display_only"
+    }
+   },
+   "regions": [
+    {
+     "id": "cranium_midline",
+     "muscleId": null,
+     "nameKo": "두개골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "mandible_midline",
+     "muscleId": null,
+     "nameKo": "하악골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "cervical_spine_midline",
+     "muscleId": null,
+     "nameKo": "경추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "thoracic_spine_midline",
+     "muscleId": null,
+     "nameKo": "흉추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "lumbar_spine_midline",
+     "muscleId": null,
+     "nameKo": "요추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "scapula_left",
+     "muscleId": null,
+     "nameKo": "견갑골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "scapula_right",
+     "muscleId": null,
+     "nameKo": "견갑골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "clavicle_left",
+     "muscleId": null,
+     "nameKo": "쇄골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "clavicle_right",
+     "muscleId": null,
+     "nameKo": "쇄골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ribs_left",
+     "muscleId": null,
+     "nameKo": "늑골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ribs_right",
+     "muscleId": null,
+     "nameKo": "늑골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "pelvis_left",
+     "muscleId": null,
+     "nameKo": "골반뼈",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "pelvis_right",
+     "muscleId": null,
+     "nameKo": "골반뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "sacrum_midline",
+     "muscleId": null,
+     "nameKo": "천골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "humerus_left",
+     "muscleId": null,
+     "nameKo": "상완골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "humerus_right",
+     "muscleId": null,
+     "nameKo": "상완골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "radius_left",
+     "muscleId": null,
+     "nameKo": "요골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "radius_right",
+     "muscleId": null,
+     "nameKo": "요골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ulna_left",
+     "muscleId": null,
+     "nameKo": "척골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ulna_right",
+     "muscleId": null,
+     "nameKo": "척골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "hand_bones_left",
+     "muscleId": null,
+     "nameKo": "손뼈",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "hand_bones_right",
+     "muscleId": null,
+     "nameKo": "손뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "femur_left",
+     "muscleId": null,
+     "nameKo": "대퇴골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "femur_right",
+     "muscleId": null,
+     "nameKo": "대퇴골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "tibia_left",
+     "muscleId": null,
+     "nameKo": "경골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "tibia_right",
+     "muscleId": null,
+     "nameKo": "경골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "fibula_left",
+     "muscleId": null,
+     "nameKo": "비골",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "fibula_right",
+     "muscleId": null,
+     "nameKo": "비골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "foot_bones_left",
+     "muscleId": null,
+     "nameKo": "발뼈",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "foot_bones_right",
+     "muscleId": null,
+     "nameKo": "발뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    }
+   ]
+  },
+  "muscle-front": {
+   "file": "muscle_front.svg",
+   "view": "front",
+   "kind": "muscle",
+   "reviewStatus": "schematic_pending_anatomical_review",
+   "anchors": {
+    "right_shoulder": {
+     "x": 173,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "right_hip": {
+     "x": 219,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "right_knee": {
+     "x": 240,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "right_ankle": {
+     "x": 247,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "right_acromion": {
+     "x": 176,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "right_asis": {
+     "x": 185,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "right_iliac_crest": {
+     "x": 205,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "left_shoulder": {
+     "x": 427,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "left_hip": {
+     "x": 381,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "left_knee": {
+     "x": 360,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "left_ankle": {
+     "x": 353,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "left_acromion": {
+     "x": 424,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "left_asis": {
+     "x": 415,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "left_iliac_crest": {
+     "x": 395,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "head_center": {
+     "x": 300,
+     "y": 126,
+     "type": "display_only"
+    },
+    "pelvis_center": {
+     "x": 300,
+     "y": 612,
+     "type": "display_only"
+    }
+   },
+   "regions": [
+    {
+     "id": "temporalis_right",
+     "muscleId": "temporalis",
+     "nameKo": "측두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "temporalis_left",
+     "muscleId": "temporalis",
+     "nameKo": "측두근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "masseter_right",
+     "muscleId": "masseter",
+     "nameKo": "교근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "masseter_left",
+     "muscleId": "masseter",
+     "nameKo": "교근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "sternocleidomastoid_right",
+     "muscleId": "sternocleidomastoid",
+     "nameKo": "흉쇄유돌근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "sternocleidomastoid_left",
+     "muscleId": "sternocleidomastoid",
+     "nameKo": "흉쇄유돌근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "upper_trapezius_right",
+     "muscleId": "upper_trapezius",
+     "nameKo": "상부 승모근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "upper_trapezius_left",
+     "muscleId": "upper_trapezius",
+     "nameKo": "상부 승모근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "deltoid_right",
+     "muscleId": "deltoid",
+     "nameKo": "삼각근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "deltoid_left",
+     "muscleId": "deltoid",
+     "nameKo": "삼각근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "pectoralis_major_right",
+     "muscleId": "pectoralis_major",
+     "nameKo": "대흉근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "pectoralis_major_left",
+     "muscleId": "pectoralis_major",
+     "nameKo": "대흉근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "serratus_anterior_right",
+     "muscleId": "serratus_anterior",
+     "nameKo": "전거근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "serratus_anterior_left",
+     "muscleId": "serratus_anterior",
+     "nameKo": "전거근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "biceps_brachii_right",
+     "muscleId": "biceps_brachii",
+     "nameKo": "상완이두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "biceps_brachii_left",
+     "muscleId": "biceps_brachii",
+     "nameKo": "상완이두근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "triceps_brachii_right",
+     "muscleId": "triceps_brachii",
+     "nameKo": "상완삼두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "triceps_brachii_left",
+     "muscleId": "triceps_brachii",
+     "nameKo": "상완삼두근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "forearm_flexors_right",
+     "muscleId": "forearm_flexors",
+     "nameKo": "전완 굴곡근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "forearm_flexors_left",
+     "muscleId": "forearm_flexors",
+     "nameKo": "전완 굴곡근군",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "external_oblique_right",
+     "muscleId": "external_oblique",
+     "nameKo": "외복사근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "external_oblique_left",
+     "muscleId": "external_oblique",
+     "nameKo": "외복사근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "rectus_abdominis_right",
+     "muscleId": "rectus_abdominis",
+     "nameKo": "복직근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "rectus_abdominis_left",
+     "muscleId": "rectus_abdominis",
+     "nameKo": "복직근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "tensor_fasciae_latae_right",
+     "muscleId": "tensor_fasciae_latae",
+     "nameKo": "대퇴근막장근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "tensor_fasciae_latae_left",
+     "muscleId": "tensor_fasciae_latae",
+     "nameKo": "대퇴근막장근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "adductors_right",
+     "muscleId": "adductors",
+     "nameKo": "내전근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "adductors_left",
+     "muscleId": "adductors",
+     "nameKo": "내전근군",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "vastus_lateralis_right",
+     "muscleId": "vastus_lateralis",
+     "nameKo": "외측광근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "vastus_lateralis_left",
+     "muscleId": "vastus_lateralis",
+     "nameKo": "외측광근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "rectus_femoris_right",
+     "muscleId": "rectus_femoris",
+     "nameKo": "대퇴직근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "rectus_femoris_left",
+     "muscleId": "rectus_femoris",
+     "nameKo": "대퇴직근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "vastus_medialis_right",
+     "muscleId": "vastus_medialis",
+     "nameKo": "내측광근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "vastus_medialis_left",
+     "muscleId": "vastus_medialis",
+     "nameKo": "내측광근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "sartorius_right",
+     "muscleId": "sartorius",
+     "nameKo": "봉공근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "sartorius_left",
+     "muscleId": "sartorius",
+     "nameKo": "봉공근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "tibialis_anterior_right",
+     "muscleId": "tibialis_anterior",
+     "nameKo": "전경골근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "tibialis_anterior_left",
+     "muscleId": "tibialis_anterior",
+     "nameKo": "전경골근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "fibularis_group_right",
+     "muscleId": "fibularis_group",
+     "nameKo": "비골근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "fibularis_group_left",
+     "muscleId": "fibularis_group",
+     "nameKo": "비골근군",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gastrocnemius_right",
+     "muscleId": "gastrocnemius",
+     "nameKo": "비복근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gastrocnemius_left",
+     "muscleId": "gastrocnemius",
+     "nameKo": "비복근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "deep_neck_flexors_right",
+     "muscleId": "deep_neck_flexors",
+     "nameKo": "깊은 목 굴곡근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "deep_neck_flexors_left",
+     "muscleId": "deep_neck_flexors",
+     "nameKo": "깊은 목 굴곡근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "pectoralis_minor_right",
+     "muscleId": "pectoralis_minor",
+     "nameKo": "소흉근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "pectoralis_minor_left",
+     "muscleId": "pectoralis_minor",
+     "nameKo": "소흉근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "internal_oblique_right",
+     "muscleId": "internal_oblique",
+     "nameKo": "내복사근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "internal_oblique_left",
+     "muscleId": "internal_oblique",
+     "nameKo": "내복사근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "transversus_abdominis_right",
+     "muscleId": "transversus_abdominis",
+     "nameKo": "복횡근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "transversus_abdominis_left",
+     "muscleId": "transversus_abdominis",
+     "nameKo": "복횡근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "iliopsoas_right",
+     "muscleId": "iliopsoas",
+     "nameKo": "장요근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "iliopsoas_left",
+     "muscleId": "iliopsoas",
+     "nameKo": "장요근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    }
+   ]
+  },
+  "muscle-back": {
+   "file": "muscle_back.svg",
+   "view": "back",
+   "kind": "muscle",
+   "reviewStatus": "schematic_pending_anatomical_review",
+   "anchors": {
+    "left_shoulder": {
+     "x": 173,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "left_hip": {
+     "x": 219,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "left_knee": {
+     "x": 240,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "left_ankle": {
+     "x": 247,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "left_acromion": {
+     "x": 176,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "left_asis": {
+     "x": 185,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "left_iliac_crest": {
+     "x": 205,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "right_shoulder": {
+     "x": 427,
+     "y": 280,
+     "type": "pose_proxy_display"
+    },
+    "right_hip": {
+     "x": 381,
+     "y": 635,
+     "type": "pose_proxy_display"
+    },
+    "right_knee": {
+     "x": 360,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "right_ankle": {
+     "x": 353,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "right_acromion": {
+     "x": 424,
+     "y": 268,
+     "type": "manual_marker_display"
+    },
+    "right_asis": {
+     "x": 415,
+     "y": 599,
+     "type": "manual_marker_display"
+    },
+    "right_iliac_crest": {
+     "x": 395,
+     "y": 563,
+     "type": "manual_marker_display"
+    },
+    "head_center": {
+     "x": 300,
+     "y": 126,
+     "type": "display_only"
+    },
+    "pelvis_center": {
+     "x": 300,
+     "y": 612,
+     "type": "display_only"
+    }
+   },
+   "regions": [
+    {
+     "id": "upper_trapezius_left",
+     "muscleId": "upper_trapezius",
+     "nameKo": "상부 승모근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "upper_trapezius_right",
+     "muscleId": "upper_trapezius",
+     "nameKo": "상부 승모근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "middle_trapezius_left",
+     "muscleId": "middle_trapezius",
+     "nameKo": "중부 승모근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "middle_trapezius_right",
+     "muscleId": "middle_trapezius",
+     "nameKo": "중부 승모근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "lower_trapezius_left",
+     "muscleId": "lower_trapezius",
+     "nameKo": "하부 승모근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "lower_trapezius_right",
+     "muscleId": "lower_trapezius",
+     "nameKo": "하부 승모근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "deltoid_left",
+     "muscleId": "deltoid",
+     "nameKo": "삼각근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "deltoid_right",
+     "muscleId": "deltoid",
+     "nameKo": "삼각근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "triceps_brachii_left",
+     "muscleId": "triceps_brachii",
+     "nameKo": "상완삼두근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "triceps_brachii_right",
+     "muscleId": "triceps_brachii",
+     "nameKo": "상완삼두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "forearm_extensors_left",
+     "muscleId": "forearm_extensors",
+     "nameKo": "전완 신전근군",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "forearm_extensors_right",
+     "muscleId": "forearm_extensors",
+     "nameKo": "전완 신전근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "latissimus_dorsi_left",
+     "muscleId": "latissimus_dorsi",
+     "nameKo": "광배근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "latissimus_dorsi_right",
+     "muscleId": "latissimus_dorsi",
+     "nameKo": "광배근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "external_oblique_left",
+     "muscleId": "external_oblique",
+     "nameKo": "외복사근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "external_oblique_right",
+     "muscleId": "external_oblique",
+     "nameKo": "외복사근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gluteus_medius_left",
+     "muscleId": "gluteus_medius",
+     "nameKo": "중둔근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gluteus_medius_right",
+     "muscleId": "gluteus_medius",
+     "nameKo": "중둔근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gluteus_maximus_left",
+     "muscleId": "gluteus_maximus",
+     "nameKo": "대둔근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gluteus_maximus_right",
+     "muscleId": "gluteus_maximus",
+     "nameKo": "대둔근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "biceps_femoris_left",
+     "muscleId": "biceps_femoris",
+     "nameKo": "대퇴이두근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "biceps_femoris_right",
+     "muscleId": "biceps_femoris",
+     "nameKo": "대퇴이두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "semimembranosus_left",
+     "muscleId": "semimembranosus",
+     "nameKo": "반막양근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "semimembranosus_right",
+     "muscleId": "semimembranosus",
+     "nameKo": "반막양근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "semitendinosus_left",
+     "muscleId": "semitendinosus",
+     "nameKo": "반건양근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "semitendinosus_right",
+     "muscleId": "semitendinosus",
+     "nameKo": "반건양근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gastrocnemius_left",
+     "muscleId": "gastrocnemius",
+     "nameKo": "비복근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gastrocnemius_right",
+     "muscleId": "gastrocnemius",
+     "nameKo": "비복근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "soleus_left",
+     "muscleId": "soleus",
+     "nameKo": "가자미근",
+     "side": "left",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "soleus_right",
+     "muscleId": "soleus",
+     "nameKo": "가자미근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "levator_scapulae_left",
+     "muscleId": "levator_scapulae",
+     "nameKo": "견갑거근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "levator_scapulae_right",
+     "muscleId": "levator_scapulae",
+     "nameKo": "견갑거근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "rhomboids_left",
+     "muscleId": "rhomboids",
+     "nameKo": "능형근군",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "rhomboids_right",
+     "muscleId": "rhomboids",
+     "nameKo": "능형근군",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "erector_spinae_left",
+     "muscleId": "erector_spinae",
+     "nameKo": "척추기립근군",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "erector_spinae_right",
+     "muscleId": "erector_spinae",
+     "nameKo": "척추기립근군",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "quadratus_lumborum_left",
+     "muscleId": "quadratus_lumborum",
+     "nameKo": "요방형근",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "quadratus_lumborum_right",
+     "muscleId": "quadratus_lumborum",
+     "nameKo": "요방형근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "suboccipitals_left",
+     "muscleId": "suboccipitals",
+     "nameKo": "후두하근군",
+     "side": "left",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "suboccipitals_right",
+     "muscleId": "suboccipitals",
+     "nameKo": "후두하근군",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    }
+   ]
+  },
+  "skeleton-right": {
+   "file": "skeleton_right_side.svg",
+   "view": "right_side",
+   "kind": "skeleton",
+   "reviewStatus": "schematic_pending_anatomical_review",
+   "anchors": {
+    "right_ear": {
+     "x": 286,
+     "y": 139,
+     "type": "pose_proxy_display"
+    },
+    "right_shoulder": {
+     "x": 287,
+     "y": 283,
+     "type": "pose_proxy_display"
+    },
+    "right_hip": {
+     "x": 278,
+     "y": 622,
+     "type": "pose_proxy_display"
+    },
+    "right_knee": {
+     "x": 316,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "right_ankle": {
+     "x": 302,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "right_asis": {
+     "x": 349,
+     "y": 583,
+     "type": "manual_marker_display"
+    },
+    "right_psis": {
+     "x": 226,
+     "y": 575,
+     "type": "manual_marker_display"
+    },
+    "c7": {
+     "x": 261,
+     "y": 247,
+     "type": "manual_marker_display"
+    },
+    "head_center": {
+     "x": 302,
+     "y": 127,
+     "type": "display_only"
+    }
+   },
+   "regions": [
+    {
+     "id": "cranium_midline",
+     "muscleId": null,
+     "nameKo": "두개골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "mandible_midline",
+     "muscleId": null,
+     "nameKo": "하악골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "cervical_spine_midline",
+     "muscleId": null,
+     "nameKo": "경추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "thoracic_spine_midline",
+     "muscleId": null,
+     "nameKo": "흉추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "lumbar_spine_midline",
+     "muscleId": null,
+     "nameKo": "요추",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ribs_right",
+     "muscleId": null,
+     "nameKo": "늑골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "scapula_right",
+     "muscleId": null,
+     "nameKo": "견갑골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "clavicle_right",
+     "muscleId": null,
+     "nameKo": "쇄골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "sternum_midline",
+     "muscleId": null,
+     "nameKo": "흉골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "pelvis_right",
+     "muscleId": null,
+     "nameKo": "골반뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "sacrum_midline",
+     "muscleId": null,
+     "nameKo": "천골",
+     "side": "midline",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "femur_right",
+     "muscleId": null,
+     "nameKo": "대퇴골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "patella_right",
+     "muscleId": null,
+     "nameKo": "슬개골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "tibia_right",
+     "muscleId": null,
+     "nameKo": "경골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "fibula_right",
+     "muscleId": null,
+     "nameKo": "비골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "humerus_right",
+     "muscleId": null,
+     "nameKo": "상완골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "radius_right",
+     "muscleId": null,
+     "nameKo": "요골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "ulna_right",
+     "muscleId": null,
+     "nameKo": "척골",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "hand_bones_right",
+     "muscleId": null,
+     "nameKo": "손뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    },
+    {
+     "id": "foot_bones_right",
+     "muscleId": null,
+     "nameKo": "발뼈",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "bone"
+    }
+   ]
+  },
+  "muscle-right": {
+   "file": "muscle_right_side.svg",
+   "view": "right_side",
+   "kind": "muscle",
+   "reviewStatus": "schematic_pending_anatomical_review",
+   "anchors": {
+    "right_ear": {
+     "x": 286,
+     "y": 139,
+     "type": "pose_proxy_display"
+    },
+    "right_shoulder": {
+     "x": 287,
+     "y": 283,
+     "type": "pose_proxy_display"
+    },
+    "right_hip": {
+     "x": 278,
+     "y": 622,
+     "type": "pose_proxy_display"
+    },
+    "right_knee": {
+     "x": 316,
+     "y": 866,
+     "type": "pose_proxy_display"
+    },
+    "right_ankle": {
+     "x": 302,
+     "y": 1090,
+     "type": "pose_proxy_display"
+    },
+    "right_asis": {
+     "x": 349,
+     "y": 583,
+     "type": "manual_marker_display"
+    },
+    "right_psis": {
+     "x": 226,
+     "y": 575,
+     "type": "manual_marker_display"
+    },
+    "c7": {
+     "x": 261,
+     "y": 247,
+     "type": "manual_marker_display"
+    },
+    "head_center": {
+     "x": 302,
+     "y": 127,
+     "type": "display_only"
+    }
+   },
+   "regions": [
+    {
+     "id": "temporalis_right",
+     "muscleId": "temporalis",
+     "nameKo": "측두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "masseter_right",
+     "muscleId": "masseter",
+     "nameKo": "교근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "sternocleidomastoid_right",
+     "muscleId": "sternocleidomastoid",
+     "nameKo": "흉쇄유돌근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "upper_trapezius_right",
+     "muscleId": "upper_trapezius",
+     "nameKo": "상부 승모근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "pectoralis_major_right",
+     "muscleId": "pectoralis_major",
+     "nameKo": "대흉근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "latissimus_dorsi_right",
+     "muscleId": "latissimus_dorsi",
+     "nameKo": "광배근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "serratus_anterior_right",
+     "muscleId": "serratus_anterior",
+     "nameKo": "전거근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "external_oblique_right",
+     "muscleId": "external_oblique",
+     "nameKo": "외복사근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gluteus_medius_right",
+     "muscleId": "gluteus_medius",
+     "nameKo": "중둔근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gluteus_maximus_right",
+     "muscleId": "gluteus_maximus",
+     "nameKo": "대둔근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "tensor_fasciae_latae_right",
+     "muscleId": "tensor_fasciae_latae",
+     "nameKo": "대퇴근막장근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "vastus_lateralis_right",
+     "muscleId": "vastus_lateralis",
+     "nameKo": "외측광근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "rectus_femoris_right",
+     "muscleId": "rectus_femoris",
+     "nameKo": "대퇴직근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "biceps_femoris_right",
+     "muscleId": "biceps_femoris",
+     "nameKo": "대퇴이두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "gastrocnemius_right",
+     "muscleId": "gastrocnemius",
+     "nameKo": "비복근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "soleus_right",
+     "muscleId": "soleus",
+     "nameKo": "가자미근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "tibialis_anterior_right",
+     "muscleId": "tibialis_anterior",
+     "nameKo": "전경골근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "fibularis_group_right",
+     "muscleId": "fibularis_group",
+     "nameKo": "비골근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "deltoid_right",
+     "muscleId": "deltoid",
+     "nameKo": "삼각근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "triceps_brachii_right",
+     "muscleId": "triceps_brachii",
+     "nameKo": "상완삼두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "biceps_brachii_right",
+     "muscleId": "biceps_brachii",
+     "nameKo": "상완이두근",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "forearm_extensors_right",
+     "muscleId": "forearm_extensors",
+     "nameKo": "전완 신전근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "forearm_flexors_right",
+     "muscleId": "forearm_flexors",
+     "nameKo": "전완 굴곡근군",
+     "side": "right",
+     "layer": "superficial",
+     "kind": "muscle"
+    },
+    {
+     "id": "pectoralis_minor_right",
+     "muscleId": "pectoralis_minor",
+     "nameKo": "소흉근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "levator_scapulae_right",
+     "muscleId": "levator_scapulae",
+     "nameKo": "견갑거근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "deep_neck_flexors_right",
+     "muscleId": "deep_neck_flexors",
+     "nameKo": "깊은 목 굴곡근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "iliopsoas_right",
+     "muscleId": "iliopsoas",
+     "nameKo": "장요근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    },
+    {
+     "id": "quadratus_lumborum_right",
+     "muscleId": "quadratus_lumborum",
+     "nameKo": "요방형근",
+     "side": "right",
+     "layer": "deep",
+     "kind": "muscle"
+    }
+   ]
+  }
+ }
+}

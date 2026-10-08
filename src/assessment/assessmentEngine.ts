@@ -32,6 +32,16 @@ function areaConfidence(measurements: AngleMeasurement[]): number | null {
  * 정면보다 잦을 수 있어, 두 결과가 모순되면 "둘 중 하나는 좌우가 바뀌었을 수 있다"는 것을 PT가
  * 참고할 수 있게 알려준다 — 어느 쪽이 맞는지 임의로 판단하지 않는다.
  */
+/**
+ * 각도로 측정된 항목의 "편차 크기(°)". 우선 확인 영역 정렬과 부위별 불균형 막대가 같은 기준을 쓰도록 공유한다.
+ * 무릎 굽힘/폄 각도는 완전 신전(180°) 대비 차이, 나머지는 측정된 각도의 절댓값.
+ * 각도 측정값이 없으면(null) 편차를 지어내지 않고 null을 돌려준다.
+ */
+export function measurementSeverity(m: AngleMeasurement): number | null {
+  if (m.valueDeg === null) return null
+  return m.id.includes('knee-flex-angle') ? Math.abs(m.valueDeg - 180) : Math.abs(m.valueDeg)
+}
+
 function buildConsistencyWarnings(allMeasurements: AngleMeasurement[]): string[] {
   const warnings: string[] = []
   const byId = new Map(allMeasurements.map((m) => [m.id, m]))
@@ -121,7 +131,7 @@ export function runAssessment(
   const scored: PriorityAreaEntry[] = allMeasurements
     .filter((m) => m.valueDeg !== null)
     .map((m) => {
-      const severity = m.id.includes('knee-flex-angle') ? Math.abs((m.valueDeg as number) - 180) : Math.abs(m.valueDeg as number)
+      const severity = measurementSeverity(m) as number
       return {
         entry: {
           area: m.area,

@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200" width="600" height="1200" id="muscle_right_side" role="img" aria-labelledby="asset-title asset-description" data-view="right_side" data-atlas-version="0.1.0" data-anatomical-review="pending">
+  <title id="asset-title">PosturePT muscle right_side — original schematic atlas</title>
+  <desc id="asset-description">Editable schematic anatomy for posture visualization. Anatomical left/right belongs to the subject. Deep regions are hidden and schematic. Not a measurement or diagnostically validated model.</desc>
+  <metadata>{"author": "PosturePT SVG asset generation", "version": "0.1.0", "geometry": "original schematic paths", "clinical_review": "pending", "subject_side": "anatomical"}</metadata>
+  <defs>
+    <pattern id="tightness-pattern" width="9" height="9" patternUnits="userSpaceOnUse">
+      <path d="M-2 9L9-2 M7 11L11 7" fill="none" stroke="#ffffff" stroke-width="1.2" opacity=".45" />
+    </pattern>
+    <pattern id="weakness-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.3" fill="#ffffff" opacity=".6" />
+    </pattern>
+  </defs>
+  <style>
+.body-outline{fill:#f3f6f8;stroke:#b8c7d0;stroke-width:1.6;opacity:.65}
+.bone-surface{fill:#f6f4ec;stroke:#81939e;stroke-width:1.6;stroke-linejoin:round}
+.bone-detail{fill:none;stroke:#9baaaf;stroke-width:1.2;stroke-linecap:round}
+.cavity{fill:#cad4d9;stroke:#81939e;stroke-width:1.2}
+.muscle-surface{fill:#ced8df;stroke:#7e919d;stroke-width:1.35;stroke-linejoin:round}
+.fiber{fill:none;stroke:#7e919d;stroke-width:1;opacity:.48;pointer-events:none}
+.connective-surface{fill:#e9eef1;stroke:#a5b4bd;stroke-width:1.2}
+.muscle[data-state="assessment_candidate"] .muscle-surface{fill:#efcb73}
+.muscle[data-state="tightness_suspected"] .muscle-surface{fill:#e8888f}
+.muscle[data-state="weakness_suspected"] .muscle-surface{fill:#8cb7e1}
+.muscle[data-state="tightness_suspected"] .state-pattern-tight{display:inline}
+.muscle[data-state="weakness_suspected"] .state-pattern-weak{display:inline}
+.state-pattern-tight,.state-pattern-weak{display:none;pointer-events:none}
+[data-selected="true"] .muscle-surface,[data-selected="true"] .bone-surface{stroke:#243e50;stroke-width:2.8}
+.deep .muscle-surface{stroke-dasharray:5 3}
+</style>
+  <g id="base_outline" pointer-events="none">
+    <path d="M282 202L287 241Q321 251 337 276Q358 310 357 356L360 404Q358 454 340 493L334 539Q368 569 363 616L343 677L339 743L332 821L327 865Q341 904 338 944L324 1011L316 1086L351 1112L369 1126Q370 1139 353 1142L298 1139L284 1128L285 1091L291 1022L287 957L279 897L274 849L261 782L250 704L250 670Q219 653 211 615Q207 574 232 546L239 485L244 423Q229 383 232 327L243 277L251 242L257 205Z" class="body-outline" />
+    <path d="M259 71Q285 45 314 58Q342 69 347 104L354 124L368 136L355 147L356 163L349 184L332 199L295 205L266 184Q249 162 251 126Z" class="body-outline" />
+    <path d="M268 273Q300 258 315 285L312 354L302 420L303 461L293 535L286 590L301 628L293 650L278 643L274 605L270 584L270 520L271 457L260 401L253 332Z" class="body-outline" />
+    <path d="M280 641L277 674L283 700L291 700L291 670L299 695L306 692L301 660L309 680L314 675L303 644Z" class="body-outline" />
+  </g>
+  <g id="superficial_layer">
+    <g id="temporalis_right" class="muscle" data-muscle-id="temporalis" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>측두근 · right</title>
+      <path d="M271 83Q285 65 308 68L322 99L313 125L297 134L282 121Z" class="muscle-surface" />
+      <path d="M271 83Q285 65 308 68L322 99L313 125L297 134L282 121Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M271 83Q285 65 308 68L322 99L313 125L297 134L282 121Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M282 82L297 126" class="fiber" />
+      <path d="M293 79L301 121" class="fiber" />
+      <path d="M306 84L305 118" class="fiber" />
+    </g>
+    <g id="masseter_right" class="muscle" data-muscle-id="masseter" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>교근 · right</title>
+      <path d="M313 142L330 141L335 177L321 190L309 170Z" class="muscle-surface" />
+      <path d="M313 142L330 141L335 177L321 190L309 170Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M313 142L330 141L335 177L321 190L309 170Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="sternocleidomastoid_right" class="muscle" data-muscle-id="sternocleidomastoid" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>흉쇄유돌근 · right</title>
+      <path d="M293 182L304 186L302 211L320 258L305 266L282 210Z" class="muscle-surface" />
+      <path d="M293 182L304 186L302 211L320 258L305 266L282 210Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M293 182L304 186L302 211L320 258L305 266L282 210Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M298 199L309 253" class="fiber" />
+    </g>
+    <g id="upper_trapezius_right" class="muscle" data-muscle-id="upper_trapezius" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>상부 승모근 · right</title>
+      <path d="M263 202L275 224L270 247L258 259L249 270L239 277L245 252Z" class="muscle-surface" />
+      <path d="M263 202L275 224L270 247L258 259L249 270L239 277L245 252Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M263 202L275 224L270 247L258 259L249 270L239 277L245 252Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M259 229L255 256" class="fiber" />
+    </g>
+    <g id="pectoralis_major_right" class="muscle" data-muscle-id="pectoralis_major" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>대흉근 · right</title>
+      <path d="M310 264L331 278L348 319L347 357L323 361L301 320Z" class="muscle-surface" />
+      <path d="M310 264L331 278L348 319L347 357L323 361L301 320Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M310 264L331 278L348 319L347 357L323 361L301 320Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M322 282L321 334" class="fiber" />
+      <path d="M331 295L329 345" class="fiber" />
+    </g>
+    <g id="latissimus_dorsi_right" class="muscle" data-muscle-id="latissimus_dorsi" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>광배근 · right</title>
+      <path d="M242 329L261 345L278 403L269 486L247 548L229 544L240 478L241 410Z" class="muscle-surface" />
+      <path d="M242 329L261 345L278 403L269 486L247 548L229 544L240 478L241 410Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M242 329L261 345L278 403L269 486L247 548L229 544L240 478L241 410Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M245 363L259 446" class="fiber" />
+      <path d="M246 398L253 477" class="fiber" />
+      <path d="M249 449L242 519" class="fiber" />
+    </g>
+    <g id="serratus_anterior_right" class="muscle" data-muscle-id="serratus_anterior" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>전거근 · right</title>
+      <path d="M312 357L337 365L332 379L306 367Z" class="muscle-surface" />
+      <path d="M312 357L337 365L332 379L306 367Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M312 357L337 365L332 379L306 367Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M307 374L334 385L329 398L301 386Z" class="muscle-surface" />
+      <path d="M307 374L334 385L329 398L301 386Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M307 374L334 385L329 398L301 386Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M299 391L330 405L322 419L292 405Z" class="muscle-surface" />
+      <path d="M299 391L330 405L322 419L292 405Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M299 391L330 405L322 419L292 405Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M292 408L324 425L316 439L286 421Z" class="muscle-surface" />
+      <path d="M292 408L324 425L316 439L286 421Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M292 408L324 425L316 439L286 421Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="external_oblique_right" class="muscle" data-muscle-id="external_oblique" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>외복사근 · right</title>
+      <path d="M290 431L315 445L337 481L333 536L347 564L304 576L250 549L271 493Z" class="muscle-surface" />
+      <path d="M290 431L315 445L337 481L333 536L347 564L304 576L250 549L271 493Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M290 431L315 445L337 481L333 536L347 564L304 576L250 549L271 493Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M291 451L323 481" class="fiber" />
+      <path d="M287 477L321 510" class="fiber" />
+      <path d="M277 505L320 545" class="fiber" />
+      <path d="M268 530L307 565" class="fiber" />
+    </g>
+    <g id="gluteus_medius_right" class="muscle" data-muscle-id="gluteus_medius" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>중둔근 · right</title>
+      <path d="M252 552Q276 542 302 564L310 593L278 629L234 623L219 599Z" class="muscle-surface" />
+      <path d="M252 552Q276 542 302 564L310 593L278 629L234 623L219 599Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M252 552Q276 542 302 564L310 593L278 629L234 623L219 599Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M256 563L237 601" class="fiber" />
+      <path d="M276 559L257 613" class="fiber" />
+      <path d="M293 575L274 615" class="fiber" />
+    </g>
+    <g id="gluteus_maximus_right" class="muscle" data-muscle-id="gluteus_maximus" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>대둔근 · right</title>
+      <path d="M237 606L278 629L282 660L267 686Q230 671 218 647L213 622Z" class="muscle-surface" />
+      <path d="M237 606L278 629L282 660L267 686Q230 671 218 647L213 622Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M237 606L278 629L282 660L267 686Q230 671 218 647L213 622Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M227 617L269 647" class="fiber" />
+      <path d="M226 633L266 661" class="fiber" />
+      <path d="M233 654L260 675" class="fiber" />
+    </g>
+    <g id="tensor_fasciae_latae_right" class="muscle" data-muscle-id="tensor_fasciae_latae" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>대퇴근막장근 · right</title>
+      <path d="M318 576L343 583L347 619L329 672L315 661L309 609Z" class="muscle-surface" />
+      <path d="M318 576L343 583L347 619L329 672L315 661L309 609Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M318 576L343 583L347 619L329 672L315 661L309 609Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M325 590L324 649" class="fiber" />
+    </g>
+    <g id="vastus_lateralis_right" class="muscle" data-muscle-id="vastus_lateralis" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>외측광근 · right</title>
+      <path d="M299 675L321 669L337 696L331 763L324 822L322 849L308 852L299 800L288 734Z" class="muscle-surface" />
+      <path d="M299 675L321 669L337 696L331 763L324 822L322 849L308 852L299 800L288 734Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M299 675L321 669L337 696L331 763L324 822L322 849L308 852L299 800L288 734Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M310 698L316 824" class="fiber" />
+      <path d="M320 697L322 809" class="fiber" />
+    </g>
+    <g id="rectus_femoris_right" class="muscle" data-muscle-id="rectus_femoris" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>대퇴직근 · right</title>
+      <path d="M336 660L344 669L341 729L336 804L331 843L323 844L332 768Z" class="muscle-surface" />
+      <path d="M336 660L344 669L341 729L336 804L331 843L323 844L332 768Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M336 660L344 669L341 729L336 804L331 843L323 844L332 768Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="biceps_femoris_right" class="muscle" data-muscle-id="biceps_femoris" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>대퇴이두근 · right</title>
+      <path d="M263 686L279 694L292 760L299 815L303 863L290 871L280 817L263 764L253 707Z" class="muscle-surface" />
+      <path d="M263 686L279 694L292 760L299 815L303 863L290 871L280 817L263 764L253 707Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M263 686L279 694L292 760L299 815L303 863L290 871L280 817L263 764L253 707Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M268 711L287 841" class="fiber" />
+    </g>
+    <g id="iliotibial_band_right" class="fascia" data-region-id="iliotibial_band" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="fascia">
+      <title>장경인대 · right</title>
+      <path d="M321 668L330 671L329 753L321 817L319 864L310 868L311 816L321 746Z" class="connective-surface" />
+    </g>
+    <g id="gastrocnemius_right" class="muscle" data-muscle-id="gastrocnemius" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>비복근 · right</title>
+      <path d="M284 895L300 904L308 946L301 987L287 1025L275 992L278 944Z" class="muscle-surface" />
+      <path d="M284 895L300 904L308 946L301 987L287 1025L275 992L278 944Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M284 895L300 904L308 946L301 987L287 1025L275 992L278 944Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M285 923L287 993" class="fiber" />
+      <path d="M292 928L293 984" class="fiber" />
+    </g>
+    <g id="soleus_right" class="muscle" data-muscle-id="soleus" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>가자미근 · right</title>
+      <path d="M277 988L288 1029L300 1001L299 1044L290 1080L279 1076Z" class="muscle-surface" />
+      <path d="M277 988L288 1029L300 1001L299 1044L290 1080L279 1076Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M277 988L288 1029L300 1001L299 1044L290 1080L279 1076Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="tibialis_anterior_right" class="muscle" data-muscle-id="tibialis_anterior" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>전경골근 · right</title>
+      <path d="M318 893L327 906L325 956L315 1032L310 1087L302 1087L308 1025L310 952Z" class="muscle-surface" />
+      <path d="M318 893L327 906L325 956L315 1032L310 1087L302 1087L308 1025L310 952Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M318 893L327 906L325 956L315 1032L310 1087L302 1087L308 1025L310 952Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M319 921L313 1030" class="fiber" />
+    </g>
+    <g id="fibularis_group_right" class="muscle" data-muscle-id="fibularis_group" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>비골근군 · right</title>
+      <path d="M306 902L314 903L309 963L301 1025L296 1054L289 1048L298 985Z" class="muscle-surface" />
+      <path d="M306 902L314 903L309 963L301 1025L296 1054L289 1048L298 985Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M306 902L314 903L309 963L301 1025L296 1054L289 1048L298 985Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="achilles_tendon_right" class="tendon" data-region-id="achilles_tendon" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="tendon">
+      <title>아킬레스건 · right</title>
+      <path d="M277 1074L289 1077L288 1102L297 1116L285 1122L274 1105Z" class="connective-surface" />
+    </g>
+    <g id="deltoid_right" class="muscle" data-muscle-id="deltoid" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>삼각근 · right</title>
+      <path d="M270 262Q295 253 310 279L310 326L293 352L270 337L255 304Z" class="muscle-surface" />
+      <path d="M270 262Q295 253 310 279L310 326L293 352L270 337L255 304Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M270 262Q295 253 310 279L310 326L293 352L270 337L255 304Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M280 274L277 327" class="fiber" />
+      <path d="M290 273L286 339" class="fiber" />
+      <path d="M301 282L296 330" class="fiber" />
+    </g>
+    <g id="triceps_brachii_right" class="muscle" data-muscle-id="triceps_brachii" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>상완삼두근 · right</title>
+      <path d="M260 334L273 341L278 391L278 435L266 446L258 431L259 384Z" class="muscle-surface" />
+      <path d="M260 334L273 341L278 391L278 435L266 446L258 431L259 384Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M260 334L273 341L278 391L278 435L266 446L258 431L259 384Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M265 351L269 428" class="fiber" />
+    </g>
+    <g id="biceps_brachii_right" class="muscle" data-muscle-id="biceps_brachii" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>상완이두근 · right</title>
+      <path d="M294 340L305 330L299 392L291 437L282 439L282 416L291 369Z" class="muscle-surface" />
+      <path d="M294 340L305 330L299 392L291 437L282 439L282 416L291 369Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M294 340L305 330L299 392L291 437L282 439L282 416L291 369Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="forearm_extensors_right" class="muscle" data-muscle-id="forearm_extensors" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>전완 신전근군 · right</title>
+      <path d="M270 456L281 457L277 506L270 573L269 618L258 616L258 567L263 511Z" class="muscle-surface" />
+      <path d="M270 456L281 457L277 506L270 573L269 618L258 616L258 567L263 511Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M270 456L281 457L277 506L270 573L269 618L258 616L258 567L263 511Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+      <path d="M270 473L263 602" class="fiber" />
+    </g>
+    <g id="forearm_flexors_right" class="muscle" data-muscle-id="forearm_flexors" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>전완 굴곡근군 · right</title>
+      <path d="M285 458L294 459L290 520L282 580L280 616L273 617L277 561Z" class="muscle-surface" />
+      <path d="M285 458L294 459L290 520L282 580L280 616L273 617L277 561Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M285 458L294 459L290 520L282 580L280 616L273 617L277 561Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+  </g>
+  <g id="deep_layer" class="deep" display="none" data-layer-description="schematic deep structures; enable separately">
+    <g id="pectoralis_minor_right" class="muscle" data-muscle-id="pectoralis_minor" data-side="right" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>소흉근 · right</title>
+      <path d="M295 287L309 289L330 363L319 376L299 335Z" class="muscle-surface" />
+      <path d="M295 287L309 289L330 363L319 376L299 335Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M295 287L309 289L330 363L319 376L299 335Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="levator_scapulae_right" class="muscle" data-muscle-id="levator_scapulae" data-side="right" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>견갑거근 · right</title>
+      <path d="M267 215L277 216L266 285L253 303L247 293Z" class="muscle-surface" />
+      <path d="M267 215L277 216L266 285L253 303L247 293Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M267 215L277 216L266 285L253 303L247 293Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="deep_neck_flexors_right" class="muscle" data-muscle-id="deep_neck_flexors" data-side="right" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>깊은 목 굴곡근 · right</title>
+      <path d="M290 213L303 217L307 258L294 260L285 236Z" class="muscle-surface" />
+      <path d="M290 213L303 217L307 258L294 260L285 236Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M290 213L303 217L307 258L294 260L285 236Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="iliopsoas_right" class="muscle" data-muscle-id="iliopsoas" data-side="right" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>장요근 · right</title>
+      <path d="M299 488L311 493L320 548L307 605L292 642L279 646L280 615L301 555Z" class="muscle-surface" />
+      <path d="M299 488L311 493L320 548L307 605L292 642L279 646L280 615L301 555Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M299 488L311 493L320 548L307 605L292 642L279 646L280 615L301 555Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+    <g id="quadratus_lumborum_right" class="muscle" data-muscle-id="quadratus_lumborum" data-side="right" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="muscle">
+      <title>요방형근 · right</title>
+      <path d="M260 466L278 469L285 547L251 565L246 546Z" class="muscle-surface" />
+      <path d="M260 466L278 469L285 547L251 565L246 546Z" class="state-pattern-tight" fill="url(#tightness-pattern)" />
+      <path d="M260 466L278 469L285 547L251 565L246 546Z" class="state-pattern-weak" fill="url(#weakness-pattern)" />
+    </g>
+  </g>
+  <g id="landmark_anchors" display="none">
+    <circle id="anchor_right_ear" cx="286" cy="139" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_shoulder" cx="287" cy="283" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_hip" cx="278" cy="622" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_knee" cx="316" cy="866" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_ankle" cx="302" cy="1090" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_asis" cx="349" cy="583" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_right_psis" cx="226" cy="575" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_c7" cx="261" cy="247" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_head_center" cx="302" cy="127" r="3" fill="#266a81" data-anchor-type="display_only" />
+  </g>
+  <g id="analysis_overlay" />
+</svg>
