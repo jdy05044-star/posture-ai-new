@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { TIER_LABEL, type AreaMuscleTendency } from '@/assessment/muscleTendency'
+import MuscleLegend from '@/components/MuscleLegend'
 import type { ObservationArea } from '@/types'
 
 /** 긴장(과사용)/약화(저사용) 상태를 색으로 구분 — 실제 색상값은 디자인 토큰(코랄/딥네이비)과 통일 */
 const TIGHT_COLOR = '#c2503c' // alert.red
-const WEAK_COLOR = '#142d3e' // clinical.700 (딥네이비)
+const WEAK_COLOR = '#2f6fb5' // alert.blue (약화 가능)
 
 function dotColor(t: AreaMuscleTendency) {
   const hasTight = t.tightMuscles.length > 0
@@ -17,6 +18,9 @@ function dotColor(t: AreaMuscleTendency) {
 
 interface Props {
   tendencies: AreaMuscleTendency[]
+  /** 선택된 영역을 부모가 관리하고 싶을 때(예: 아래 운동 목록과 동기화) 넘긴다. 없으면 내부 상태를 쓴다. */
+  selected?: ObservationArea | null
+  onSelect?: (area: ObservationArea | null) => void
 }
 
 /**
@@ -60,8 +64,13 @@ function BodySilhouette() {
  * 점으로 표시하고, 탭/클릭하면 그 영역의 실제 근거(측정값)·신뢰도·참고 근육을 보여준다.
  * 점의 진하기는 신뢰도(등급)를 나타낼 뿐, 새로운 값을 지어내지 않는다.
  */
-export default function MuscleMapSVG({ tendencies }: Props) {
-  const [selected, setSelected] = useState<ObservationArea | null>(null)
+export default function MuscleMapSVG({ tendencies, selected: selectedProp, onSelect }: Props) {
+  const [inner, setInner] = useState<ObservationArea | null>(null)
+  const selected = selectedProp !== undefined ? selectedProp : inner
+  const setSelected = (a: ObservationArea | null) => {
+    setInner(a)
+    onSelect?.(a)
+  }
 
   if (tendencies.length === 0) {
     return (
@@ -74,6 +83,12 @@ export default function MuscleMapSVG({ tendencies }: Props) {
   const front = tendencies.filter((t) => AREA_MARKER[t.area].view === 'front')
   const back = tendencies.filter((t) => AREA_MARKER[t.area].view === 'back')
   const selectedT = tendencies.find((t) => t.area === selected) ?? null
+  // 편차가 관찰되지 않은 영역은 회색 '참고 부위'로만 표시한다 (눌러도 반응하지 않음).
+  const refAreas = (Object.keys(AREA_MARKER) as ObservationArea[]).filter((a) => !tendencies.some((t) => t.area === a))
+  const refDots = (view: 'front' | 'back') =>
+    refAreas
+      .filter((a) => AREA_MARKER[a].view === view)
+      .map((a) => <circle key={a} cx={AREA_MARKER[a].x} cy={AREA_MARKER[a].y} r={2.2} fill="#b7c4cf" stroke="white" strokeWidth={0.8} />)
 
   function renderGroup(list: AreaMuscleTendency[]) {
     return list.map((t) => {
@@ -114,85 +129,59 @@ export default function MuscleMapSVG({ tendencies }: Props) {
 
   return (
     <div>
-      <div className="mb-2 flex items-center justify-center gap-4 text-[11px] text-clinical-600">
-        <span className="flex items-center gap-1.5">
-          <span className="legend-dot" style={{ backgroundColor: TIGHT_COLOR }} /> 긴장된 근육 (과사용 경향)
-        </span>
-        <span className="flex items-center gap-1.5">
-          <span className="legend-dot" style={{ backgroundColor: WEAK_COLOR }} /> 약화된 근육 (저사용 경향)
-        </span>
-      </div>
-      <div className="flex items-start justify-center gap-6 rounded-lg bg-clinical-50 py-3">
+      <MuscleLegend className="mb-3 justify-center" />
+      <div className="flex items-start justify-center gap-8 rounded-2xl bg-clinical-50 py-4">
         <div className="text-center">
-          <svg viewBox="0 0 100 100" className="h-44 w-auto">
+          <svg viewBox="0 0 100 100" className="h-52 w-auto">
             <BodySilhouette />
+            {refDots('front')}
             {renderGroup(front)}
           </svg>
-          <p className="text-[10px] text-clinical-400">정면</p>
+          <p className="t-meta">정면</p>
         </div>
         <div className="text-center">
-          <svg viewBox="0 0 100 100" className="h-44 w-auto">
+          <svg viewBox="0 0 100 100" className="h-52 w-auto">
             <BodySilhouette />
+            {refDots('back')}
             {renderGroup(back)}
           </svg>
-          <p className="text-[10px] text-clinical-400">후면</p>
+          <p className="t-meta">후면</p>
         </div>
       </div>
 
       {selectedT ? (
-        <div className="mt-3 rounded-lg border border-clinical-200 bg-white p-3 text-sm">
-          <div className="mb-1 flex items-center justify-between gap-2">
-            <p className="font-medium text-clinical-800">{selectedT.area}</p>
-            <span className="flex-none text-xs text-clinical-400">
-              {selectedT.confidencePct != null ? `인식 명확도 ${selectedT.confidencePct}%` : '인식 명확도 —'} ·{' '}
-              {TIER_LABEL[selectedT.tier]}
+        <div className="mt-3 rounded-2xl border border-clinical-100 bg-white p-4">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-base font-semibold text-clinical-900">{selectedT.area}</p>
+            <span className="t-meta flex-none">
+              {selectedT.confidencePct != null ? `인식 명확도 ${selectedT.confidencePct}%` : '인식 명확도 —'}
             </span>
           </div>
-          <p className="mb-2 text-xs text-clinical-500">근거: {selectedT.reason}</p>
+          <p className="t-meta mt-0.5">
+            {selectedT.reason} · {TIER_LABEL[selectedT.tier]}
+          </p>
           {selectedT.tightMuscles.length > 0 && (
-            <p className="text-xs">
-              <span className="font-medium text-alert-red">긴장(단축) 경향</span>{' '}
-              <span className="text-clinical-600">{selectedT.tightMuscles.join(', ')}</span>
-            </p>
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {selectedT.tightMuscles.map((m) => (
+                <span key={m} className="chip-tight">
+                  {m}
+                </span>
+              ))}
+            </div>
           )}
           {selectedT.weakMuscles.length > 0 && (
-            <p className="text-xs">
-              <span className="font-medium text-clinical-700">약화(저활성) 경향</span>{' '}
-              <span className="text-clinical-600">{selectedT.weakMuscles.join(', ')}</span>
-            </p>
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {selectedT.weakMuscles.map((m) => (
+                <span key={m} className="chip-weak">
+                  {m}
+                </span>
+              ))}
+            </div>
           )}
-          <button onClick={() => setSelected(null)} className="mt-2 text-xs text-clinical-400 underline">
-            닫기
-          </button>
         </div>
       ) : (
-        <ul className="mt-3 space-y-1.5">
-          {tendencies.map((t) => {
-            const names = [...t.tightMuscles, ...t.weakMuscles]
-            return (
-              <li key={t.area} className="flex items-start gap-2 text-xs">
-                <span
-                  className="mt-0.5 h-2 w-2 flex-none rounded-full"
-                  style={{ backgroundColor: dotColor(t), opacity: tierOpacity(t.tier) }}
-                />
-                <button onClick={() => setSelected(t.area)} className="text-left decoration-dotted hover:underline">
-                  <span className="font-medium text-clinical-800">{t.area}</span>{' '}
-                  <span className="text-clinical-600">
-                    {names.slice(0, 3).join(', ')}
-                    {names.length > 3 ? ' 외' : ''}
-                  </span>
-                </button>
-              </li>
-            )
-          })}
-        </ul>
+        <p className="t-meta mt-3 text-center">점을 누르면 근거와 관련 근육이 보입니다 · 점 진하기 = 인식 명확도</p>
       )}
-
-      <p className="mt-2 text-xs text-clinical-400">
-        실제 근육의 정확한 해부학적 위치가 아니라, 측정된 편차를 근거로 참고 근육을 정리해 그림 위 대략적인
-        위치에 표시한 것입니다. 점의 진하기는 인식 명확도(landmark가 얼마나 또렷하게 인식됐는지)를 나타낼 뿐,
-        임상적 확실성이나 진단을 의미하지 않습니다.
-      </p>
     </div>
   )
 }

@@ -47,10 +47,7 @@ export default function LibrarySuggestions({ area, areaLabel }: Props) {
       </ul>
 
       {hasUnreviewed && (
-        <p className="mt-3 text-xs text-clinical-400">
-          &quot;PT 검수 전&quot; 운동은 원본 자료에서 가져온 참고 목록이며, 근육·목적·주의사항은 PT 검수 전까지 최종
-          판단이 아닙니다. 처방이나 회원용 내보내기에는 PT가 승인한 운동만 사용됩니다.
-        </p>
+        <p className="t-meta mt-3">&quot;PT 검수 전&quot;은 원본 자료 참고 목록입니다. 처방·내보내기에는 PT 승인 운동만 사용됩니다.</p>
       )}
 
       <button onClick={() => navigate('/library')} className="mt-3 text-sm font-semibold text-mint-700 underline">

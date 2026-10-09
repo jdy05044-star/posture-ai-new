@@ -113,11 +113,8 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
   return (
     <div className="card space-y-4 p-4">
       <div>
-        <h3 className="text-sm font-semibold text-clinical-900">해부학 모델로 보기</h3>
-        <p className="mt-1 text-xs leading-relaxed text-clinical-500">
-          중립 자세의 도식 모델 위에 측정된 관찰과 &quot;근육 평가 후보&quot;를 표시합니다. 실제 뼈 위치나 근육 상태를
-          보여 주는 그림이 아닙니다.
-        </p>
+        <h3 className="t-section">해부학 모델로 보기</h3>
+        <p className="t-meta mt-1">중립 자세 도식 위에 측정 관찰과 &quot;평가 후보&quot;를 표시합니다.</p>
       </div>
 
       <div className="flex gap-1 rounded-xl bg-clinical-100 p-1">
@@ -342,7 +339,7 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
 
       <p className="border-t border-clinical-100 pt-3 text-[11px] leading-relaxed text-clinical-400">
         해부학 도식 모델 v0.1 · 검수 상태: {ATLAS_REVIEW_STATUS === 'pending' ? '해부학 전문가 검수 전' : ATLAS_REVIEW_STATUS}.
-        근육 경계·깊이·기준점 위치는 단순화되어 있습니다. 평가 후보 규칙은 임상 검증 전 제안이며 진단이 아닙니다.
+        그림은 단순화된 도식이며, 평가 후보는 임상 검증 전 제안으로 진단이 아닙니다.
       </p>
     </div>
   )

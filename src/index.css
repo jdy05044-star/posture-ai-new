@@ -59,6 +59,48 @@
   .legend-dot {
     @apply inline-block h-2.5 w-2.5 flex-none rounded-full;
   }
+
+  /* ── 글자 계층: 제목 / 소제목 / 본문 / 보조설명 ── */
+  .t-title {
+    @apply text-xl font-bold tracking-tight text-clinical-900;
+  }
+  .t-section {
+    @apply text-base font-semibold text-clinical-900;
+  }
+  .t-body {
+    @apply text-sm leading-relaxed text-clinical-700;
+  }
+  .t-meta {
+    @apply text-xs leading-relaxed text-clinical-400;
+  }
+
+  /* ── 정보 블록: 항목 하나를 카드 하나로 ── */
+  .info-block {
+    @apply rounded-2xl border border-clinical-100 bg-white p-4;
+  }
+  .info-block-title {
+    @apply mb-2.5 flex items-center gap-2 text-sm font-semibold text-clinical-900;
+  }
+  .info-block-num {
+    @apply flex h-5 w-5 flex-none items-center justify-center rounded-full bg-mint-50 text-[11px] font-bold text-mint-700;
+  }
+
+  /* ── 칩 ── */
+  .chip {
+    @apply inline-flex items-center rounded-full bg-clinical-100 px-3 py-1 text-xs font-medium text-clinical-700;
+  }
+  .chip-tight {
+    @apply inline-flex items-center rounded-full bg-alert-coral/15 px-3 py-1 text-xs font-medium text-alert-red;
+  }
+  .chip-weak {
+    @apply inline-flex items-center rounded-full bg-alert-blue/10 px-3 py-1 text-xs font-medium text-alert-blue;
+  }
+  .chip-btn {
+    @apply inline-flex items-center rounded-full border border-clinical-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-clinical-600 transition-colors;
+  }
+  .chip-btn-active {
+    @apply border-mint-500 bg-mint-50 text-mint-800;
+  }
 }
 
 /* STEP11: PDF 리포트 인쇄용 스타일. window.print()로 저장할 때 불필요한 UI를 숨기고 여백을 정리한다. */
