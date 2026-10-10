@@ -16,15 +16,17 @@ export default function Report() {
     setPatientName,
     assessedDate,
     setAssessedDate,
-    latestSummary
+    latestSummary,
+    manualSideLandmarks,
+    manualFrontLandmarks
   } = useAppState()
   const navigate = useNavigate()
 
   const hasLiveResults = Object.values(results).some((r) => r && r.landmarks.length > 0)
   const summary = useMemo(
-    () => (hasLiveResults ? runAssessment(results) : latestSummary),
+    () => (hasLiveResults ? runAssessment(results, manualSideLandmarks, manualFrontLandmarks) : latestSummary),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hasLiveResults, results]
+    [hasLiveResults, results, manualSideLandmarks, manualFrontLandmarks]
   )
 
   return (

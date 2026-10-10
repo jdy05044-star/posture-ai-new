@@ -13,11 +13,11 @@ import type { AngleMeasurement, ObservationArea } from '@/types'
 const AREAS: ObservationArea[] = ['어깨', '골반', '허리/몸통', '머리/목', '무릎', '발']
 
 export default function Compare() {
-  const { results, captures, beforeSummary, beforeCaptures, beforeResults, clearBefore, manualSideLandmarks } =
+  const { results, captures, beforeSummary, beforeCaptures, beforeResults, clearBefore, manualSideLandmarks, manualFrontLandmarks } =
     useAppState()
   const navigate = useNavigate()
 
-  const afterSummary = useMemo(() => runAssessment(results, manualSideLandmarks), [results, manualSideLandmarks])
+  const afterSummary = useMemo(() => runAssessment(results, manualSideLandmarks, manualFrontLandmarks), [results, manualSideLandmarks, manualFrontLandmarks])
   const afterHasData = Object.values(results).some((r) => r && r.landmarks.length > 0)
 
   const beforeSagittalLeft = useMemo(

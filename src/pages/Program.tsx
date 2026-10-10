@@ -1,6 +1,9 @@
 import { useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { runAssessment } from '@/assessment/assessmentEngine'
+import { approvedLibraryExercises } from '@/exercises/unified'
+import { OVERLAY_KEY, usePersistentRecord } from '@/library/libraryStorage'
+import type { ExerciseOverlay } from '@/library/types'
 import { generateProgram } from '@/prescription/prescriptionEngine'
 import ExercisePicker from '@/components/ExercisePicker'
 import ProgramExerciseRow from '@/components/ProgramExerciseRow'
@@ -15,20 +18,36 @@ const CATEGORY_LABEL: Record<ExerciseCategory, string> = { warmup: 'Warm-up', ma
 const CATEGORIES: ExerciseCategory[] = ['warmup', 'main', 'cooldown']
 
 function toProgramExercise(ex: Exercise, reason: string, cautionConditions: ConditionTag[]): ProgramExercise {
+  // 라이브러리 운동은 질환별 금기 태그가 없어 자동 확인이 안 되므로, 주의 질환이 있으면 직접 확인하도록 표시한다.
+  const libraryNeedsCheck = ex.source === '운동 라이브러리 (PT 승인)' && cautionConditions.length > 0
   return {
     ...ex,
     reason,
-    requiresCaution: ex.conditionTags.some((t) => t !== 'general' && cautionConditions.includes(t)),
+    requiresCaution:
+      libraryNeedsCheck || ex.conditionTags.some((t) => t !== 'general' && cautionConditions.includes(t)),
     overrides: {}
   }
 }
 
 export default function Program() {
-  const { results, program, setProgram, updateProgramCategory, ptNote, setPtNote, symptomTags, setSymptomTags } =
-    useAppState()
+  const {
+    results,
+    program,
+    setProgram,
+    updateProgramCategory,
+    ptNote,
+    setPtNote,
+    symptomTags,
+    setSymptomTags,
+    manualSideLandmarks,
+    manualFrontLandmarks
+  } = useAppState()
   const navigate = useNavigate()
+  const overlays = usePersistentRecord<ExerciseOverlay>(OVERLAY_KEY)
+  // PT가 운동 라이브러리에서 승인한 운동은 앱 기본 운동과 같은 후보 풀에서 함께 쓰인다.
+  const approvedExtras = useMemo(() => approvedLibraryExercises(overlays.data), [overlays.data])
 
-  const summary = useMemo(() => runAssessment(results), [results])
+  const summary = useMemo(() => runAssessment(results, manualSideLandmarks, manualFrontLandmarks), [results, manualSideLandmarks, manualFrontLandmarks])
   const priorityAreas = useMemo(
     () => Array.from(new Set(summary.priorityAreas.map((p) => p.area))),
     [summary]
@@ -47,7 +66,7 @@ export default function Program() {
   }
 
   function handleGenerate() {
-    const generated = generateProgram({ priorityAreas, symptomTags, cautionConditions, exerciseLevel })
+    const generated = generateProgram({ priorityAreas, symptomTags, cautionConditions, exerciseLevel, extraExercises: approvedExtras })
     setProgram(generated)
   }
 
@@ -274,6 +293,7 @@ export default function Program() {
                   <p className="label-caption mb-1">교체할 운동 선택</p>
                   <ExercisePicker
                     category={category}
+                    extra={approvedExtras}
                     excludeIds={program[category].map((e) => e.id)}
                     onPick={applyReplace}
                     onCancel={() => setReplacing(null)}
@@ -286,6 +306,7 @@ export default function Program() {
                 {addingTo === category ? (
                   <ExercisePicker
                     category={category}
+                    extra={approvedExtras}
                     excludeIds={program[category].map((e) => e.id)}
                     onPick={(ex) => applyAdd(category, ex)}
                     onCancel={() => setAddingTo(null)}

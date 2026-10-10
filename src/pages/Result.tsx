@@ -14,6 +14,7 @@ import AreaReportList from '@/components/AreaReportList'
 import CauseMusclePanel from '@/components/CauseMusclePanel'
 import DisclaimerNote from '@/components/DisclaimerNote'
 import ExercisePanel from '@/components/ExercisePanel'
+import ManualFrontLandmarkEditor from '@/components/ManualFrontLandmarkEditor'
 import ManualSideLandmarkEditor from '@/components/ManualSideLandmarkEditor'
 import MeasurementOverlay from '@/components/MeasurementOverlay'
 import ReportSummary from '@/components/ReportSummary'
@@ -39,12 +40,17 @@ export default function Result() {
     saveAsBefore,
     setLatestSummary,
     manualSideLandmarks,
-    setManualSideLandmarks
+    setManualSideLandmarks,
+    manualFrontLandmarks,
+    setManualFrontLandmarks,
+    muscleAssessments,
+    addMuscleAssessment,
+    removeMuscleAssessment
   } = useAppState()
   const navigate = useNavigate()
   const [tab, setTab] = useState<TabId>('A')
 
-  const summary = useMemo(() => runAssessment(results, manualSideLandmarks), [results, manualSideLandmarks])
+  const summary = useMemo(() => runAssessment(results, manualSideLandmarks, manualFrontLandmarks), [results, manualSideLandmarks, manualFrontLandmarks])
   const sagittalMeasurementsLeft = useMemo(
     () => extractMeasurements(summary, SAGITTAL_MEASUREMENT_IDS_LEFT),
     [summary]
@@ -159,6 +165,17 @@ export default function Result() {
             </div>
           )}
 
+          {captures.front && (
+            <div className="card p-4">
+              <h3 className="t-section mb-1">ASIS 직접 표시 — 정면 (좌우 ASIS 높이 차이)</h3>
+              <ManualFrontLandmarkEditor
+                imageDataUrl={captures.front.dataUrl}
+                value={manualFrontLandmarks}
+                onChange={setManualFrontLandmarks}
+              />
+            </div>
+          )}
+
           {captures.back && (
             <div className="card p-4">
               <h3 className="mb-1 text-sm font-semibold text-clinical-900">후면 사진 측정 보기</h3>
@@ -232,7 +249,14 @@ export default function Result() {
       {tab === 'D' && <ExercisePanel summary={summary} />}
 
       {/* F. 해부학 모델 (Skeleton / Muscle) */}
-      {tab === 'F' && <AnatomyViewer summary={summary} />}
+      {tab === 'F' && (
+        <AnatomyViewer
+          summary={summary}
+          assessments={muscleAssessments}
+          onAddAssessment={addMuscleAssessment}
+          onRemoveAssessment={removeMuscleAssessment}
+        />
+      )}
 
       {/* E. 변화 비교 및 기록 */}
       {tab === 'E' && (
