@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 1200" width="600" height="1200" id="skeleton_front" role="img" aria-labelledby="asset-title asset-description" data-view="front" data-atlas-version="0.1.0" data-anatomical-review="pending">
+  <title id="asset-title">PosturePT skeleton front — original schematic atlas</title>
+  <desc id="asset-description">Editable schematic anatomy for posture visualization. Anatomical left/right belongs to the subject. Deep regions are hidden and schematic. Not a measurement or diagnostically validated model.</desc>
+  <metadata>{"author": "PosturePT SVG asset generation", "version": "0.1.0", "geometry": "original schematic paths", "clinical_review": "pending", "subject_side": "anatomical"}</metadata>
+  <defs>
+    <pattern id="tightness-pattern" width="9" height="9" patternUnits="userSpaceOnUse">
+      <path d="M-2 9L9-2 M7 11L11 7" fill="none" stroke="#ffffff" stroke-width="1.2" opacity=".45" />
+    </pattern>
+    <pattern id="weakness-pattern" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="1.3" fill="#ffffff" opacity=".6" />
+    </pattern>
+  </defs>
+  <style>
+.body-outline{fill:#f3f6f8;stroke:#b8c7d0;stroke-width:1.6;opacity:.65}
+.bone-surface{fill:#f6f4ec;stroke:#81939e;stroke-width:1.6;stroke-linejoin:round}
+.bone-detail{fill:none;stroke:#9baaaf;stroke-width:1.2;stroke-linecap:round}
+.cavity{fill:#cad4d9;stroke:#81939e;stroke-width:1.2}
+.muscle-surface{fill:#ced8df;stroke:#7e919d;stroke-width:1.35;stroke-linejoin:round}
+.fiber{fill:none;stroke:#7e919d;stroke-width:1;opacity:.48;pointer-events:none}
+.connective-surface{fill:#e9eef1;stroke:#a5b4bd;stroke-width:1.2}
+.muscle[data-state="assessment_candidate"] .muscle-surface{fill:#efcb73}
+.muscle[data-state="tightness_suspected"] .muscle-surface{fill:#e8888f}
+.muscle[data-state="weakness_suspected"] .muscle-surface{fill:#8cb7e1}
+.muscle[data-state="tightness_suspected"] .state-pattern-tight{display:inline}
+.muscle[data-state="weakness_suspected"] .state-pattern-weak{display:inline}
+.state-pattern-tight,.state-pattern-weak{display:none;pointer-events:none}
+[data-selected="true"] .muscle-surface,[data-selected="true"] .bone-surface{stroke:#243e50;stroke-width:2.8}
+.deep .muscle-surface{stroke-dasharray:5 3}
+</style>
+  <g id="base_outline" pointer-events="none">
+    <path d="M270 205 L269 237 Q244 247 209 248 Q177 251 155 276 L138 315 L125 380 L109 431 L95 495 L82 557 L78 603 L65 628 L60 665 Q63 678 70 672 L76 646 L78 684 Q80 694 86 686 L88 650 L92 690 Q97 697 101 686 L103 650 L108 681 Q113 686 116 676 L115 641 L124 650 Q133 651 131 642 L112 617 L110 588 L122 555 L137 492 L152 440 L165 391 L178 323 L198 336 Q217 382 214 425 L220 470 Q207 521 190 559 L178 600 Q178 648 196 682 L202 754 L211 844 L217 876 Q210 928 218 970 L232 1040 L230 1092 L211 1115 Q202 1127 212 1139 L248 1139 Q262 1136 262 1124 L257 1090 L267 1011 L273 943 L273 891 L278 851 L286 779 L291 715 L300 675 L309 715 L314 779 L322 851 L327 891 L327 943 L333 1011 L343 1090 L338 1124 Q338 1136 352 1139 L388 1139 Q398 1127 389 1115 L370 1092 L368 1040 L382 970 Q390 928 383 876 L389 844 L398 754 L404 682 Q422 648 422 600 L410 559 Q393 521 380 470 L386 425 Q383 382 402 336 L422 323 L435 391 L448 440 L463 492 L478 555 L490 588 L488 617 L469 642 Q467 651 476 650 L485 641 L484 676 Q487 686 492 681 L497 650 L499 686 Q503 697 508 690 L512 650 L514 686 Q520 694 522 684 L524 646 L530 672 Q537 678 540 665 L535 628 L522 603 L518 557 L505 495 L491 431 L475 380 L462 315 L445 276 Q423 251 391 248 Q356 247 331 237 L330 205 Z" class="body-outline" />
+    <path d="M258 112 Q256 74 276 58 Q300 42 324 58 Q344 74 342 112 L338 161 Q333 187 316 205 L284 205 Q267 187 262 161 Z" class="body-outline" />
+    <g>
+      <path d="M259 122Q247 114 249 137Q250 153 262 157" class="body-outline" />
+    </g>
+    <g transform="translate(600 0) scale(-1 1)">
+      <path d="M259 122Q247 114 249 137Q250 153 262 157" class="body-outline" />
+    </g>
+  </g>
+  <g id="superficial_layer">
+    <g id="cranium_midline" class="bone" data-region-id="cranium" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>두개골 · midline</title>
+      <path d="M260 110Q257 73 277 61Q300 47 323 61Q343 74 340 110L335 144L323 164L310 169L290 169L277 164L265 144Z" class="bone-surface" />
+      <path d="M266 121Q273 105 289 116L290 136Q270 142 266 121Z" class="cavity" />
+      <path d="M334 121Q327 105 311 116L310 136Q330 142 334 121Z" class="cavity" />
+      <path d="M300 125L291 147L299 151L308 146Z" class="cavity" />
+      <path d="M274 150Q282 159 288 159M326 150Q318 159 312 159M286 167H314M286 160H314" class="bone-detail" />
+    </g>
+    <g id="mandible_midline" class="bone" data-region-id="mandible" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>하악골 · midline</title>
+      <path d="M266 146L272 173Q279 200 291 205L309 205Q321 200 328 173L334 146L327 151L320 175Q316 184 309 185L291 185Q284 184 280 175L273 151Z" class="bone-surface" />
+      <path d="M287 173V183" class="bone-detail" />
+      <path d="M292 173V183" class="bone-detail" />
+      <path d="M297 173V183" class="bone-detail" />
+      <path d="M302 173V183" class="bone-detail" />
+      <path d="M307 173V183" class="bone-detail" />
+      <path d="M312 173V183" class="bone-detail" />
+    </g>
+    <g id="cervical_spine_midline" class="bone" data-region-id="cervical_spine" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>경추 · midline</title>
+      <path d="M291 208Q300 204 309 208L311 216Q300 221 289 216Z" class="bone-surface" />
+      <path d="M291 215Q300 211 309 215L311 223Q300 228 289 223Z" class="bone-surface" />
+      <path d="M291 222Q300 218 309 222L311 230Q300 235 289 230Z" class="bone-surface" />
+      <path d="M291 229Q300 225 309 229L311 237Q300 242 289 237Z" class="bone-surface" />
+      <path d="M291 236Q300 232 309 236L311 244Q300 249 289 244Z" class="bone-surface" />
+      <path d="M291 243Q300 239 309 243L311 251Q300 256 289 251Z" class="bone-surface" />
+      <path d="M291 250Q300 246 309 250L311 258Q300 263 289 258Z" class="bone-surface" />
+      <path d="M291 257Q300 253 309 257L311 265Q300 270 289 265Z" class="bone-surface" />
+    </g>
+    <g id="thoracic_spine_midline" class="bone" data-region-id="thoracic_spine" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>흉추 · midline</title>
+      <path d="M287 265Q300 261 313 265L315 273Q300 278 285 273Z" class="bone-surface" />
+      <path d="M287 280Q300 276 313 280L315 288Q300 293 285 288Z" class="bone-surface" />
+      <path d="M287 295Q300 291 313 295L315 303Q300 308 285 303Z" class="bone-surface" />
+      <path d="M287 310Q300 306 313 310L315 318Q300 323 285 318Z" class="bone-surface" />
+      <path d="M287 325Q300 321 313 325L315 333Q300 338 285 333Z" class="bone-surface" />
+      <path d="M287 340Q300 336 313 340L315 348Q300 353 285 348Z" class="bone-surface" />
+      <path d="M287 355Q300 351 313 355L315 363Q300 368 285 363Z" class="bone-surface" />
+      <path d="M287 370Q300 366 313 370L315 378Q300 383 285 378Z" class="bone-surface" />
+      <path d="M287 385Q300 381 313 385L315 393Q300 398 285 393Z" class="bone-surface" />
+      <path d="M287 400Q300 396 313 400L315 408Q300 413 285 408Z" class="bone-surface" />
+      <path d="M287 415Q300 411 313 415L315 423Q300 428 285 423Z" class="bone-surface" />
+      <path d="M287 430Q300 426 313 430L315 438Q300 443 285 438Z" class="bone-surface" />
+      <path d="M287 445Q300 441 313 445L315 453Q300 458 285 453Z" class="bone-surface" />
+    </g>
+    <g id="lumbar_spine_midline" class="bone" data-region-id="lumbar_spine" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>요추 · midline</title>
+      <path d="M283 456Q300 452 317 456L319 464Q300 469 281 464Z" class="bone-surface" />
+      <path d="M283 475Q300 471 317 475L319 483Q300 488 281 483Z" class="bone-surface" />
+      <path d="M283 494Q300 490 317 494L319 502Q300 507 281 502Z" class="bone-surface" />
+      <path d="M283 513Q300 509 317 513L319 521Q300 526 281 521Z" class="bone-surface" />
+      <path d="M283 532Q300 528 317 532L319 540Q300 545 281 540Z" class="bone-surface" />
+    </g>
+    <g id="clavicle_right" class="bone" data-region-id="clavicle" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>쇄골 · right</title>
+      <path d="M297 261Q275 252 253 259Q216 246 183 263L176 273Q211 260 252 269Q278 263 296 270Z" class="bone-surface" />
+    </g>
+    <g id="clavicle_left" class="bone" data-region-id="clavicle" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>쇄골 · left</title>
+      <path d="M297 261Q275 252 253 259Q216 246 183 263L176 273Q211 260 252 269Q278 263 296 270Z" class="bone-surface" />
+    </g>
+    <g id="ribs_right" class="bone" data-region-id="ribs" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>늑골 · right</title>
+      <path d="M291 278Q252 252 238 270Q226 296 288 302L288 307Q218 298 231 269Q250 245 291 273Z" class="bone-surface" />
+      <path d="M291 292Q248 266 234 284Q222 310 288 316L288 321Q214 312 227 283Q246 259 291 287Z" class="bone-surface" />
+      <path d="M291 306Q244 280 230 298Q218 324 288 330L288 335Q210 326 223 297Q242 273 291 301Z" class="bone-surface" />
+      <path d="M291 320Q240 294 226 312Q214 338 288 344L288 349Q206 340 219 311Q238 287 291 315Z" class="bone-surface" />
+      <path d="M291 334Q236 308 222 326Q210 352 288 358L288 363Q202 354 215 325Q234 301 291 329Z" class="bone-surface" />
+      <path d="M291 348Q232 322 218 340Q206 366 288 372L288 377Q198 368 211 339Q230 315 291 343Z" class="bone-surface" />
+      <path d="M291 362Q228 336 214 354Q202 380 288 386L288 391Q194 382 207 353Q226 329 291 357Z" class="bone-surface" />
+      <path d="M291 376Q224 350 210 368Q198 394 275 400L275 405Q190 396 203 367Q222 343 291 371Z" class="bone-surface" />
+      <path d="M291 390Q233 364 219 382Q207 408 265 414L265 419Q199 410 212 381Q231 357 291 385Z" class="bone-surface" />
+      <path d="M291 404Q242 378 228 396Q216 422 255 428L255 433Q208 424 221 395Q240 371 291 399Z" class="bone-surface" />
+      <path d="M291 418Q251 392 237 410Q225 436 245 442L245 447Q217 438 230 409Q249 385 291 413Z" class="bone-surface" />
+      <path d="M291 432Q260 406 246 424Q234 450 235 456L235 461Q226 452 239 423Q258 399 291 427Z" class="bone-surface" />
+    </g>
+    <g id="ribs_left" class="bone" data-region-id="ribs" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>늑골 · left</title>
+      <path d="M291 278Q252 252 238 270Q226 296 288 302L288 307Q218 298 231 269Q250 245 291 273Z" class="bone-surface" />
+      <path d="M291 292Q248 266 234 284Q222 310 288 316L288 321Q214 312 227 283Q246 259 291 287Z" class="bone-surface" />
+      <path d="M291 306Q244 280 230 298Q218 324 288 330L288 335Q210 326 223 297Q242 273 291 301Z" class="bone-surface" />
+      <path d="M291 320Q240 294 226 312Q214 338 288 344L288 349Q206 340 219 311Q238 287 291 315Z" class="bone-surface" />
+      <path d="M291 334Q236 308 222 326Q210 352 288 358L288 363Q202 354 215 325Q234 301 291 329Z" class="bone-surface" />
+      <path d="M291 348Q232 322 218 340Q206 366 288 372L288 377Q198 368 211 339Q230 315 291 343Z" class="bone-surface" />
+      <path d="M291 362Q228 336 214 354Q202 380 288 386L288 391Q194 382 207 353Q226 329 291 357Z" class="bone-surface" />
+      <path d="M291 376Q224 350 210 368Q198 394 275 400L275 405Q190 396 203 367Q222 343 291 371Z" class="bone-surface" />
+      <path d="M291 390Q233 364 219 382Q207 408 265 414L265 419Q199 410 212 381Q231 357 291 385Z" class="bone-surface" />
+      <path d="M291 404Q242 378 228 396Q216 422 255 428L255 433Q208 424 221 395Q240 371 291 399Z" class="bone-surface" />
+      <path d="M291 418Q251 392 237 410Q225 436 245 442L245 447Q217 438 230 409Q249 385 291 413Z" class="bone-surface" />
+      <path d="M291 432Q260 406 246 424Q234 450 235 456L235 461Q226 452 239 423Q258 399 291 427Z" class="bone-surface" />
+    </g>
+    <g id="sternum_midline" class="bone" data-region-id="sternum" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>흉골 · midline</title>
+      <path d="M289 267L311 267L310 290L307 365L300 382L293 365L290 290Z" class="bone-surface" />
+    </g>
+    <g id="pelvis_right" class="bone" data-region-id="pelvis" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>골반뼈 · right</title>
+      <path d="M285 553Q249 525 211 551Q184 564 179 591L190 628L214 649L238 635Q251 621 270 638L296 656L296 640L279 623L269 600Q288 584 285 553Z" class="bone-surface" />
+      <path d="M213 563Q246 552 272 571" class="bone-detail" />
+      <path d="M205 601Q219 624 236 620" class="bone-detail" />
+    </g>
+    <g id="pelvis_left" class="bone" data-region-id="pelvis" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>골반뼈 · left</title>
+      <path d="M285 553Q249 525 211 551Q184 564 179 591L190 628L214 649L238 635Q251 621 270 638L296 656L296 640L279 623L269 600Q288 584 285 553Z" class="bone-surface" />
+      <path d="M213 563Q246 552 272 571" class="bone-detail" />
+      <path d="M205 601Q219 624 236 620" class="bone-detail" />
+    </g>
+    <g id="sacrum_midline" class="bone" data-region-id="sacrum" data-side="midline" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>천골 · midline</title>
+      <path d="M276 552Q300 543 324 552L315 600L300 630L285 600Z" class="bone-surface" />
+      <path d="M284 566H316M287 578H313M290 590H310M294 604H306" class="bone-detail" />
+    </g>
+    <g id="humerus_right" class="bone" data-region-id="humerus" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>상완골 · right</title>
+      <path d="M165 284Q169 267 181 277Q190 287 184 300L159 380L147 426Q146 438 134 440L122 433L127 422L140 403L157 304Q153 298 165 284Z" class="bone-surface" />
+      <path d="M171 301L142 420" class="bone-detail" />
+    </g>
+    <g id="humerus_left" class="bone" data-region-id="humerus" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>상완골 · left</title>
+      <path d="M165 284Q169 267 181 277Q190 287 184 300L159 380L147 426Q146 438 134 440L122 433L127 422L140 403L157 304Q153 298 165 284Z" class="bone-surface" />
+      <path d="M171 301L142 420" class="bone-detail" />
+    </g>
+    <g id="radius_right" class="bone" data-region-id="radius" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>요골 · right</title>
+      <path d="M123 446L134 445L123 492L111 554L107 597L99 602L94 595L101 550L117 485Z" class="bone-surface" />
+    </g>
+    <g id="radius_left" class="bone" data-region-id="radius" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>요골 · left</title>
+      <path d="M123 446L134 445L123 492L111 554L107 597L99 602L94 595L101 550L117 485Z" class="bone-surface" />
+    </g>
+    <g id="ulna_right" class="bone" data-region-id="ulna" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>척골 · right</title>
+      <path d="M138 437L149 442L140 473L124 529L117 585L109 594L106 584L117 520L130 472Z" class="bone-surface" />
+    </g>
+    <g id="ulna_left" class="bone" data-region-id="ulna" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>척골 · left</title>
+      <path d="M138 437L149 442L140 473L124 529L117 585L109 594L106 584L117 520L130 472Z" class="bone-surface" />
+    </g>
+    <g id="hand_bones_right" class="bone" data-region-id="hand_bones" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>손뼈 · right</title>
+      <path d="M94 607L106 604L114 617L109 629L90 630L85 619Z" class="bone-surface" />
+      <path d="M87 629L91 629L80 657L76 657Z M76 660L80 660L79 676L75 676Z" class="bone-surface" />
+      <path d="M94 632L98 632L93 660L89 660Z M89 663L93 663L92 679L88 679Z" class="bone-surface" />
+      <path d="M101 632L105 632L105 660L101 660Z M101 663L105 663L104 679L100 679Z" class="bone-surface" />
+      <path d="M108 631L112 631L118 659L114 659Z M114 662L118 662L117 678L113 678Z" class="bone-surface" />
+      <path d="M112 616L125 638L120 642L107 625Z" class="bone-surface" />
+    </g>
+    <g id="hand_bones_left" class="bone" data-region-id="hand_bones" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>손뼈 · left</title>
+      <path d="M94 607L106 604L114 617L109 629L90 630L85 619Z" class="bone-surface" />
+      <path d="M87 629L91 629L80 657L76 657Z M76 660L80 660L79 676L75 676Z" class="bone-surface" />
+      <path d="M94 632L98 632L93 660L89 660Z M89 663L93 663L92 679L88 679Z" class="bone-surface" />
+      <path d="M101 632L105 632L105 660L101 660Z M101 663L105 663L104 679L100 679Z" class="bone-surface" />
+      <path d="M108 631L112 631L118 659L114 659Z M114 662L118 662L117 678L113 678Z" class="bone-surface" />
+      <path d="M112 616L125 638L120 642L107 625Z" class="bone-surface" />
+    </g>
+    <g id="femur_right" class="bone" data-region-id="femur" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>대퇴골 · right</title>
+      <path d="M256 639Q267 625 279 635Q287 647 275 656L260 658L246 674L251 776L250 843L256 858L252 872L239 876L227 870L224 858L232 842L234 774L227 684L218 668L215 651L224 644L237 650Z" class="bone-surface" />
+      <path d="M243 684L243 840" class="bone-detail" />
+    </g>
+    <g id="femur_left" class="bone" data-region-id="femur" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>대퇴골 · left</title>
+      <path d="M256 639Q267 625 279 635Q287 647 275 656L260 658L246 674L251 776L250 843L256 858L252 872L239 876L227 870L224 858L232 842L234 774L227 684L218 668L215 651L224 644L237 650Z" class="bone-surface" />
+      <path d="M243 684L243 840" class="bone-detail" />
+    </g>
+    <g id="patella_right" class="bone" data-region-id="patella" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>슬개골 · right</title>
+      <path d="M232 854Q240 847 249 854L250 869Q243 886 232 871Z" class="bone-surface" />
+    </g>
+    <g id="patella_left" class="bone" data-region-id="patella" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>슬개골 · left</title>
+      <path d="M232 854Q240 847 249 854L250 869Q243 886 232 871Z" class="bone-surface" />
+    </g>
+    <g id="tibia_right" class="bone" data-region-id="tibia" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>경골 · right</title>
+      <path d="M231 884L254 884L250 908L252 1006L254 1082L246 1093L236 1085L240 1005L236 910Z" class="bone-surface" />
+      <path d="M245 912L246 1072" class="bone-detail" />
+    </g>
+    <g id="tibia_left" class="bone" data-region-id="tibia" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>경골 · left</title>
+      <path d="M231 884L254 884L250 908L252 1006L254 1082L246 1093L236 1085L240 1005L236 910Z" class="bone-surface" />
+      <path d="M245 912L246 1072" class="bone-detail" />
+    </g>
+    <g id="fibula_right" class="bone" data-region-id="fibula" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>비골 · right</title>
+      <path d="M219 887L225 887L227 931L232 1020L236 1084L231 1096L226 1085L223 1021L220 932Z" class="bone-surface" />
+    </g>
+    <g id="fibula_left" class="bone" data-region-id="fibula" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>비골 · left</title>
+      <path d="M219 887L225 887L227 931L232 1020L236 1084L231 1096L226 1085L223 1021L220 932Z" class="bone-surface" />
+    </g>
+    <g id="foot_bones_right" class="bone" data-region-id="foot_bones" data-side="right" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>발뼈 · right</title>
+      <path d="M232 1095L252 1095L255 1110L249 1121L232 1120L223 1112Z" class="bone-surface" />
+      <path d="M224 1115L245 1122L241 1132L213 1132L211 1124Z" class="bone-surface" />
+      <path d="M215 1121L219 1123L218 1134L214 1134Z" class="bone-surface" />
+      <path d="M222 1121L226 1123L225 1134L221 1134Z" class="bone-surface" />
+      <path d="M229 1121L233 1123L232 1134L228 1134Z" class="bone-surface" />
+      <path d="M236 1121L240 1123L239 1134L235 1134Z" class="bone-surface" />
+      <path d="M243 1121L247 1123L246 1134L242 1134Z" class="bone-surface" />
+    </g>
+    <g id="foot_bones_left" class="bone" data-region-id="foot_bones" data-side="left" data-layer="superficial" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>발뼈 · left</title>
+      <path d="M232 1095L252 1095L255 1110L249 1121L232 1120L223 1112Z" class="bone-surface" />
+      <path d="M224 1115L245 1122L241 1132L213 1132L211 1124Z" class="bone-surface" />
+      <path d="M215 1121L219 1123L218 1134L214 1134Z" class="bone-surface" />
+      <path d="M222 1121L226 1123L225 1134L221 1134Z" class="bone-surface" />
+      <path d="M229 1121L233 1123L232 1134L228 1134Z" class="bone-surface" />
+      <path d="M236 1121L240 1123L239 1134L235 1134Z" class="bone-surface" />
+      <path d="M243 1121L247 1123L246 1134L242 1134Z" class="bone-surface" />
+    </g>
+  </g>
+  <g id="deep_layer" class="deep" display="none" data-layer-description="schematic deep structures; enable separately">
+    <g id="scapula_right" class="bone" data-region-id="scapula" data-side="right" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="bone">
+      <title>견갑골 · right</title>
+      <path d="M208 278Q220 271 255 293L274 350L232 386L206 331Z" class="bone-surface" />
+      <path d="M215 300L253 319L239 371" class="bone-detail" />
+    </g>
+    <g id="scapula_left" class="bone" data-region-id="scapula" data-side="left" data-layer="deep" data-state="unassessed" data-selected="false" data-kind="bone" transform="translate(600 0) scale(-1 1)">
+      <title>견갑골 · left</title>
+      <path d="M208 278Q220 271 255 293L274 350L232 386L206 331Z" class="bone-surface" />
+      <path d="M215 300L253 319L239 371" class="bone-detail" />
+    </g>
+  </g>
+  <g id="landmark_anchors" display="none">
+    <circle id="anchor_right_shoulder" cx="173" cy="280" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_hip" cx="219" cy="635" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_knee" cx="240" cy="866" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_ankle" cx="247" cy="1090" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_right_acromion" cx="176" cy="268" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_right_asis" cx="185" cy="599" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_right_iliac_crest" cx="205" cy="563" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_left_shoulder" cx="427" cy="280" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_left_hip" cx="381" cy="635" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_left_knee" cx="360" cy="866" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_left_ankle" cx="353" cy="1090" r="3" fill="#266a81" data-anchor-type="pose_proxy_display" />
+    <circle id="anchor_left_acromion" cx="424" cy="268" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_left_asis" cx="415" cy="599" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_left_iliac_crest" cx="395" cy="563" r="3" fill="#266a81" data-anchor-type="manual_marker_display" />
+    <circle id="anchor_head_center" cx="300" cy="126" r="3" fill="#266a81" data-anchor-type="display_only" />
+    <circle id="anchor_pelvis_center" cx="300" cy="612" r="3" fill="#266a81" data-anchor-type="display_only" />
+  </g>
+  <g id="analysis_overlay" />
+</svg>

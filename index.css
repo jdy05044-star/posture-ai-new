@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-clinical-50 text-clinical-900 antialiased;
+    /* STEP12: 아이폰 노치/홈 인디케이터 영역을 피해 여백 확보 */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  /* iOS에서 16px 미만 입력창은 포커스 시 자동 확대되어 레이아웃이 깨지므로 최소 16px로 고정 */
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-clinical-700 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-clinical-800 disabled:cursor-not-allowed disabled:bg-clinical-300;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl border border-clinical-200 bg-white px-5 py-3 text-sm font-semibold text-clinical-700 transition-colors hover:bg-clinical-50;
+  }
+  .btn-mint {
+    @apply inline-flex items-center justify-center rounded-xl bg-mint-500 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-mint-600;
+  }
+  .card {
+    @apply rounded-2xl border border-clinical-100 bg-white;
+  }
+  .label-caption {
+    @apply text-xs font-semibold uppercase tracking-wide text-clinical-400;
+  }
+  .pill-mint {
+    @apply rounded-full bg-mint-50 px-2.5 py-1 text-xs font-medium text-mint-700;
+  }
+  .pill-coral {
+    @apply rounded-full bg-alert-coral/15 px-2.5 py-1 text-xs font-medium text-alert-red;
+  }
+  /* 결과 화면 A~E 탭 */
+  .tab-btn {
+    @apply flex-1 rounded-full px-3 py-2 text-center text-xs font-semibold transition-colors;
+  }
+  .tab-btn-active {
+    @apply bg-clinical-700 text-white;
+  }
+  .tab-btn-inactive {
+    @apply text-clinical-500 hover:bg-clinical-100;
+  }
+  /* 섹션 헤더 번호 배지 (01, 02 ... 스타일) */
+  .section-badge {
+    @apply flex h-7 w-7 flex-none items-center justify-center rounded-full bg-clinical-700 text-xs font-bold text-white;
+  }
+  /* 긴장(과사용)/약화(저사용) 근육 범례용 색상 점 */
+  .legend-dot {
+    @apply inline-block h-2.5 w-2.5 flex-none rounded-full;
+  }
+
+  /* ── 글자 계층: 제목 / 소제목 / 본문 / 보조설명 ── */
+  .t-title {
+    @apply text-xl font-bold tracking-tight text-clinical-900;
+  }
+  .t-section {
+    @apply text-base font-semibold text-clinical-900;
+  }
+  .t-body {
+    @apply text-sm leading-relaxed text-clinical-700;
+  }
+  .t-meta {
+    @apply text-xs leading-relaxed text-clinical-400;
+  }
+
+  /* ── 정보 블록: 항목 하나를 카드 하나로 ── */
+  .info-block {
+    @apply rounded-2xl border border-clinical-100 bg-white p-4;
+  }
+  .info-block-title {
+    @apply mb-2.5 flex items-center gap-2 text-sm font-semibold text-clinical-900;
+  }
+  .info-block-num {
+    @apply flex h-5 w-5 flex-none items-center justify-center rounded-full bg-mint-50 text-[11px] font-bold text-mint-700;
+  }
+
+  /* ── 칩 ── */
+  .chip {
+    @apply inline-flex items-center rounded-full bg-clinical-100 px-3 py-1 text-xs font-medium text-clinical-700;
+  }
+  .chip-tight {
+    @apply inline-flex items-center rounded-full bg-alert-coral/15 px-3 py-1 text-xs font-medium text-alert-red;
+  }
+  .chip-weak {
+    @apply inline-flex items-center rounded-full bg-alert-blue/10 px-3 py-1 text-xs font-medium text-alert-blue;
+  }
+  .chip-btn {
+    @apply inline-flex items-center rounded-full border border-clinical-200 bg-white px-3.5 py-1.5 text-xs font-semibold text-clinical-600 transition-colors;
+  }
+  .chip-btn-active {
+    @apply border-mint-500 bg-mint-50 text-mint-800;
+  }
+}
+
+/* STEP11: PDF 리포트 인쇄용 스타일. window.print()로 저장할 때 불필요한 UI를 숨기고 여백을 정리한다. */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+  .card {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+}
+
+/* 운동 근육 역할 칩 (코랄=주, 노랑=보조, 파랑=안정화, 보라=과사용 주의) */
+@layer components {
+  .role-chip{ @apply inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-sm font-medium; }
+  .role-primary{ @apply border-[#e8888f] bg-[#e8888f]/15 text-clinical-800; }
+  .role-secondary{ @apply border-[#efcb73] bg-[#efcb73]/25 text-clinical-800; }
+  .role-stabilizer{ @apply border-[#8cb7e1] bg-[#8cb7e1]/20 text-clinical-800; }
+  .role-overuse{ @apply border-dashed border-[#a98bd4] bg-[#a98bd4]/15 text-clinical-800; }
+}
