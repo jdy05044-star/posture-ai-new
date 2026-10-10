@@ -5,6 +5,7 @@ import { computeMuscleTendencies } from '@/assessment/muscleTendency'
 import DisclaimerNote from '@/components/DisclaimerNote'
 import ExerciseCard, { type ExerciseCardData } from '@/components/ExerciseCard'
 import { pickTodayExercises } from '@/exercises/todayPicks'
+import { approvedLibraryExercises, isLibraryExercise } from '@/exercises/unified'
 import ExerciseImageSlot from '@/library/ExerciseImageSlot'
 import { useResolvedImages } from '@/library/exerciseImages'
 import { LIBRARY_EXERCISES } from '@/library/libraryData'
@@ -35,7 +36,8 @@ export default function ExercisePanel({ summary }: Props) {
 
   const tendencies = useMemo(() => computeMuscleTendencies(summary), [summary])
   const areas = useMemo(() => Array.from(new Set(summary.priorityAreas.map((p) => p.area))), [summary])
-  const picks = useMemo(() => pickTodayExercises(areas), [areas])
+  const approvedExtras = useMemo(() => approvedLibraryExercises(overlays.data), [overlays.data])
+  const picks = useMemo(() => pickTodayExercises(areas, 3, approvedExtras), [areas, approvedExtras])
   const [picked, setPicked] = useState<ObservationArea | null>(null)
   const area = picked ?? areas[0] ?? null
 
@@ -45,19 +47,23 @@ export default function ExercisePanel({ summary }: Props) {
     return t ? Array.from(new Set([...t.tightMuscles, ...t.weakMuscles])) : []
   }
 
-  const todayCards: ExerciseCardData[] = picks.map(({ exercise: ex, area: a }, i) => ({
-    rank: i + 1,
-    name: ex.name,
-    purpose: ex.purpose,
-    muscles: musclesForArea(a),
-    musclesNote: a ? '부위 일반 참고' : undefined,
-    sets: ex.sets ? `${ex.sets}세트` : null,
-    reps: repsText(ex),
-    level: ex.intensity ?? null,
-    caution: ex.precautions,
-    badge: { text: '앱 기본 운동', tone: 'navy' },
-    areaTag: a ? AREA_DISPLAY_LABEL[a] : '일반 자세 개선'
-  }))
+  const todayCards: ExerciseCardData[] = picks.map(({ exercise: ex, area: a }, i) => {
+    const fromLibrary = isLibraryExercise(ex)
+    return {
+      rank: i + 1,
+      name: ex.name,
+      purpose: ex.purpose,
+      // 라이브러리 운동은 원본의 대상 근육을, 앱 기본 운동은 해당 부위의 일반 참고 근육을 보여준다.
+      muscles: fromLibrary ? (ex.targetMuscles ?? []) : musclesForArea(a),
+      musclesNote: fromLibrary ? undefined : a ? '부위 일반 참고' : undefined,
+      sets: ex.sets ? `${ex.sets}세트` : null,
+      reps: repsText(ex),
+      level: ex.intensity ?? null,
+      caution: ex.precautions,
+      badge: fromLibrary ? { text: 'PT 승인', tone: 'mint' } : { text: '앱 기본 운동', tone: 'navy' },
+      areaTag: a ? AREA_DISPLAY_LABEL[a] : '일반 자세 개선'
+    }
+  })
 
   const lib = area ? suggestLibraryExercises(area, overlays.data, 4) : null
   const libCards: ExerciseCardData[] = (lib?.items ?? []).map(({ exercise: ex, status }) => {

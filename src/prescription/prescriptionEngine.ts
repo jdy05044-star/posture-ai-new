@@ -45,6 +45,12 @@ function scoreExercise(
 ): ScoredExercise {
   let score = 0
   const reasons: string[] = []
+  // PT가 직접 승인한 라이브러리 운동은 같은 점수일 때 먼저 오도록 작은 가산점만 준다 (증상·부위 매칭을 뒤집지 않음).
+  const ptApproved = ex.source === '운동 라이브러리 (PT 승인)'
+  if (ptApproved) {
+    score += 0.5
+    reasons.push('PT가 승인한 라이브러리 운동')
+  }
 
   const symptomMatch = ex.conditionTags.filter((t) => t !== 'general' && symptomTags.includes(t))
   if (symptomMatch.length > 0) {
@@ -58,12 +64,16 @@ function scoreExercise(
     reasons.push(`우선 확인 영역(${areaMatch.join(', ')})의 운동 프로그램 구성에 적합`)
   }
 
-  if (reasons.length === 0) {
+  if (reasons.length === 0 || (ptApproved && reasons.length === 1)) {
     reasons.push('일반적인 자세 개선 목적으로 포함')
   }
 
-  const requiresCaution = ex.conditionTags.some((t) => t !== 'general' && cautionConditions.includes(t))
-  if (requiresCaution) {
+  let requiresCaution = ex.conditionTags.some((t) => t !== 'general' && cautionConditions.includes(t))
+  // 라이브러리 운동에는 질환별 금기 태그가 없어 자동으로 걸러낼 수 없다. 주의 질환이 있으면 PT가 원본 주의사항을 직접 확인하도록 표시한다.
+  if (ptApproved && cautionConditions.length > 0) {
+    requiresCaution = true
+    reasons.push('⚠ 라이브러리 운동은 문진 질환과의 금기를 자동 확인하지 못함 — 주의사항을 직접 확인')
+  } else if (requiresCaution) {
     reasons.push('⚠ 문진에서 확인된 질환과 관련된 주의사항이 있어 강도 조정이 필요할 수 있음')
   }
 
@@ -83,7 +93,7 @@ function pickForCategory(
   category: ExerciseCategory,
   args: GenerateProgramArgs
 ): ProgramExercise[] {
-  const pool = EXERCISE_LIBRARY.filter((e) => e.category === category)
+  const pool = [...EXERCISE_LIBRARY, ...(args.extraExercises ?? [])].filter((e) => e.category === category)
   const scored = pool
     .map((ex) => scoreExercise(ex, args.priorityAreas, args.symptomTags, args.cautionConditions))
     .sort((a, b) => b.score - a.score)

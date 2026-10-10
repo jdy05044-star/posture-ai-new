@@ -2,6 +2,7 @@ import type {
   AngleMeasurement,
   AreaAssessmentResult,
   AssessmentSummary,
+  ManualFrontLandmarks,
   ManualSideLandmarks,
   ObservationArea,
   PoseAnalysisResult,
@@ -9,7 +10,7 @@ import type {
   ViewType
 } from '@/types'
 import { computeFrontalMeasurements, computeSagittalMeasurements, tagSagittalMeasurements } from './angleCalculations'
-import { computeManualSagittalMeasurements } from './manualMeasurements'
+import { computeAsisHeightFromManualPoints, computeManualSagittalMeasurements } from './manualMeasurements'
 
 /** 좌/우 측면 각각의 PT 수동 기준점. 아직 안 찍었으면 undefined/null이어도 되며, 그 경우 정직하게 '측정 불확실'로 남는다. */
 export interface ManualSideLandmarksBySide {
@@ -88,12 +89,18 @@ function buildObservation(measurements: AngleMeasurement[]): string {
  */
 export function runAssessment(
   results: Record<ViewType, PoseAnalysisResult | null>,
-  manualSideLandmarks?: ManualSideLandmarksBySide | null
+  manualSideLandmarks?: ManualSideLandmarksBySide | null,
+  manualFrontLandmarks?: ManualFrontLandmarks | null
 ): AssessmentSummary {
   const allMeasurements: AngleMeasurement[] = []
 
   if (results.front && results.front.landmarks.length > 0) {
     allMeasurements.push(...computeFrontalMeasurements(results.front))
+  }
+  // 좌우 ASIS 높이 차이는 자동 인식이 아니라 PT가 정면 사진 위에 직접 표시한 점으로 계산한다.
+  // 정면 분석이 있거나 PT가 점을 하나라도 찍었을 때만 항목을 만들고, 한쪽만 찍었으면 '측정 불확실'로 남긴다.
+  if ((results.front && results.front.landmarks.length > 0) || manualFrontLandmarks?.leftAsis || manualFrontLandmarks?.rightAsis) {
+    allMeasurements.push(computeAsisHeightFromManualPoints(manualFrontLandmarks))
   }
   if (results.back && results.back.landmarks.length > 0) {
     const backMeasurements = computeFrontalMeasurements(results.back).map((m) => ({

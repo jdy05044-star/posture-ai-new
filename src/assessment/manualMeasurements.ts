@@ -1,4 +1,4 @@
-import type { AngleMeasurement, ManualPoint, ManualSideLandmarks } from '@/types'
+import type { AngleMeasurement, ManualFrontLandmarks, ManualPoint, ManualSideLandmarks } from '@/types'
 
 const RAD2DEG = 180 / Math.PI
 
@@ -102,3 +102,36 @@ export function computeThoracicKyphosisFromManualPoints(
 export function computeManualSagittalMeasurements(manual: ManualSideLandmarks | null | undefined): AngleMeasurement[] {
   return [computePelvicTiltFromManualPoints(manual), computeThoracicKyphosisFromManualPoints(manual)]
 }
+
+/**
+ * 좌우 ASIS 높이 차이 (정면 사진, PT 지정). 양쪽 ASIS가 모두 찍혀야 계산된다.
+ * 수평선 대비 두 점을 잇는 선의 기울기(도)이며, 좌우 순서(화면 위치)와 무관하게 계산한다.
+ * 어느 쪽이 낮은지는 PT가 "대상자의 왼쪽/오른쪽"으로 지정한 이름을 따른다.
+ */
+export function computeAsisHeightFromManualPoints(manual: ManualFrontLandmarks | null | undefined): AngleMeasurement {
+  const base = { id: 'asis-height-front', label: '좌우 ASIS 높이 차이 (PT 지정)', area: '골반' as const }
+  const l = manual?.leftAsis
+  const r = manual?.rightAsis
+  if (!l || !r) {
+    return {
+      ...base,
+      valueDeg: null,
+      direction: null,
+      confidence: null,
+      unavailableReason:
+        '좌우 ASIS 높이 차이는 정면 사진 위에 PT가 양쪽 ASIS를 직접 표시해야 계산됩니다 (미표시 — 측정 불확실)'
+    }
+  }
+  const deg = Math.atan2(r.y - l.y, Math.abs(r.x - l.x)) * RAD2DEG // 양수 = 대상자 오른쪽이 더 아래
+  const absDeg = Math.round(Math.abs(deg) * 10) / 10
+  const direction =
+    absDeg === 0 ? '좌우 ASIS 높이 차이 거의 없음' : deg > 0 ? '우측 ASIS가 더 낮음' : '좌측 ASIS가 더 낮음'
+  return { ...base, valueDeg: absDeg, direction, confidence: null }
+}
+
+/**
+ * 근육 평가 후보(R04)를 만들 최소 ASIS 높이 차이(도).
+ * 이 값은 임상 기준이 아니라 "아주 작은 클릭 오차가 후보를 만들지 않도록" 둔 임시 표시 기준이며,
+ * 반복 촬영으로 이 앱의 실제 측정 오차를 구하면 그 값으로 대체해야 한다.
+ */
+export const ASIS_HEIGHT_MIN_DEG = 2

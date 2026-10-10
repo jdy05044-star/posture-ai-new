@@ -16,9 +16,13 @@ function get(named: PoseAnalysisResult['named'], name: LandmarkName): Landmark |
 /**
  * 수평선 대비 두 점의 기울기(도). 이미지 좌표는 y가 아래로 증가한다.
  * 양수 = b가 a보다 더 아래(낮음), 음수 = b가 a보다 더 위(높음)
+ *
+ * 정면 사진에서 대상자의 왼쪽 점은 화면 오른쪽에 있어 b.x - a.x가 음수가 된다.
+ * 가로 거리에 절댓값을 써서, 점의 좌우 순서와 상관없이 "수평에서 몇 도 기울었는가"만 계산한다
+ * (이전에는 이 경우 값이 약 180°로 나왔다).
  */
 function tiltFromHorizontal(a: Landmark, b: Landmark): number {
-  return Math.atan2(b.y - a.y, b.x - a.x) * RAD2DEG
+  return Math.atan2(b.y - a.y, Math.abs(b.x - a.x)) * RAD2DEG
 }
 
 /** 수직선(중력선) 대비 두 점을 잇는 선의 기울기 크기(도). 방향은 별도로 해석해야 한다. */
@@ -115,12 +119,18 @@ export function computeFrontalMeasurements(result: PoseAnalysisResult): AngleMea
     const knee = get(n, side === 'left' ? 'leftKnee' : 'rightKnee')
     const ankle = get(n, side === 'left' ? 'leftAnkle' : 'rightAnkle')
     if (hip && knee && ankle) {
-      // 고관절-발목 직선에서 무릎이 안쪽(-)/바깥쪽(+)으로 얼마나 벗어났는지, 다리 길이 대비 비율로 계산
+      // 고관절-발목 직선에서 무릎이 안쪽/바깥쪽으로 얼마나 벗어났는지, 다리 길이 대비 비율로 계산
       const legLength = Math.hypot(ankle.x - hip.x, ankle.y - hip.y) || 1
-      // 점과 직선 사이 거리 (2D 외적 이용)
+      // 점과 직선 사이 거리 (2D 외적 이용). 고관절→발목이 아래로 향할 때 cross < 0이면 무릎이 화면 오른쪽에 있다.
       const cross = (ankle.x - hip.x) * (knee.y - hip.y) - (ankle.y - hip.y) * (knee.x - hip.x)
       const distRatio = cross / legLength
-      const pct = Math.round((distRatio / legLength) * 1000) / 10
+      const offsetPct = Math.round((Math.abs(distRatio) / legLength) * 1000) / 10
+      // 바깥쪽 = 몸 중심선에서 먼 쪽. 중심선은 양쪽 고관절의 중점을 쓰고, 반대쪽 고관절이 없으면
+      // 촬영 방향이 정면(대상자의 왼쪽이 화면 오른쪽)이라고 가정한다.
+      const otherHip = get(n, side === 'left' ? 'rightHip' : 'leftHip')
+      const legIsOnImageRight = otherHip ? hip.x > otherHip.x : side === 'left'
+      const kneeIsOnImageRight = cross < 0
+      const pct = kneeIsOnImageRight === legIsOnImageRight ? offsetPct : -offsetPct // + = 바깥쪽
       out.push({
         ...args,
         valueDeg: null,

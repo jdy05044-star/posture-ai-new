@@ -28,6 +28,15 @@ export const MUSCLE_GROUPS: Record<string, MuscleGroup> = {
     nameEn: 'Hamstrings',
     atlasMuscleIds: ['biceps_femoris', 'semitendinosus', 'semimembranosus']
   },
+  /**
+   * 설계 문서의 R04 후보 "골반 주변근". 어느 근육을 특정하지 않는 묶음이므로, 골반 옆·위에서 골반 높이에 관여하는
+   * 대표 근육(중둔근·대퇴근막장근·요방형근)을 모델에서 함께 표시한다. 좌우는 지정하지 않는다.
+   */
+  pelvic_muscles: {
+    nameKo: '골반 주변근군',
+    nameEn: 'Pelvic muscles',
+    atlasMuscleIds: ['gluteus_medius', 'tensor_fasciae_latae', 'quadratus_lumborum']
+  },
   hip_abductors: {
     nameKo: '고관절 외전근군',
     nameEn: 'Hip abductors',

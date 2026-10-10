@@ -1,9 +1,11 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import type { MuscleAssessment } from '@/anatomy/assessments'
 import type {
   AssessmentSummary,
   CaptureImage,
   ConditionTag,
   GeneratedProgram,
+  ManualFrontLandmarks,
   ManualSideLandmarks,
   PoseAnalysisResult,
   ProgramExercise,
@@ -29,6 +31,10 @@ interface AppState {
   setPtNote: (note: string) => void
   symptomTags: ConditionTag[]
   setSymptomTags: (tags: ConditionTag[]) => void
+  /** PT가 입력한 근육 검사 결과. 근육 평가 후보의 상태(긴장/약화 의심)를 바꾸는 유일한 입력이다. */
+  muscleAssessments: MuscleAssessment[]
+  addMuscleAssessment: (a: MuscleAssessment) => void
+  removeMuscleAssessment: (id: string) => void
   patientName: string
   setPatientName: (name: string) => void
   assessedDate: string
@@ -55,6 +61,8 @@ interface AppState {
    * 해당 측 측면 사진이 새로 바뀌면 그 쪽만 자동으로 초기화된다.
    */
   manualSideLandmarks: ManualSideLandmarksBySide
+  manualFrontLandmarks: ManualFrontLandmarks
+  setManualFrontLandmarks: (next: ManualFrontLandmarks) => void
   setManualSideLandmarks: (side: 'left' | 'right', next: ManualSideLandmarks) => void
   resetAll: () => void
 }
@@ -91,12 +99,14 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   const [program, setProgram] = useState<GeneratedProgram | null>(null)
   const [ptNote, setPtNote] = useState('')
   const [symptomTags, setSymptomTags] = useState<ConditionTag[]>([])
+  const [muscleAssessments, setMuscleAssessments] = useState<MuscleAssessment[]>([])
   const [patientName, setPatientName] = useState('')
   const [assessedDate, setAssessedDate] = useState(todayStr())
   const [beforeSummary, setBeforeSummary] = useState<AssessmentSummary | null>(null)
   const [latestSummary, setLatestSummaryState] = useState<AssessmentSummary | null>(null)
   const [beforeCaptures, setBeforeCaptures] = useState<Record<ViewType, string | null>>(emptyBeforeCaptures)
   const [beforeResults, setBeforeResults] = useState<Record<ViewType, PoseAnalysisResult | null>>(emptyResults)
+  const [manualFrontLandmarks, setManualFrontLandmarks] = useState<ManualFrontLandmarks>({})
   const [manualSideLandmarks, setManualSideLandmarksState] =
     useState<ManualSideLandmarksBySide>(emptyManualSideLandmarks)
 
@@ -109,6 +119,7 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       setProgram(saved.program)
       setPtNote(saved.ptNote)
       setSymptomTags(saved.symptomTags as ConditionTag[])
+      setMuscleAssessments(saved.muscleAssessments ?? [])
       setPatientName(saved.patientName)
       setAssessedDate(saved.assessedDate || todayStr())
       setBeforeSummary(saved.beforeSummary)
@@ -120,8 +131,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
   // 가벼운 데이터(사진 제외)는 바뀔 때마다 자동 저장한다.
   useEffect(() => {
     if (!hydrated.current) return
-    saveSession({ patientName, assessedDate, beforeSummary, latestSummary, program, ptNote, symptomTags })
-  }, [patientName, assessedDate, beforeSummary, latestSummary, program, ptNote, symptomTags])
+    saveSession({ patientName, assessedDate, beforeSummary, latestSummary, program, ptNote, symptomTags, muscleAssessments })
+  }, [patientName, assessedDate, beforeSummary, latestSummary, program, ptNote, symptomTags, muscleAssessments])
 
   const value = useMemo<AppState>(
     () => ({
@@ -130,6 +141,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         setCaptures((c) => ({ ...c, [view]: image }))
         // 측면 사진이 바뀌면 이전 사진 기준으로 찍어둔 골반/등 기준점은 더 이상 유효하지 않으므로,
         // 바뀐 쪽(좌/우)의 기준점만 초기화한다.
+        // 정면 사진이 바뀌면 이전 사진 기준으로 찍어둔 ASIS도 무효이므로 초기화한다.
+        if (view === 'front') setManualFrontLandmarks({})
         if (view === 'side-left') setManualSideLandmarksState((m) => ({ ...m, left: {} }))
         if (view === 'side-right') setManualSideLandmarksState((m) => ({ ...m, right: {} }))
       },
@@ -143,6 +156,9 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       setPtNote,
       symptomTags,
       setSymptomTags,
+      muscleAssessments,
+      addMuscleAssessment: (a) => setMuscleAssessments((list) => [...list, a]),
+      removeMuscleAssessment: (id) => setMuscleAssessments((list) => list.filter((x) => x.id !== id)),
       patientName,
       setPatientName,
       assessedDate,
@@ -167,6 +183,8 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         setBeforeCaptures(emptyBeforeCaptures)
         setBeforeResults(emptyResults)
       },
+      manualFrontLandmarks,
+      setManualFrontLandmarks,
       manualSideLandmarks,
       setManualSideLandmarks: (side, next) => setManualSideLandmarksState((m) => ({ ...m, [side]: next })),
       resetAll: () => {
@@ -175,11 +193,13 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
         setProgram(null)
         setPtNote('')
         setSymptomTags([])
+        setMuscleAssessments([])
         setBeforeSummary(null)
         setLatestSummaryState(null)
         setBeforeCaptures(emptyBeforeCaptures)
         setBeforeResults(emptyResults)
         setManualSideLandmarksState(emptyManualSideLandmarks)
+        setManualFrontLandmarks({})
       }
     }),
     [
@@ -188,13 +208,15 @@ export function AppStateProvider({ children }: { children: ReactNode }) {
       program,
       ptNote,
       symptomTags,
+      muscleAssessments,
       patientName,
       assessedDate,
       beforeSummary,
       latestSummary,
       beforeCaptures,
       beforeResults,
-      manualSideLandmarks
+      manualSideLandmarks,
+      manualFrontLandmarks
     ]
   )
 

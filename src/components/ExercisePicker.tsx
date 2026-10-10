@@ -5,13 +5,15 @@ import { EXERCISE_LIBRARY } from '@/exercises/exerciseLibrary'
 interface Props {
   category: ExerciseCategory
   excludeIds: string[]
+  /** PT가 승인한 운동 라이브러리 운동 (앱 기본 운동과 함께 선택지에 나온다) */
+  extra?: Exercise[]
   onPick: (exercise: Exercise) => void
   onCancel?: () => void
   label?: string
 }
 
-export default function ExercisePicker({ category, excludeIds, onPick, onCancel, label }: Props) {
-  const options = EXERCISE_LIBRARY.filter((e) => e.category === category && !excludeIds.includes(e.id))
+export default function ExercisePicker({ category, excludeIds, extra = [], onPick, onCancel, label }: Props) {
+  const options = [...EXERCISE_LIBRARY, ...extra].filter((e) => e.category === category && !excludeIds.includes(e.id))
   const [selectedId, setSelectedId] = useState(options[0]?.id ?? '')
 
   if (options.length === 0) {
@@ -28,6 +30,7 @@ export default function ExercisePicker({ category, excludeIds, onPick, onCancel,
         {options.map((o) => (
           <option key={o.id} value={o.id}>
             {o.name}
+            {o.source === '운동 라이브러리 (PT 승인)' ? ' (PT 승인)' : ''}
           </option>
         ))}
       </select>

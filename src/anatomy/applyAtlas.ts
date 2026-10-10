@@ -1,5 +1,6 @@
 import { regionsForHypothesis, type AtlasAnchor } from './atlas'
-import type { AnatomyFinding, AtlasView, MuscleHypothesis } from './types'
+import { paintPriority, type MuscleState, type ResolvedHypothesis } from './assessments'
+import type { AnatomyFinding, AtlasView } from './types'
 
 const NS = 'http://www.w3.org/2000/svg'
 const ACCENT = '#22677e'
@@ -10,14 +11,26 @@ function esc(id: string): string {
   return typeof CSS !== 'undefined' && CSS.escape ? CSS.escape(id) : id
 }
 
-/** 모든 근육을 '미평가'로 되돌리고(정상 판정이 아님), 가설이 있는 영역만 '평가 후보'로 칠한다. */
-export function applyMuscleCandidates(svg: SVGSVGElement, view: AtlasView, hypotheses: MuscleHypothesis[]) {
+/**
+ * 모든 근육을 '미평가'로 되돌리고(정상 판정이 아님), 후보가 있는 영역만 상태 색으로 칠한다.
+ * 상태: 평가 후보(노랑) · PT 검사로 지지된 긴장 의심(빨강)/약화 의심(파랑). 검사로 반박된 쪽은 칠하지 않는다.
+ */
+export function applyMuscleCandidates(svg: SVGSVGElement, view: AtlasView, resolved: ResolvedHypothesis[]) {
   svg.querySelectorAll('.muscle').forEach((el) => el.setAttribute('data-state', 'unassessed'))
-  for (const h of hypotheses) {
+  const best = new Map<string, { state: MuscleState; rank: number }>()
+  for (const { h, sides } of resolved) {
     for (const r of regionsForHypothesis(view, h)) {
-      const el = svg.querySelector(`#${esc(r.regionId)}`)
-      if (el && el.getAttribute('data-kind') === 'muscle') el.setAttribute('data-state', 'assessment_candidate')
+      const sr = sides.find((x) => x.side === r.side)
+      if (!sr) continue
+      const rank = paintPriority(sr.state)
+      if (rank === 0) continue
+      const cur = best.get(r.regionId)
+      if (!cur || rank > cur.rank) best.set(r.regionId, { state: sr.state, rank })
     }
+  }
+  for (const [regionId, { state }] of best) {
+    const el = svg.querySelector(`#${esc(regionId)}`)
+    if (el && el.getAttribute('data-kind') === 'muscle') el.setAttribute('data-state', state)
   }
 }
 

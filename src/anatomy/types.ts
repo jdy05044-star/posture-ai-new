@@ -15,7 +15,7 @@ export type ProposedTarget = 'tightness' | 'function'
 
 export type FindingOverlay =
   /** 좌우 한 쌍(어깨/고관절 추정점)의 상대 높이. higherSide는 대상자 기준 더 높은 쪽. */
-  | { kind: 'height-pair'; region: 'shoulder' | 'hip'; higherSide: Side; angleDeg: number }
+  | { kind: 'height-pair'; region: 'shoulder' | 'hip' | 'asis'; higherSide: Side; angleDeg: number }
   /** 모델 기준점 두 개를 잇는 선 + 라벨 (귀-어깨, ASIS-PSIS) */
   | { kind: 'pair-line'; from: string; to: string; label: string }
   /** 모델 기준점 하나에 표시 */

@@ -1,3 +1,4 @@
+import type { MuscleAssessment } from '@/anatomy/assessments'
 import type { AssessmentSummary, GeneratedProgram } from '@/types'
 
 const STORAGE_KEY = 'posture-pt-ai:session:v1'
@@ -16,6 +17,8 @@ export interface PersistedSession {
   program: GeneratedProgram | null
   ptNote: string
   symptomTags: string[]
+  /** PT가 입력한 근육 검사 결과 (이 대상자의 것이므로 세션과 함께 저장/삭제된다) */
+  muscleAssessments?: MuscleAssessment[]
   savedAt: string
 }
 

@@ -10,10 +10,12 @@ import {
   type AssetKey,
   type Mode
 } from '@/anatomy/atlas'
+import { resolveHypotheses, STATE_LABEL, type MuscleAssessment, type ResolvedHypothesis } from '@/anatomy/assessments'
 import { buildAnatomyModel } from '@/anatomy/buildAnatomy'
 import { DOMAIN_LABEL, MUSCLE_GROUPS, SIDE_LABEL, TARGET_LABEL } from '@/anatomy/catalog'
 import type { AnatomyFinding, AtlasView, MuscleHypothesis } from '@/anatomy/types'
-import LibrarySuggestions from '@/components/LibrarySuggestions'
+import MuscleAssessmentForm from '@/components/MuscleAssessmentForm'
+import MuscleLinkedExercises from '@/components/MuscleLinkedExercises'
 import type { AssessmentSummary } from '@/types'
 
 const VIEW_LABEL: Record<Exclude<AtlasView, 'left'>, string> = { front: '정면', back: '후면', right: '우측면' }
@@ -24,10 +26,32 @@ const HELD_TEXT = {
 } as const
 
 function sideText(h: MuscleHypothesis): string {
+  // R04(ASIS 높이 차이)는 정적 높이만으로 좌우를 정할 수 없어 "양측 모두 후보"가 아니라 "좌우 미지정"이다.
+  if (h.ruleId === 'R04') return '좌우 미지정'
   return h.sides.length === 2 ? '양측' : `${SIDE_LABEL[h.sides[0]]}측`
 }
 
-export default function AnatomyViewer({ summary }: { summary: AssessmentSummary }) {
+interface ViewerProps {
+  summary: AssessmentSummary
+  /** PT가 입력한 근육 검사 결과 (후보의 상태를 바꾼다) */
+  assessments: MuscleAssessment[]
+  onAddAssessment: (a: MuscleAssessment) => void
+  onRemoveAssessment: (id: string) => void
+}
+
+function resolutionText(r: ResolvedHypothesis): string {
+  return r.sides
+    .map((x) => `${SIDE_LABEL[x.side]}: ${x.conflict ? '재평가 필요 (검사 결과 충돌)' : STATE_LABEL[x.state]}`)
+    .join(' · ')
+}
+
+function resolutionPillClass(r: ResolvedHypothesis): string {
+  if (r.sides.some((x) => x.state === 'tightness_suspected')) return 'chip-tight'
+  if (r.sides.some((x) => x.state === 'weakness_suspected')) return 'chip-weak'
+  return 'pill-coral'
+}
+
+export default function AnatomyViewer({ summary, assessments, onAddAssessment, onRemoveAssessment }: ViewerProps) {
   const [mode, setMode] = useState<Mode>('skeleton')
   const [view, setView] = useState<Exclude<AtlasView, 'left'>>('front')
   const [cameraOk, setCameraOk] = useState(false)
@@ -39,6 +63,7 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
   const box = useRef<HTMLDivElement>(null)
 
   const model = useMemo(() => buildAnatomyModel(summary, { cameraLevelConfirmed: cameraOk }), [summary, cameraOk])
+  const resolved = useMemo(() => resolveHypotheses(model.hypotheses, assessments), [model, assessments])
   const key = assetKey(mode, view)
 
   // 방향/모드가 바뀔 때만 SVG 파일을 불러온다.
@@ -65,7 +90,7 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
     if (!el || !svg || svg.key !== key || !key) return
     setDeepVisible(el, mode === 'muscle' && showDeep)
     if (mode === 'muscle') {
-      applyMuscleCandidates(el, view, model.hypotheses)
+      applyMuscleCandidates(el, view, resolved)
       const ids = selectedHyp ? regionsForHypothesis(view, selectedHyp).map((r) => r.regionId) : []
       setSelected(el, ids)
       drawFindingOverlay(el, null, {})
@@ -74,7 +99,7 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
       setSelected(el, f ? f.highlightBones : [])
       drawFindingOverlay(el, f, getAsset(key).anchors)
     }
-  }, [svg, key, mode, view, model, selectedHyp, selectedFinding, showDeep])
+  }, [svg, key, mode, view, model, resolved, selectedHyp, selectedFinding, showDeep])
 
   function selectHypothesis(h: MuscleHypothesis) {
     const here = regionsForHypothesis(view, h)
@@ -107,6 +132,8 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
     if (h) setSelectedHypId(h.id)
   }
 
+  const selectedRes = selectedHyp ? resolved.find((r) => r.h.id === selectedHyp.id) ?? null : null
+  const selectedAssessments = selectedHyp ? assessments.filter((a) => a.groupId === selectedHyp.groupId) : []
   const relatedHyps = selectedFinding ? model.hypotheses.filter((h) => h.findingId === selectedFinding.id) : []
   const heldForSelected = selectedFinding ? model.held.filter((x) => x.findingId === selectedFinding.id) : []
 
@@ -168,6 +195,14 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
               평가 후보 (자세 규칙만 발동)
             </span>
             <span className="inline-flex items-center gap-1.5">
+              <span className="legend-dot" style={{ background: '#e8888f' }} />
+              긴장 의심 (PT 검사 지지)
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <span className="legend-dot" style={{ background: '#8cb7e1' }} />
+              약화 의심 (PT 검사 지지)
+            </span>
+            <span className="inline-flex items-center gap-1.5">
               <span className="legend-dot" style={{ background: '#ced8df' }} />
               미평가 (정상 판정 아님)
             </span>
@@ -176,10 +211,6 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
             <input type="checkbox" checked={showDeep} onChange={(e) => setShowDeep(e.target.checked)} />
             심부 근육 도식 보기 (피부에서 직접 보이는 근육이 아님)
           </label>
-          <p className="text-clinical-400">
-            긴장 의심(빨강)·약화 의심(파랑)은 PT의 근력·길이 검사 결과가 입력된 뒤에만 표시됩니다. 이 앱에는 해당
-            입력 기능이 아직 없어 지금은 표시되지 않습니다.
-          </p>
         </div>
       )}
 
@@ -230,7 +261,8 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
                 : '현재 측정 결과에서는 연결되는 평가 후보가 없습니다 (측정이 없거나, 규칙이 요구하는 입력이 없음).'}
             </p>
           )}
-          {model.hypotheses.map((h) => {
+          {resolved.map((rh) => {
+            const h = rh.h
             const g = MUSCLE_GROUPS[h.groupId]
             const here = regionsForHypothesis(view, h).length > 0
             const finding = model.findings.find((f) => f.id === h.findingId)
@@ -247,6 +279,9 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
                   <span className="block text-xs text-clinical-500">
                     {TARGET_LABEL[h.target]} 후보 · 근거: {finding?.label}
                   </span>
+                  {rh.sides.some((x) => x.state !== 'assessment_candidate' || x.conflict) && (
+                    <span className="block text-xs font-medium text-clinical-700">{resolutionText(rh)}</span>
+                  )}
                 </span>
                 <span className="flex-none text-xs text-mint-700">{here ? '' : '다른 방향 ›'}</span>
               </button>
@@ -298,7 +333,11 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
             <span className="text-xs font-normal text-clinical-400">{MUSCLE_GROUPS[selectedHyp.groupId].nameEn}</span>
           </h4>
           <p className="flex flex-wrap items-center gap-2">
-            <span className="pill-coral">평가 후보</span>
+            {selectedRes && (
+              <span className={resolutionPillClass(selectedRes)}>
+                {selectedRes.sides.some((x) => x.state !== 'assessment_candidate') ? '검사 결과 반영' : '평가 후보'}
+              </span>
+            )}
             <span className="text-xs">{sideText(selectedHyp)} · {TARGET_LABEL[selectedHyp.target]}</span>
           </p>
           <p>
@@ -308,10 +347,20 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
           <p>
             <b className="text-clinical-800">권장 평가</b> · {selectedHyp.domains.map((d) => DOMAIN_LABEL[d]).join(', ')}
           </p>
-          <p className="text-xs text-clinical-500">
-            근거 수준: 자세 사진만 (검증 전 후보). 사진만으로 근육이 긴장했거나 약하다고 판단할 수 없으며, PT의 검사로
-            확인해야 합니다.
-          </p>
+          {selectedRes && selectedAssessments.length > 0 ? (
+            <p className="text-xs font-medium text-clinical-700">{resolutionText(selectedRes)}</p>
+          ) : (
+            <p className="text-xs text-clinical-500">근거 수준: 자세 사진만 (검증 전 후보). 아래에 PT 검사 결과를 입력하면 반영됩니다.</p>
+          )}
+          {selectedRes && (
+            <MuscleAssessmentForm
+              key={selectedRes.h.id}
+              resolved={selectedRes}
+              existing={selectedAssessments}
+              onAdd={onAddAssessment}
+              onRemove={onRemoveAssessment}
+            />
+          )}
           <button
             onClick={() => {
               setMode('skeleton')
@@ -329,8 +378,13 @@ export default function AnatomyViewer({ summary }: { summary: AssessmentSummary 
             const f = model.findings.find((x) => x.id === selectedHyp.findingId)
             return f ? (
               <div className="border-t border-clinical-100 pt-3">
-                <p className="label-caption mb-2">연결된 운동 (참고용)</p>
-                <LibrarySuggestions area={f.area} areaLabel={f.area} />
+                <p className="label-caption mb-2">연결된 운동</p>
+                <MuscleLinkedExercises
+                  groupId={selectedHyp.groupId}
+                  groupLabel={MUSCLE_GROUPS[selectedHyp.groupId].nameKo}
+                  area={f.area}
+                  areaLabel={f.area}
+                />
               </div>
             ) : null
           })()}

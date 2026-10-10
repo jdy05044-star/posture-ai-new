@@ -1,4 +1,5 @@
 import { formatMeasurementValue } from '@/assessment/angleCalculations'
+import { ASIS_HEIGHT_MIN_DEG } from '@/assessment/manualMeasurements'
 import type { AngleMeasurement, AssessmentSummary } from '@/types'
 import type {
   AnatomyFinding,
@@ -28,7 +29,7 @@ interface RuleDef {
 /**
  * 개발 명세의 '평가 후보 규칙' 중 이 앱이 실제로 측정하는 입력과 연결되는 것만 옮긴 것.
  * 모든 규칙은 검증 전 후보이며(clinical_review_required), 결과는 항상 '평가 후보'까지만 만든다.
- * R03(어깨 전방 위치)·R04(수동 ASIS 높이)·R10(머리 기울기)·R11(한발서기)·R12(전문가 견갑 소견)는
+ * R03(어깨 전방 위치)·R10(머리 기울기)·R11(한발서기)·R12(전문가 견갑 소견)는
  * 이 앱에 해당 입력이 아직 없어 연결하지 않았다.
  */
 const RULES: Record<string, RuleDef> = {
@@ -47,6 +48,12 @@ const RULES: Record<string, RuleDef> = {
       { groupId: 'suboccipitals', target: 'tightness' }
     ],
     domains: ['strength_endurance', 'tone_length']
+  },
+  /** 수동 ASIS 좌우 높이 차이 → 골반 주변근 기능 평가 후보. 좌우는 지정하지 않는다 (정적 높이만으로 약화측을 정할 수 없음). */
+  R04: {
+    id: 'R04',
+    candidates: [{ groupId: 'pelvic_muscles', target: 'function' }],
+    domains: ['strength_endurance', 'range_of_motion']
   },
   R05: {
     id: 'R05',
@@ -99,7 +106,7 @@ function higherSideFromDirection(direction: string | null): Side | null {
 }
 
 const HIP_NOTE =
-  '고관절 추정점의 높이 차이이며 골반뼈(ASIS 등)의 기울기가 아닙니다. 골반 주변 근육 평가 후보는 PT가 ASIS를 직접 표시한 뒤에만 만들 수 있고, 현재 앱의 ASIS 입력은 측면 사진용이라 좌우 높이 차이용 입력은 아직 없습니다.'
+  '고관절 추정점의 높이 차이이며 골반뼈(ASIS 등)의 기울기가 아닙니다. 골반 주변 근육 평가 후보는 \"측정 근거\" 탭에서 PT가 정면 사진 위에 좌우 ASIS를 직접 표시했을 때만 만들어집니다.'
 
 interface Built {
   finding: AnatomyFinding
@@ -140,7 +147,7 @@ function buildAll(summary: AssessmentSummary): Built[] {
     })
   }
 
-  // 고관절 추정점 높이 (정면·후면): 근육 후보를 만들지 않는다 (R04는 수동 ASIS 필요)
+  // 고관절 추정점 높이 (정면·후면): 근육 후보를 만들지 않는다 (R04는 PT가 직접 표시한 ASIS가 필요)
   for (const [id, view] of [
     ['pelvis-tilt', 'front'],
     ['pelvis-tilt-back', 'back']
@@ -167,6 +174,35 @@ function buildAll(summary: AssessmentSummary): Built[] {
       },
       triggers: []
     })
+  }
+
+  // 좌우 ASIS 높이 차이 (정면, PT 지정): R04 — 골반 주변근 기능 평가 후보 (좌우 미지정)
+  {
+    const m = ms.get('asis-height-front')
+    if (isUsable(m)) {
+      const higher = higherSideFromDirection(m.direction)
+      const meetsMin = m.valueDeg !== null && m.valueDeg >= ASIS_HEIGHT_MIN_DEG
+      out.push({
+        finding: {
+          id: 'asis-height-front',
+          view: 'front',
+          label: 'ASIS 높이 차이 (정면, PT 지정)',
+          area: '골반',
+          valueText: valueText(m),
+          direction: m.direction,
+          confidence: m.confidence,
+          overlay:
+            higher && m.valueDeg !== null
+              ? { kind: 'height-pair', region: 'asis', higherSide: higher, angleDeg: m.valueDeg }
+              : { kind: 'none' },
+          highlightBones: ['pelvis_left', 'pelvis_right'],
+          note: meetsMin
+            ? 'PT가 직접 표시한 좌우 ASIS 기준입니다. 정적 높이 차이만으로는 어느 쪽 근육이 약한지 정하지 않으므로 좌우 모두를 평가 후보로 둡니다.'
+            : `차이가 ${ASIS_HEIGHT_MIN_DEG}° 미만이라 근육 평가 후보는 만들지 않았습니다 (임시 표시 기준 — 반복 촬영으로 오차를 확인하기 전 값).`
+        },
+        triggers: higher && meetsMin ? [{ ruleId: 'R04', sides: ['left', 'right'], viaView: 'front' }] : []
+      })
+    }
   }
 
   // 무릎 정렬 (정면)

@@ -103,7 +103,7 @@ export interface PatientIntake {
 }
 
 export type ExerciseCategory = 'warmup' | 'main' | 'cooldown'
-export type ExerciseSource = 'PDF' | '일반 운동 라이브러리'
+export type ExerciseSource = 'PDF' | '일반 운동 라이브러리' | '운동 라이브러리 (PT 승인)'
 
 /** 운동 데이터 구조 (요청 스펙 9번 항목) */
 export interface Exercise {
@@ -128,6 +128,8 @@ export interface Exercise {
   commonMistakes?: string[]
   /** 어떤 관찰 영역(어깨/골반/허리/목/무릎/발)에 매칭되는지 */
   targetAreas: ObservationArea[]
+  /** 원본 자료에 적힌 대상 근육 (운동 라이브러리에서 온 운동만 값이 있다. 앱 기본 운동에는 이 정보가 없다) */
+  targetMuscles?: string[]
   /**
    * 이 운동이 도움이 될 수 있는 증상/질환 태그 (요청 스펙 10번 항목: 사용자가 입력한 주요 증상과 매칭).
    * 진단명을 확정하는 용도가 아니라, 문진에서 선택한 증상과 운동을 연결하는 '태그' 성격이다.
@@ -214,6 +216,16 @@ export interface ManualSideLandmarks {
   t12?: ManualPoint
 }
 
+/**
+ * 정면 사진 위에서 PT가 직접 표시하는 좌·우 ASIS(전상장골극). 대상자 기준 좌/우로 저장한다
+ * (정면 사진에서는 대상자의 왼쪽이 화면 오른쪽에 보인다).
+ * 자동 인식의 hip 추정점은 ASIS가 아니므로, 좌우 ASIS 높이 차이는 이 입력이 있을 때만 계산한다.
+ */
+export interface ManualFrontLandmarks {
+  leftAsis?: ManualPoint
+  rightAsis?: ManualPoint
+}
+
 // ── STEP5: 각도 계산 ──────────────────────────────────────────
 
 /** 하나의 각도/비대칭 측정값. 계산에 필요한 landmark가 없으면 valueDeg는 null이 된다. */
@@ -272,6 +284,8 @@ export interface GenerateProgramArgs {
   /** 문진에서 확인된, 주의가 필요한 질환 태그 (금기/주의사항 표시용) */
   cautionConditions: ConditionTag[]
   exerciseLevel: PatientIntake['exerciseExperience']
+  /** PT가 승인한 운동 라이브러리 운동. 앱 기본 운동과 같은 후보 풀에서 함께 고른다. */
+  extraExercises?: Exercise[]
 }
 
 /** PT가 화면에서 직접 수정 가능한 운동 프로그램 항목 (요청 스펙 14번 항목) */
