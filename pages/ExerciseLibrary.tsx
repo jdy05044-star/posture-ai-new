@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import ExerciseImageSlot from '@/library/ExerciseImageSlot'
 import visualMeta from '@/library/exerciseVisualMeta.json'
 import EnrichmentSection from '@/library/EnrichmentSection'
+import MusclePhotoToggle from '@/library/MusclePhotoToggle'
 import { useResolvedImages } from '@/library/exerciseImages'
 import {
   ALL,
@@ -91,6 +92,9 @@ function ExerciseDetail({ ex, imageUrl, overlay, onChange }: DetailProps) {
           <p className="text-clinical-400">표기된 근육 없음</p>
         )}
         <p className="mt-1 text-sm text-clinical-400">원자료 언급과 동작 기반 편집이 섞여 있어 확정된 평가가 아닙니다.</p>
+        <div className="mt-3">
+          <MusclePhotoToggle libId={ex.id} name={ex.name} muscles={ex.targetMuscles} />
+        </div>
       </section>
 
       <EnrichmentSection exerciseId={ex.id} name={ex.name} overlay={overlay} onChange={onChange} />
@@ -288,6 +292,9 @@ export default function ExerciseLibrary() {
         <button onClick={() => navigate('/')} className="text-sm font-semibold text-clinical-500">
           ← 홈
         </button>
+        <button onClick={() => navigate('/exercise-cards')} className="text-sm font-semibold text-mint-700">
+          운동 소개 카드 →
+        </button>
         <button onClick={() => navigate('/tests')} className="text-sm font-semibold text-mint-700">
           기능검사 →
         </button>
@@ -298,7 +305,7 @@ export default function ExerciseLibrary() {
       </p>
 
       <p className="mt-3 rounded-xl bg-clinical-100 px-4 py-3 text-sm leading-relaxed text-clinical-600">
-        운동 그림은 일부 운동에만 있는 AI 생성 참고 이미지이며, 실제 동작을 정확히 대체하지 않습니다. 그림이 없는 운동은 "이미지 준비 중"으로 표시됩니다.
+        운동 사진과 근육 사진은 AI가 만든 참고 그림이며 동작·해부학 PT 검수 전입니다. 실제 동작을 정확히 대체하지 않습니다. 근육 사진은 운동을 눌러 "근육 사진 보기"로 확인합니다.
         근육·목적·주의사항에는 앱용으로 편집한 내용이 섞여 있어 확정된 의료 판단이 아닙니다. PT가 승인한 운동만 자세 평가 결과의 추천·처방에 쓰입니다.
       </p>
 

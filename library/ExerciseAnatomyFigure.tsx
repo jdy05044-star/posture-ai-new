@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { SVG_LOADERS } from '@/anatomy/atlas'
-import { resolveExerciseImage } from './exerciseImages'
 import { planAnatomy, ROLE_COLOR, ROLE_LABEL, ROLE_ORDER, type MuscleRole } from './exerciseAnatomy'
 import type { ExerciseEnrichment } from './types'
 
@@ -8,11 +7,9 @@ type View = 'front' | 'back'
 const WEIGHT: Record<MuscleRole, number> = { primary: 4, secondary: 2, stabilizer: 1, overuse: 1 }
 
 interface Props {
-  exerciseId: string
+  exerciseId?: string
   name: string
   enrichment: ExerciseEnrichment
-  /** 라이선스가 확인된 해부도 이미지 경로(없어도 됨). 있으면 생성 그림 대신 이것을 먼저 보여준다. */
-  userImage?: string
 }
 
 function esc(id: string) {
@@ -20,20 +17,11 @@ function esc(id: string) {
 }
 
 /** 근육 해부도(자체 제작 SVG)에 운동별 역할 색을 칠한다. 사진·외부 이미지는 쓰지 않는다. */
-export default function ExerciseAnatomyFigure({ exerciseId, name, enrichment, userImage }: Props) {
+export default function ExerciseAnatomyFigure({ name, enrichment }: Props) {
   const plan = useMemo(() => planAnatomy(enrichment), [enrichment])
-  const [uploaded, setUploaded] = useState<string | null | undefined>(undefined)
   const [html, setHtml] = useState<Record<View, string | null>>({ front: null, back: null })
   const [forced, setForced] = useState<View | null>(null)
   const box = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    let off = false
-    resolveExerciseImage(userImage ?? `/images/exercises/anatomy/${exerciseId.toLowerCase()}-target.webp`).then((u) => !off && setUploaded(u))
-    return () => {
-      off = true
-    }
-  }, [exerciseId, userImage])
 
   useEffect(() => {
     let off = false
@@ -79,14 +67,6 @@ export default function ExerciseAnatomyFigure({ exerciseId, name, enrichment, us
 
   const roles = ROLE_ORDER.filter((r) => enrichment[r].length > 0)
   const present = (v: View) => Object.keys(plan.roleByAtlasId).some((id) => html[v]?.includes(`data-muscle-id="${id}"`))
-
-  if (uploaded) {
-    return (
-      <div className="overflow-hidden rounded-xl bg-clinical-50">
-        <img src={uploaded} alt={`${name} 해부학 타깃`} className="w-full object-contain" />
-      </div>
-    )
-  }
 
   return (
     <div>
