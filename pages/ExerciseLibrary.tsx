@@ -298,8 +298,8 @@ export default function ExerciseLibrary() {
       </p>
 
       <p className="mt-3 rounded-xl bg-clinical-100 px-4 py-3 text-sm leading-relaxed text-clinical-600">
-        운동 그림은 AI 생성 참고 이미지 또는 자세 유형 도식입니다. 실제 동작을 정확히 대체하지 않습니다. 근육·목적·주의사항에는 앱용으로 편집한 내용이 섞여 있으며,
-        자세 평가 결과의 자동 처방에는 사용되지 않습니다.
+        운동 그림은 일부 운동에만 있는 AI 생성 참고 이미지이며, 실제 동작을 정확히 대체하지 않습니다. 그림이 없는 운동은 "이미지 준비 중"으로 표시됩니다.
+        근육·목적·주의사항에는 앱용으로 편집한 내용이 섞여 있어 확정된 의료 판단이 아닙니다. PT가 승인한 운동만 자세 평가 결과의 추천·처방에 쓰입니다.
       </p>
 
       {LIBRARY_ISSUES.length > 0 && (
