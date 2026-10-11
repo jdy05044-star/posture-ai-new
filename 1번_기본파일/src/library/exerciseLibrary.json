@@ -1,0 +1,3228 @@
+{
+  "libraryName": "PosturePT Exercise Library",
+  "version": "0.1.0",
+  "sourcePolicy": "첨부 문서의 운동/검사 동작을 추출하되 앱용 한국어 설명은 새로 요약. 원자료의 사진과 도해는 라이선스 확인 없이 재사용하지 않음. 근육 목록/목적은 원자료 언급 및 동작 기반 편집이 섞여 있으므로 전문가 검수 전까지 확정 평가·자동 처방에 사용 금지.",
+  "exercises": [
+    {
+      "id": "EX001",
+      "name": "팔 위로 올리며 상체 기울이기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 1,
+      "goals": "옆구리와 골반 주변의 유연성",
+      "targetMuscles": [
+        "요방형근",
+        "내전근"
+      ],
+      "steps": [
+        "똑바로 앉아 팔을 들고 몸통을 옆으로 기울인다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "양쪽 4회씩",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 23
+      },
+      "image": "/images/exercises/ex001.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX002",
+      "name": "한쪽 다리 뻗고 상체 숙이기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 2,
+      "goals": "뒤쪽 허벅지와 고관절 유연성",
+      "targetMuscles": [
+        "햄스트링"
+      ],
+      "steps": [
+        "한쪽 다리를 뻗고 허리를 길게 유지하며 상체를 전방으로 기울인다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "양쪽 4회씩",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 20
+      },
+      "image": "/images/exercises/ex002.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX003",
+      "name": "손과 발로 바닥 눌러 골반 들어 올리기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 3,
+      "goals": "고관절 신전 및 골반 안정",
+      "targetMuscles": [
+        "대퇴직근"
+      ],
+      "steps": [
+        "손과 발로 바닥을 지지한 뒤 골반을 들어 올린다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "양쪽 4회씩",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 16
+      },
+      "image": "/images/exercises/ex003.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX004",
+      "name": "앉아서 양쪽 무릎 좌우로 넘기기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 4,
+      "goals": "고관절 회전 가동성과 골반 조절",
+      "targetMuscles": [],
+      "steps": [
+        "앉아서 두 무릎을 한 방향으로 움직인 후 반대 방향으로 넘긴다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 13
+      },
+      "image": "/images/exercises/ex004.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX005",
+      "name": "옆으로 누워 무릎 벌리기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 5,
+      "goals": "고관절 바깥돌림 조절 및 골반 안정",
+      "targetMuscles": [
+        "중둔근",
+        "소둔근",
+        "이상근"
+      ],
+      "steps": [
+        "옆으로 누워 두 발을 가까이 둔 채 위쪽 무릎을 벌렸다 돌아온다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 10
+      },
+      "image": "/images/exercises/ex005.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX006",
+      "name": "옆으로 누워 다리 들어 움직이기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 6,
+      "goals": "고관절 근육 조절 및 골반 안정",
+      "targetMuscles": [
+        "중둔근",
+        "소둔근",
+        "대둔근"
+      ],
+      "steps": [
+        "옆으로 누워 위쪽 다리를 들어 올리고 정해진 범위에서 움직인다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 7
+      },
+      "image": "/images/exercises/ex006.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX007",
+      "name": "누워서 엉덩이 힘으로 골반 들어 올리기",
+      "englishName": "",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 7,
+      "goals": "고관절 신전과 몸통 안정",
+      "targetMuscles": [
+        "대둔근",
+        "햄스트링",
+        "코어근육"
+      ],
+      "steps": [
+        "바로 누워 무릎을 굽힌 상태에서 골반을 들어 올렸다 천천히 내린다."
+      ],
+      "cautions": "통증 없이 움직이며 골반과 허리가 과하게 꺾이지 않도록 주의",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 3
+      },
+      "image": "/images/exercises/ex007.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX008",
+      "name": "누워서 허리뼈 사이사이 늘리기",
+      "englishName": "",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 1,
+      "goals": "몸통 길이 인지 및 허리 주변 이완",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "바로 누운 상태에서 팔과 다리를 길게 뻗어 몸통이 길어지는 느낌을 만든다."
+      ],
+      "cautions": "통증 시 중지, 허리 과신전 피하기",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 57
+      },
+      "image": "/images/exercises/ex008.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX009",
+      "name": "옆으로 누워 팔과 다리 길게 뻗기",
+      "englishName": "",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 2,
+      "goals": "척추 주변 긴장 조절과 몸통 신장",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "옆으로 누워 팔과 다리를 멀리 뻗어 길게 유지한다."
+      ],
+      "cautions": "통증 시 중지, 허리 과신전 피하기",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 55
+      },
+      "image": "/images/exercises/ex009.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX010",
+      "name": "복부에 힘주며 다리 들어 올리기",
+      "englishName": "",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 4,
+      "goals": "복부 안정과 다리 움직임 조절",
+      "targetMuscles": [
+        "복근"
+      ],
+      "steps": [
+        "복부를 고정하며 한쪽 다리를 들어 올렸다 내린다."
+      ],
+      "cautions": "통증 시 중지, 허리 과신전 피하기",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 49
+      },
+      "image": "/images/exercises/ex010.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX011",
+      "name": "복부에 힘주며 팔과 다리 내렸다 올리기",
+      "englishName": "",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 5,
+      "goals": "복부 안정과 대각선 협응",
+      "targetMuscles": [
+        "복근"
+      ],
+      "steps": [
+        "바로 누운 상태에서 복부를 안정시킨 채 팔과 다리를 움직인다."
+      ],
+      "cautions": "통증 시 중지, 허리 과신전 피하기",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 46
+      },
+      "image": "/images/exercises/ex011.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX012",
+      "name": "양쪽 발뒤꿈치 붙여 허벅지 들어 올리기",
+      "englishName": "",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 6,
+      "goals": "고관절 주변과 엉덩이 근육 활성",
+      "targetMuscles": [
+        "중둔근",
+        "소둔근",
+        "이상근"
+      ],
+      "steps": [
+        "두 발뒤꿈치를 모으고 위쪽 허벅지를 들어 올린다."
+      ],
+      "cautions": "통증 시 중지, 허리 과신전 피하기",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 43
+      },
+      "image": "/images/exercises/ex012.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX013",
+      "name": "네발 자세에서 무릎 들어 올리기",
+      "englishName": "",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 7,
+      "goals": "체간 안정 및 몸통 제어",
+      "targetMuscles": [
+        "복근",
+        "척추기립근"
+      ],
+      "steps": [
+        "네발기기에서 몸통을 고정한 채 무릎을 살짝 들어 올린다."
+      ],
+      "cautions": "통증 시 중지, 허리 과신전 피하기",
+      "sourceDosage": "4회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 40
+      },
+      "image": "/images/exercises/ex013.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX014",
+      "name": "팔 들어 올렸다가 옆으로 내리기",
+      "englishName": "",
+      "bodyPart": "어깨",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 4,
+      "goals": "어깨 올림·내림 조절",
+      "targetMuscles": [
+        "삼각근",
+        "승모근"
+      ],
+      "steps": [
+        "팔을 들어 올리고 옆쪽으로 천천히 내린다."
+      ],
+      "cautions": "어깨 통증·저림이 있다면 PT 평가 우선",
+      "sourceDosage": "8회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 80
+      },
+      "image": "/images/exercises/ex014.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX015",
+      "name": "어깨 뒤로 보내 손목 젖히기",
+      "englishName": "",
+      "bodyPart": "어깨",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 5,
+      "goals": "견갑 후인과 흉곽 자세 조절",
+      "targetMuscles": [
+        "승모근",
+        "마름근"
+      ],
+      "steps": [
+        "어깨를 뒤쪽으로 보낸 상태에서 손목과 팔 움직임을 연결한다."
+      ],
+      "cautions": "어깨 통증·저림이 있다면 PT 평가 우선",
+      "sourceDosage": "8회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 77
+      },
+      "image": "/images/exercises/ex015.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX016",
+      "name": "팔 구부려 뒤로 보내며 위팔뼈 회전하기",
+      "englishName": "",
+      "bodyPart": "어깨",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 6,
+      "goals": "상완 외회전 및 어깨뼈 제어",
+      "targetMuscles": [
+        "회전근개",
+        "승모근"
+      ],
+      "steps": [
+        "팔꿈치를 구부리고 팔을 뒤로 움직이며 어깨 회전을 조절한다."
+      ],
+      "cautions": "어깨 통증·저림이 있다면 PT 평가 우선",
+      "sourceDosage": "8회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 74
+      },
+      "image": "/images/exercises/ex016.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX017",
+      "name": "체중 지탱하며 팔 올렸다 내리기",
+      "englishName": "",
+      "bodyPart": "어깨",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": 7,
+      "goals": "어깨뼈와 몸통 안정",
+      "targetMuscles": [
+        "승모근",
+        "코어근육"
+      ],
+      "steps": [
+        "팔로 체중을 지지한 자세에서 팔 움직임을 반복한다."
+      ],
+      "cautions": "어깨 통증·저림이 있다면 PT 평가 우선",
+      "sourceDosage": "8회 × 3세트",
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "IMG_2586.pdf (골반·허리 단계별 운동)",
+        "pdfPage": 72
+      },
+      "image": "/images/exercises/ex017.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX018",
+      "name": "Nose Nod",
+      "englishName": "Nose Nod",
+      "bodyPart": "머리/목",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "위쪽 경추 움직임 인지",
+      "targetMuscles": [
+        "목 굴곡 조절"
+      ],
+      "steps": [
+        "턱을 작게 끄덕여 시작 위치로 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 1
+      },
+      "image": "/images/exercises/ex018.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX019",
+      "name": "Nose Circle",
+      "englishName": "Nose Circle",
+      "bodyPart": "머리/목",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "위쪽 경추의 작은 원운동",
+      "targetMuscles": [
+        "목 움직임 조절"
+      ],
+      "steps": [
+        "코끝으로 작은 원을 그리듯 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 2
+      },
+      "image": "/images/exercises/ex019.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX020",
+      "name": "Head Roll",
+      "englishName": "Head Roll",
+      "bodyPart": "머리/목",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "경추 회전 움직임",
+      "targetMuscles": [
+        "경추 주변"
+      ],
+      "steps": [
+        "누운 상태에서 머리를 좌우로 돌린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex020.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX021",
+      "name": "Pelvic Clock",
+      "englishName": "Pelvic Clock",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "골반 기울기와 위치 인지",
+      "targetMuscles": [
+        "골반 주변"
+      ],
+      "steps": [
+        "누워서 골반을 시계방향의 작은 움직임으로 조절한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 5
+      },
+      "image": "/images/exercises/ex021.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX022",
+      "name": "Pillow Squeeze",
+      "englishName": "Pillow Squeeze",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "무릎 사이 물체 조이기",
+      "targetMuscles": [
+        "고관절 내전근"
+      ],
+      "steps": [
+        "무릎 사이 베개를 부드럽게 조이고 푼다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 6
+      },
+      "image": "/images/exercises/ex022.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX023",
+      "name": "Single Leg Slide",
+      "englishName": "Single Leg Slide",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "하지 이동 중 골반 안정",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "누워서 한쪽 발을 바닥에 미끄러뜨리듯 펴고 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 7
+      },
+      "image": "/images/exercises/ex023.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX024",
+      "name": "Knee Side",
+      "englishName": "Knee Side",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "무릎 좌우 이동 중 골반 조절",
+      "targetMuscles": [
+        "고관절 회전근"
+      ],
+      "steps": [
+        "한 무릎을 바깥으로 이동했다 되돌린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 8
+      },
+      "image": "/images/exercises/ex024.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX025",
+      "name": "Knee Tag",
+      "englishName": "Knee Tag",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "고관절·무릎 협응",
+      "targetMuscles": [
+        "고관절 주변"
+      ],
+      "steps": [
+        "무릎 움직임을 이용해 정해진 위치에 닿게 한 후 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 9
+      },
+      "image": "/images/exercises/ex025.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX026",
+      "name": "Knee Press",
+      "englishName": "Knee Press",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통과 고관절 안정",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "무릎을 가볍게 누르는 동작과 몸통 고정을 연결한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 10
+      },
+      "image": "/images/exercises/ex026.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX027",
+      "name": "Knee Float",
+      "englishName": "Knee Float",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "골반 안정 상태의 하지 들어올리기",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "누운 상태에서 무릎이 굽혀진 다리를 소폭 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 11
+      },
+      "image": "/images/exercises/ex027.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX028",
+      "name": "Knee Circle",
+      "englishName": "Knee Circle",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "고관절 회전 협응",
+      "targetMuscles": [
+        "고관절 주변"
+      ],
+      "steps": [
+        "무릎으로 원을 그리듯 천천히 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 12
+      },
+      "image": "/images/exercises/ex028.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX029",
+      "name": "Up Up Down Down",
+      "englishName": "Up Up Down Down",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "하지 교대 동작 중 복부 안정",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "양 다리를 순서대로 들어 올렸다 순서대로 내린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 13
+      },
+      "image": "/images/exercises/ex029.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX030",
+      "name": "Toe Tap",
+      "englishName": "Toe Tap",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "골반 고정과 하지 협응",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "무릎을 접어 든 상태에서 발끝을 바닥에 가볍게 터치한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 14
+      },
+      "image": "/images/exercises/ex030.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX031",
+      "name": "Lifted Frog",
+      "englishName": "Lifted Frog",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "엉덩관절 벌림과 골반 안정",
+      "targetMuscles": [
+        "고관절 외회전근"
+      ],
+      "steps": [
+        "두 다리를 든 상태에서 무릎을 바깥쪽으로 벌렸다 모은다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 85DA211",
+        "pdfPage": 15
+      },
+      "image": "/images/exercises/ex031.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX032",
+      "name": "Knee to Chest",
+      "englishName": "Knee to Chest",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "허리와 하지 이완",
+      "targetMuscles": [],
+      "steps": [
+        "양 무릎을 몸쪽으로 가져와 가볍게 안는다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 1
+      },
+      "image": "/images/exercises/ex032.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX033",
+      "name": "Bridge Side to Side",
+      "englishName": "Bridge Side to Side",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "브릿지 자세에서 체중 이동",
+      "targetMuscles": [
+        "대둔근",
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "브릿지에서 골반을 안정시킨 채 좌우 조절한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 2
+      },
+      "image": "/images/exercises/ex033.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX034",
+      "name": "Arm Float",
+      "englishName": "Arm Float",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "팔 들기 중 어깨뼈 안정",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "바로 누운 자세에서 팔을 천장 방향으로 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 3
+      },
+      "image": "/images/exercises/ex034.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX035",
+      "name": "Shoulder Shrug",
+      "englishName": "Shoulder Shrug",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "견갑 움직임 인지",
+      "targetMuscles": [
+        "승모근"
+      ],
+      "steps": [
+        "팔을 뻗고 어깨뼈를 부드럽게 전인·후인한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex035.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX036",
+      "name": "Arm Over Head",
+      "englishName": "Arm Over Head",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "어깨 굽힘 가동성과 몸통 안정",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "팔을 머리 위쪽으로 뻗고 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 5
+      },
+      "image": "/images/exercises/ex036.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX037",
+      "name": "Arm Open",
+      "englishName": "Arm Open",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "가슴과 어깨 조절",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "팔을 옆으로 벌렸다 시작 자세로 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 6
+      },
+      "image": "/images/exercises/ex037.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX038",
+      "name": "Arm Slide",
+      "englishName": "Arm Slide",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "팔 미끄러뜨리기와 견갑 조절",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "팔을 바닥을 따라 미끄러뜨리듯 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 7
+      },
+      "image": "/images/exercises/ex038.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX039",
+      "name": "Alternative Arm and Leg Slide",
+      "englishName": "Alternative Arm and Leg Slide",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "교차 팔·다리 협응과 중립 유지",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "반대 팔과 다리를 번갈아 미끄러뜨리듯 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 51FE8CB",
+        "pdfPage": 8
+      },
+      "image": "/images/exercises/ex039.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX040",
+      "name": "Dead Bugs",
+      "englishName": "Dead Bugs",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "체간 안정과 대각선 협응",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "누운 자세에서 팔과 반대쪽 다리를 교차 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 1
+      },
+      "image": "/images/exercises/ex040.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX041",
+      "name": "Bridge",
+      "englishName": "Bridge",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "엉덩관절 폄과 체간 안정",
+      "targetMuscles": [
+        "대둔근",
+        "햄스트링"
+      ],
+      "steps": [
+        "무릎을 굽힌 채 골반을 천천히 들어 올리고 내린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 2
+      },
+      "image": "/images/exercises/ex041.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX042",
+      "name": "Curl Up",
+      "englishName": "Curl Up",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "상체 굴곡과 복부 조절",
+      "targetMuscles": [
+        "복직근"
+      ],
+      "steps": [
+        "머리와 몸통을 조금 들어올린 뒤 내려온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 3
+      },
+      "image": "/images/exercises/ex042.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX043",
+      "name": "Modified Hundred",
+      "englishName": "Modified Hundred",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "호흡과 복부 지구력",
+      "targetMuscles": [
+        "복근"
+      ],
+      "steps": [
+        "수정 헌드레드 자세에서 팔 펌핑과 호흡을 조절한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex043.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX044",
+      "name": "One Leg Stretch",
+      "englishName": "One Leg Stretch",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "한쪽 다리 교대와 중심 안정",
+      "targetMuscles": [
+        "복근"
+      ],
+      "steps": [
+        "상체를 들어 올리고 한 다리를 교대해 뻗는다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 5
+      },
+      "image": "/images/exercises/ex044.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX045",
+      "name": "Prone Breathing",
+      "englishName": "Prone Breathing",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "엎드린 자세의 호흡 인지",
+      "targetMuscles": [
+        "호흡 관련 근육"
+      ],
+      "steps": [
+        "엎드려 호흡하면서 흉곽과 배의 움직임을 느낀다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 6
+      },
+      "image": "/images/exercises/ex045.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX046",
+      "name": "Diamond Press",
+      "englishName": "Diamond Press",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "흉추 폄과 어깨 안정",
+      "targetMuscles": [
+        "등 신전근"
+      ],
+      "steps": [
+        "엎드린 상태에서 상체를 작게 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 7
+      },
+      "image": "/images/exercises/ex046.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX047",
+      "name": "Sphinx Position",
+      "englishName": "Sphinx Position",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 폄과 어깨 지지",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "팔꿈치로 몸통을 지지하는 스핑크스 자세를 취한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 8
+      },
+      "image": "/images/exercises/ex047.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX048",
+      "name": "Modified Swan",
+      "englishName": "Modified Swan",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "척추 폄 움직임 조절",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "엎드려 상체를 작은 범위로 들어 올렸다 내린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 9
+      },
+      "image": "/images/exercises/ex048.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX049",
+      "name": "Elbow Up",
+      "englishName": "Elbow Up",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "견갑과 팔꿈치 위치 조절",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "엎드린 자세에서 팔꿈치를 들어 올렸다 내린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 10
+      },
+      "image": "/images/exercises/ex049.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX050",
+      "name": "Shoulder Pull Down",
+      "englishName": "Shoulder Pull Down",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "견갑 하강 조절",
+      "targetMuscles": [
+        "광배근",
+        "하부승모근"
+      ],
+      "steps": [
+        "어깨뼈를 아래로 움직이고 시작 위치로 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 11
+      },
+      "image": "/images/exercises/ex050.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX051",
+      "name": "Chest Head Lift",
+      "englishName": "Chest Head Lift",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "흉추와 목 폄 조절",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "엎드린 상태에서 머리와 가슴을 조금 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 12
+      },
+      "image": "/images/exercises/ex051.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX052",
+      "name": "Arm Lift",
+      "englishName": "Arm Lift",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "상지 들기 및 견갑 안정",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "엎드린 상태에서 한쪽 팔을 작게 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 13
+      },
+      "image": "/images/exercises/ex052.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX053",
+      "name": "Leg Lift",
+      "englishName": "Leg Lift",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "고관절 신전과 골반 조절",
+      "targetMuscles": [
+        "대둔근"
+      ],
+      "steps": [
+        "엎드린 상태에서 한쪽 다리를 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 14
+      },
+      "image": "/images/exercises/ex053.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX054",
+      "name": "Alternative Arm & Leg Lift",
+      "englishName": "Alternative Arm & Leg Lift",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 안정과 교차 팔다리 협응",
+      "targetMuscles": [
+        "등 신전근",
+        "대둔근"
+      ],
+      "steps": [
+        "엎드린 자세에서 반대 팔과 다리를 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 15
+      },
+      "image": "/images/exercises/ex054.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX055",
+      "name": "Breathing",
+      "englishName": "Breathing",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "호흡 패턴 조절",
+      "targetMuscles": [
+        "호흡 관련 근육"
+      ],
+      "steps": [
+        "자세를 유지하고 흉곽과 복부의 움직임에 집중한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 16
+      },
+      "image": "/images/exercises/ex055.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX056",
+      "name": "Single Leg Lift",
+      "englishName": "Single Leg Lift",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "한쪽 다리 들기 및 고관절 조절",
+      "targetMuscles": [
+        "대둔근"
+      ],
+      "steps": [
+        "다리를 한쪽씩 들어 올렸다 내린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 17
+      },
+      "image": "/images/exercises/ex056.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX057",
+      "name": "Side Thigh Lift",
+      "englishName": "Side Thigh Lift",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "옆누운 자세 고관절 벌림",
+      "targetMuscles": [
+        "중둔근"
+      ],
+      "steps": [
+        "옆으로 누워 위쪽 허벅지를 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 18
+      },
+      "image": "/images/exercises/ex057.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX058",
+      "name": "Double Leg Lift",
+      "englishName": "Double Leg Lift",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "측면 몸통 안정과 양다리 조절",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "옆으로 누운 상태에서 다리를 함께 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 19
+      },
+      "image": "/images/exercises/ex058.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX059",
+      "name": "Side Leg Circle",
+      "englishName": "Side Leg Circle",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "고관절 원운동과 골반 안정",
+      "targetMuscles": [
+        "고관절 주변"
+      ],
+      "steps": [
+        "옆으로 누워 위쪽 다리로 작은 원을 그린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 20
+      },
+      "image": "/images/exercises/ex059.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX060",
+      "name": "Clam",
+      "englishName": "Clam",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "엉덩관절 바깥돌림 조절",
+      "targetMuscles": [
+        "중둔근",
+        "깊은 외회전근"
+      ],
+      "steps": [
+        "옆으로 누워 무릎을 벌렸다 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F208E42",
+        "pdfPage": 21
+      },
+      "image": "/images/exercises/ex060.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX061",
+      "name": "Modified Side Leg Kick",
+      "englishName": "Modified Side Leg Kick",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "다리 전후 움직임과 중심 안정",
+      "targetMuscles": [
+        "둔근"
+      ],
+      "steps": [
+        "옆으로 누워 위쪽 다리를 앞뒤로 이동한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 1
+      },
+      "image": "/images/exercises/ex061.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX062",
+      "name": "Thigh Stretch",
+      "englishName": "Thigh Stretch",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "앞 허벅지와 고관절 앞쪽 신장",
+      "targetMuscles": [
+        "대퇴직근"
+      ],
+      "steps": [
+        "몸통을 곧게 유지하며 무릎선 뒤쪽으로 기울인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 2
+      },
+      "image": "/images/exercises/ex062.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX063",
+      "name": "Arm Opening",
+      "englishName": "Arm Opening",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "흉곽 회전과 어깨 열기",
+      "targetMuscles": [
+        "흉근"
+      ],
+      "steps": [
+        "옆누운 상태에서 위쪽 팔을 반대쪽으로 연다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 3
+      },
+      "image": "/images/exercises/ex063.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX064",
+      "name": "Side Push Up",
+      "englishName": "Side Push Up",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "옆누운 자세 상지 밀기",
+      "targetMuscles": [
+        "삼두근"
+      ],
+      "steps": [
+        "옆으로 누워 팔로 몸통을 지탱하며 밀어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex064.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX065",
+      "name": "Cat Stretch",
+      "englishName": "Cat Stretch",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "척추 분절 움직임",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "네발기기에서 등을 둥글게 했다 중립으로 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 5
+      },
+      "image": "/images/exercises/ex065.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX066",
+      "name": "Single Leg Lift",
+      "englishName": "Single Leg Lift",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "네발기기 고관절 신전",
+      "targetMuscles": [
+        "대둔근"
+      ],
+      "steps": [
+        "네발 자세에서 한 다리를 뒤로 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 6
+      },
+      "image": "/images/exercises/ex066.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX067",
+      "name": "Single Arm Lift",
+      "englishName": "Single Arm Lift",
+      "bodyPart": "어깨",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "네발기기 상지 조절",
+      "targetMuscles": [
+        "어깨 주변"
+      ],
+      "steps": [
+        "네발 자세에서 한 팔을 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 7
+      },
+      "image": "/images/exercises/ex067.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX068",
+      "name": "Alternative Arm and Leg Lift",
+      "englishName": "Alternative Arm and Leg Lift",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "네발기기 교차 안정",
+      "targetMuscles": [
+        "코어근육"
+      ],
+      "steps": [
+        "네발 자세에서 반대 팔과 다리를 뻗는다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 8
+      },
+      "image": "/images/exercises/ex068.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX069",
+      "name": "Pointer",
+      "englishName": "Pointer",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "대각선 체간 안정",
+      "targetMuscles": [
+        "코어근육"
+      ],
+      "steps": [
+        "네발 자세에서 팔다리 뻗은 위치를 유지하고 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 9
+      },
+      "image": "/images/exercises/ex069.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX070",
+      "name": "Rest Position",
+      "englishName": "Rest Position",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "휴식 및 몸통 신장",
+      "targetMuscles": [],
+      "steps": [
+        "네발 자세에서 골반을 뒤로 보내 쉰다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 10
+      },
+      "image": "/images/exercises/ex070.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX071",
+      "name": "Kneeling Hamstring & Hip Flexor Stretch",
+      "englishName": "Kneeling Hamstring & Hip Flexor Stretch",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "햄스트링 및 고관절 굴곡근 유연성",
+      "targetMuscles": [
+        "햄스트링",
+        "장요근"
+      ],
+      "steps": [
+        "무릎을 지지한 상태에서 하지를 전후로 놓고 늘린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 11
+      },
+      "image": "/images/exercises/ex071.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX072",
+      "name": "Lunge Stretch",
+      "englishName": "Lunge Stretch",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "고관절 앞쪽 유연성",
+      "targetMuscles": [
+        "장요근"
+      ],
+      "steps": [
+        "런지 자세로 골반을 안정시켜 고관절 앞쪽을 늘린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 12
+      },
+      "image": "/images/exercises/ex072.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX073",
+      "name": "Thigh Stretch (2-point)",
+      "englishName": "Thigh Stretch (2-point)",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "무릎서기 몸통·허벅지 조절",
+      "targetMuscles": [
+        "대퇴직근"
+      ],
+      "steps": [
+        "두 무릎으로 지지하며 몸통을 뒤로 기울였다 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 13
+      },
+      "image": "/images/exercises/ex073.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX074",
+      "name": "Plank",
+      "englishName": "Plank",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 안정과 지구력",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "체간을 일직선으로 유지하는 플랭크 자세를 취한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 14
+      },
+      "image": "/images/exercises/ex074.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX075",
+      "name": "Breathing",
+      "englishName": "Breathing",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "호흡과 몸통 조절",
+      "targetMuscles": [
+        "호흡 관련 근육"
+      ],
+      "steps": [
+        "허리를 중립에 두고 호흡을 연습한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 15
+      },
+      "image": "/images/exercises/ex075.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX076",
+      "name": "Spine Stretch",
+      "englishName": "Spine Stretch",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 굽힘과 길이 인지",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "앉아서 척추를 길게 늘린 뒤 몸통을 전방으로 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 16
+      },
+      "image": "/images/exercises/ex076.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX077",
+      "name": "Rolling Like a Ball",
+      "englishName": "Rolling Like a Ball",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "둥근 몸통 자세 유지와 조절",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "둥글게 몸을 말아 뒤로 굴렀다가 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 17
+      },
+      "image": "/images/exercises/ex077.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX078",
+      "name": "Seal",
+      "englishName": "Seal",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 균형과 회전 제어",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "앉아 발을 든 균형 자세에서 몸통 굴림을 조절한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 18
+      },
+      "image": "/images/exercises/ex078.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX079",
+      "name": "Mermaid",
+      "englishName": "Mermaid",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 측면 굽힘과 신장",
+      "targetMuscles": [
+        "요방형근"
+      ],
+      "steps": [
+        "앉은 상태에서 몸통을 옆으로 부드럽게 기울인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 19
+      },
+      "image": "/images/exercises/ex079.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX080",
+      "name": "Side Bend",
+      "englishName": "Side Bend",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "옆쪽 체간 안정",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "옆으로 지지하면서 몸통을 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 20
+      },
+      "image": "/images/exercises/ex080.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX081",
+      "name": "Saw",
+      "englishName": "Saw",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "앉은 자세 몸통 회전·굽힘",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "앉은 상태에서 몸통을 회전해 반대쪽 발 방향으로 뻗는다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 21
+      },
+      "image": "/images/exercises/ex081.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX082",
+      "name": "Spine Twist",
+      "englishName": "Spine Twist",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "앉은 자세 몸통 회전",
+      "targetMuscles": [
+        "복부 안정화 근육"
+      ],
+      "steps": [
+        "앉아서 팔을 벌리고 몸통을 좌우로 돌린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 30FE086",
+        "pdfPage": 22
+      },
+      "image": "/images/exercises/ex082.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX083",
+      "name": "Criss Cross",
+      "englishName": "Criss Cross",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "교차 몸통 회전과 복부 제어",
+      "targetMuscles": [
+        "복사근"
+      ],
+      "steps": [
+        "상체를 들고 몸통을 돌리며 반대쪽 무릎 쪽으로 움직인다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 0E2827D",
+        "pdfPage": 1
+      },
+      "image": "/images/exercises/ex083.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX084",
+      "name": "Double Leg Stretch",
+      "englishName": "Double Leg Stretch",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "양팔·다리 협응과 체간 안정",
+      "targetMuscles": [
+        "복근"
+      ],
+      "steps": [
+        "상체를 유지하며 팔과 다리를 멀리 뻗고 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 0E2827D",
+        "pdfPage": 2
+      },
+      "image": "/images/exercises/ex084.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX085",
+      "name": "Bent Leg Roll Up",
+      "englishName": "Bent Leg Roll Up",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "척추 굽힘 조절",
+      "targetMuscles": [
+        "복근"
+      ],
+      "steps": [
+        "무릎을 굽힌 상태에서 몸통을 말아 올리고 천천히 내린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF 0E2827D",
+        "pdfPage": 3
+      },
+      "image": "/images/exercises/ex085.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX086",
+      "name": "Alternative Arm & Leg Lift",
+      "englishName": "Alternative Arm & Leg Lift",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "반대 팔·다리 들기",
+      "targetMuscles": [
+        "척추기립근",
+        "대둔근"
+      ],
+      "steps": [
+        "엎드린 자세에서 반대쪽 팔과 다리를 들어 올린다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F3AE0DC",
+        "pdfPage": 1
+      },
+      "image": "/images/exercises/ex086.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX087",
+      "name": "Swan Dive",
+      "englishName": "Swan Dive",
+      "bodyPart": "허리/몸통",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "몸통 폄",
+      "targetMuscles": [
+        "척추기립근"
+      ],
+      "steps": [
+        "엎드린 상태에서 상체를 펴서 들어 올렸다 돌아온다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F3AE0DC",
+        "pdfPage": 2
+      },
+      "image": "/images/exercises/ex087.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX088",
+      "name": "Single Leg Kick",
+      "englishName": "Single Leg Kick",
+      "bodyPart": "골반",
+      "exerciseType": "필라테스",
+      "sourceLevel": null,
+      "goals": "무릎 굽힘과 하체 협응",
+      "targetMuscles": [
+        "햄스트링"
+      ],
+      "steps": [
+        "엎드린 자세에서 한쪽 무릎을 구부리는 동작을 반복한다."
+      ],
+      "cautions": "통증, 저림, 어지럼이 생기면 중단하고 전문가 확인. 중립자세와 호흡은 PT 지도에 맞춰 조정.",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "매트 필라테스.goodnotes / 내부PDF F3AE0DC",
+        "pdfPage": 3
+      },
+      "image": "/images/exercises/ex088.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX089",
+      "name": "걷기",
+      "englishName": "Walking",
+      "bodyPart": "전신",
+      "exerciseType": "유산소",
+      "sourceLevel": null,
+      "goals": "일상 유산소 활동",
+      "targetMuscles": [],
+      "steps": [
+        "가능한 범위에서 편안하게 걷는다."
+      ],
+      "cautions": "통증·신경 증상 악화 시 중단",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "merged%20(pdf.io).pdf (허리·골반 기능해부학 강의)",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex089.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX090",
+      "name": "자전거 타기",
+      "englishName": "Cycling",
+      "bodyPart": "전신",
+      "exerciseType": "유산소",
+      "sourceLevel": null,
+      "goals": "일상 유산소 활동",
+      "targetMuscles": [],
+      "steps": [
+        "관절에 무리가 없도록 강도를 조절해 자전거를 탄다."
+      ],
+      "cautions": "",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "merged%20(pdf.io).pdf (허리·골반 기능해부학 강의)",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex090.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX091",
+      "name": "수영",
+      "englishName": "Swimming",
+      "bodyPart": "전신",
+      "exerciseType": "유산소",
+      "sourceLevel": null,
+      "goals": "일상 유산소 활동",
+      "targetMuscles": [],
+      "steps": [
+        "증상이 허용하는 방식으로 수영한다."
+      ],
+      "cautions": "",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "merged%20(pdf.io).pdf (허리·골반 기능해부학 강의)",
+        "pdfPage": 4
+      },
+      "image": "/images/exercises/ex091.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX092",
+      "name": "고관절 신전근 강화 동작",
+      "englishName": "Hip extension strengthening",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": null,
+      "goals": "고관절 폄근 강화",
+      "targetMuscles": [
+        "대둔근"
+      ],
+      "steps": [],
+      "cautions": "",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "merged%20(pdf.io).pdf (허리·골반 기능해부학 강의)",
+        "pdfPage": 28
+      },
+      "image": "/images/exercises/ex092.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    },
+    {
+      "id": "EX093",
+      "name": "중둔근 측면 강화 동작",
+      "englishName": "Hip abductor strengthening",
+      "bodyPart": "골반",
+      "exerciseType": "근력·안정화",
+      "sourceLevel": null,
+      "goals": "골반 측면 안정성",
+      "targetMuscles": [
+        "중둔근"
+      ],
+      "steps": [],
+      "cautions": "",
+      "sourceDosage": null,
+      "dosage": {
+        "reps": null,
+        "sets": null,
+        "holdSeconds": null,
+        "frequencyPerWeek": null
+      },
+      "source": {
+        "file": "merged%20(pdf.io).pdf (허리·골반 기능해부학 강의)",
+        "pdfPage": 31
+      },
+      "image": "/images/exercises/ex093.webp",
+      "videoUrl": null,
+      "approvalStatus": "PT 검수 필요",
+      "evidenceNote": "원자료 동작 목록/도해에 근거. 간결한 앱 설명은 편집·요약이며 개인 처방이 아님."
+    }
+  ],
+  "assessmentTests": [
+    {
+      "id": "TS001",
+      "name": "호흡 패턴 평가",
+      "bodyPart": "허리/몸통",
+      "testType": "움직임 평가",
+      "purpose": "호흡 패턴, 갈비뼈·복부 움직임 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 12
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS002",
+      "name": "서서 롤다운",
+      "bodyPart": "허리/몸통",
+      "testType": "움직임 평가",
+      "purpose": "몸통 굽힘 동작과 분절 움직임 평가",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 11
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS003",
+      "name": "팔 위로 올리기",
+      "bodyPart": "어깨",
+      "testType": "움직임 평가",
+      "purpose": "어깨 가동범위와 견갑상완 리듬 평가",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 10
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS004",
+      "name": "서서 측굴",
+      "bodyPart": "허리/몸통",
+      "testType": "움직임 평가",
+      "purpose": "몸통 측굴과 골반 이동 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 9
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS005",
+      "name": "서서 몸통 회전",
+      "bodyPart": "허리/몸통",
+      "testType": "움직임 평가",
+      "purpose": "몸통 회전 가동성과 보상 움직임 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 8
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS006",
+      "name": "양쪽 무릎 굽히기",
+      "bodyPart": "무릎",
+      "testType": "움직임 평가",
+      "purpose": "슬관절·발·고관절 정렬과 움직임 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 7
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS007",
+      "name": "한 발 서기",
+      "bodyPart": "골반",
+      "testType": "움직임 평가",
+      "purpose": "균형 유지와 지지측 골반 안정성 평가",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 6
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS008",
+      "name": "누워서 다리 미끄러뜨리기",
+      "bodyPart": "골반",
+      "testType": "움직임 평가",
+      "purpose": "하지 움직임과 골반·중립척추 안정성 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 14
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS009",
+      "name": "브릿지 움직임 검사",
+      "bodyPart": "골반",
+      "testType": "움직임 평가",
+      "purpose": "골반·척추 분절 및 지지 능력 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 14
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS010",
+      "name": "네발기기 고양이 자세 검사",
+      "bodyPart": "허리/몸통",
+      "testType": "움직임 평가",
+      "purpose": "척추 가동성과 분절 움직임 관찰",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_1991(1).pdf (모던필라테스 평가·프로그래밍)",
+        "pdfPage": 14
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS011",
+      "name": "어깨 능동·수동 ROM",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 자격 보유 전문가 수행",
+      "purpose": "어깨관절 능동과 수동 가동범위 구분",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "어깨관절_검진_시험정리노트.pdf",
+        "pdfPage": 5
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS012",
+      "name": "Apley Scratch 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 자격 보유 전문가 수행",
+      "purpose": "어깨 복합 가동범위 비교",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "어깨관절_검진_시험정리노트.pdf",
+        "pdfPage": 7
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS013",
+      "name": "어깨 근력 9방향 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 자격 보유 전문가 수행",
+      "purpose": "굽힘·폄·벌림·모음·내회전·외회전·견갑 3방향",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "어깨관절_검진_시험정리노트.pdf",
+        "pdfPage": 8
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS014",
+      "name": "Yergason 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 자격 보유 전문가 수행",
+      "purpose": "이두근 장두 힘줄 안정성 참고",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "어깨관절_검진_시험정리노트.pdf",
+        "pdfPage": 13
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS015",
+      "name": "Drop Arm 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 자격 보유 전문가 수행",
+      "purpose": "회전근개 관련 검사",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "어깨관절_검진_시험정리노트.pdf",
+        "pdfPage": 14
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS016",
+      "name": "Apprehension 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 자격 보유 전문가 수행",
+      "purpose": "관절 불안정성 관련 검사",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "어깨관절_검진_시험정리노트.pdf",
+        "pdfPage": 13
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS017",
+      "name": "견갑골 전인(앞당김) 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 전문가 수행",
+      "purpose": "어깨뼈 앞당김 동작과 좌우 보상 비교",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_2782.pdf (견관절 검진 원문)",
+        "pdfPage": 6
+      },
+      "reviewStatus": "PT 검토 필요"
+    },
+    {
+      "id": "TS018",
+      "name": "견갑골 후인(뒤당김) 검사",
+      "bodyPart": "어깨",
+      "testType": "임상검사 - 전문가 수행",
+      "purpose": "어깨뼈 뒤당김 동작과 좌우 보상 비교",
+      "resultsSchema": {
+        "left": null,
+        "right": null,
+        "pain": null,
+        "notes": ""
+      },
+      "source": {
+        "file": "IMG_2782.pdf (견관절 검진 원문)",
+        "pdfPage": 7
+      },
+      "reviewStatus": "PT 검토 필요"
+    }
+  ],
+  "qualityFlags": {
+    "manualReviewRequired": true,
+    "missingDoseMeans": "원문 횟수 미확인. 자동 생성 금지",
+    "sourceLevelMeans": "원본 자료의 단계 번호. 임상적 위험도·절대 난이도 아님",
+    "duplicateExerciseNames": "동일 이름이 다른 자세/자료에 존재할 수 있어 source별 ID 보존",
+    "imageUsage": "원문 사진 미첨부. 이미지 경로만 제안"
+  }
+}
