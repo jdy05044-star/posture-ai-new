@@ -1,0 +1,45 @@
+import { useEffect, useState } from 'react'
+
+interface Props {
+  /** 확인된 이미지 URL. null/undefined면 플레이스홀더를 보여준다. */
+  url: string | null | undefined
+  label: string
+  variant?: 'thumb' | 'full'
+  caption?: string
+}
+
+/**
+ * 운동 이미지 슬롯. /public/images/exercises/ 에 파일이 들어오면 자동으로 보이고, 없으면 플레이스홀더만 보인다.
+ * 원자료(책)의 사진·그림은 저작권 확인 없이 쓰지 않으므로, 이 슬롯에는 사용 권리가 확인된 이미지만 넣는다.
+ */
+export default function ExerciseImageSlot({ url, label, variant = 'thumb', caption }: Props) {
+  const [broken, setBroken] = useState(false)
+  useEffect(() => setBroken(false), [url])
+  const box = variant === 'thumb' ? 'h-16 w-16 flex-none rounded-xl' : 'aspect-[4/3] w-full rounded-xl'
+  if (url && !broken) {
+    return (
+      <figure className={`overflow-hidden bg-clinical-50 ${box}`}>
+        <img src={url} alt={`${label} 동작 참고 그림`} loading="lazy" onError={() => setBroken(true)} className={variant === 'thumb' ? 'h-full w-full object-cover' : 'h-[calc(100%-34px)] w-full object-contain'} />
+        {variant === 'full' && (
+          <figcaption className="px-2 py-1 text-center text-xs text-clinical-500">
+            {caption || '운동 참고 도식 · 정확한 수행은 아래 설명과 PT 지도를 확인하세요'}
+          </figcaption>
+        )}
+      </figure>
+    )
+  }
+  return (
+    <div
+      className={`flex flex-col items-center justify-center gap-1 border border-dashed border-clinical-200 bg-clinical-50 text-clinical-300 ${box}`}
+      role="img"
+      aria-label={`${label} 이미지 준비 중`}
+    >
+      <svg width={variant === 'thumb' ? 20 : 28} height={variant === 'thumb' ? 20 : 28} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor" strokeWidth="1.5" />
+        <circle cx="9" cy="9" r="1.6" fill="currentColor" />
+        <path d="M4 17l5-5 3 3 4-5 4 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+      {variant === 'full' && <p className="text-sm text-clinical-400">이미지 준비 중</p>}
+    </div>
+  )
+}
