@@ -5,6 +5,7 @@ import { computeMuscleTendencies } from '@/assessment/muscleTendency'
 import DisclaimerNote from '@/components/DisclaimerNote'
 import ExerciseCard, { type ExerciseCardData } from '@/components/ExerciseCard'
 import { pickTodayExercises } from '@/exercises/todayPicks'
+import { exerciseVisualPath } from '@/exercises/exerciseVisuals'
 import { approvedLibraryExercises, isLibraryExercise, LIBRARY_ID_PREFIX } from '@/exercises/unified'
 import ExerciseImageSlot from '@/library/ExerciseImageSlot'
 import { ORIGIN_LABEL, resolveEnrichment } from '@/library/enrichment'
@@ -75,6 +76,7 @@ export default function ExercisePanel({ summary }: Props) {
       caution: ex.precautions,
       badge: fromLibrary ? { text: 'PT 승인', tone: 'mint' } : { text: '앱 기본 운동', tone: 'navy' },
       areaTag: a ? AREA_DISPLAY_LABEL[a] : '일반 자세 개선',
+      image: <ExerciseImageSlot url={fromLibrary ? images[ex.id.slice(LIBRARY_ID_PREFIX.length)] : exerciseVisualPath(ex)} label={ex.name} />,
       roles: fromLibrary ? rolesFor(ex.id.slice(LIBRARY_ID_PREFIX.length)) : undefined
     }
   })

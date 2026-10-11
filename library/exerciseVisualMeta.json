@@ -1,0 +1,374 @@
+{
+  "EX001": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX002": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX003": {
+    "kind": "pose_reference",
+    "label": "누운 자세 · 골반 들어 올리기 · 동작 유형 도식"
+  },
+  "EX004": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX005": {
+    "kind": "ai_demo",
+    "label": "AI 동작 참고 일러스트"
+  },
+  "EX006": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX007": {
+    "kind": "ai_demo",
+    "label": "AI 동작 참고 일러스트"
+  },
+  "EX008": {
+    "kind": "pose_reference",
+    "label": "바로 누운 자세 · 동작 유형 도식"
+  },
+  "EX009": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX010": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX011": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX012": {
+    "kind": "pose_reference",
+    "label": "발과 발목 움직임 참고 · 동작 유형 도식"
+  },
+  "EX013": {
+    "kind": "pose_reference",
+    "label": "네발기기 자세 · 동작 유형 도식"
+  },
+  "EX014": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX015": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX016": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX017": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX018": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX019": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX020": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX021": {
+    "kind": "pose_reference",
+    "label": "바로 누운 자세 · 동작 유형 도식"
+  },
+  "EX022": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX023": {
+    "kind": "pose_reference",
+    "label": "바로 누운 자세 · 동작 유형 도식"
+  },
+  "EX024": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX025": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX026": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX027": {
+    "kind": "pose_reference",
+    "label": "바로 누운 자세 · 동작 유형 도식"
+  },
+  "EX028": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX029": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX030": {
+    "kind": "pose_reference",
+    "label": "바로 누운 자세 · 동작 유형 도식"
+  },
+  "EX031": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX032": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX033": {
+    "kind": "pose_reference",
+    "label": "누운 자세 · 골반 들어 올리기 · 동작 유형 도식"
+  },
+  "EX034": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX035": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX036": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX037": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX038": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX039": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX040": {
+    "kind": "pose_reference",
+    "label": "바로 누운 자세 · 동작 유형 도식"
+  },
+  "EX041": {
+    "kind": "ai_demo",
+    "label": "AI 동작 참고 일러스트"
+  },
+  "EX042": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX043": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX044": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX045": {
+    "kind": "pose_reference",
+    "label": "엎드린 자세 · 동작 유형 도식"
+  },
+  "EX046": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX047": {
+    "kind": "pose_reference",
+    "label": "엎드린 자세 · 동작 유형 도식"
+  },
+  "EX048": {
+    "kind": "pose_reference",
+    "label": "엎드린 자세 · 동작 유형 도식"
+  },
+  "EX049": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX050": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX051": {
+    "kind": "pose_reference",
+    "label": "목·머리 움직임 참고 · 동작 유형 도식"
+  },
+  "EX052": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX053": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX054": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX055": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX056": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX057": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX058": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX059": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX060": {
+    "kind": "ai_demo",
+    "label": "AI 동작 참고 일러스트"
+  },
+  "EX061": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX062": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX063": {
+    "kind": "pose_reference",
+    "label": "어깨 움직임 참고 · 동작 유형 도식"
+  },
+  "EX064": {
+    "kind": "pose_reference",
+    "label": "옆으로 누운 자세 · 동작 유형 도식"
+  },
+  "EX065": {
+    "kind": "pose_reference",
+    "label": "네발기기 자세 · 동작 유형 도식"
+  },
+  "EX066": {
+    "kind": "pose_reference",
+    "label": "네발기기 자세 · 동작 유형 도식"
+  },
+  "EX067": {
+    "kind": "pose_reference",
+    "label": "네발기기 자세 · 동작 유형 도식"
+  },
+  "EX068": {
+    "kind": "ai_demo",
+    "label": "AI 동작 참고 일러스트"
+  },
+  "EX069": {
+    "kind": "ai_demo",
+    "label": "AI 동작 참고 일러스트"
+  },
+  "EX070": {
+    "kind": "pose_reference",
+    "label": "네발기기 자세 · 동작 유형 도식"
+  },
+  "EX071": {
+    "kind": "pose_reference",
+    "label": "무릎 꿇은 자세 · 동작 유형 도식"
+  },
+  "EX072": {
+    "kind": "pose_reference",
+    "label": "무릎 꿇은 자세 · 동작 유형 도식"
+  },
+  "EX073": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX074": {
+    "kind": "pose_reference",
+    "label": "플랭크 자세 · 동작 유형 도식"
+  },
+  "EX075": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX076": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX077": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX078": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX079": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX080": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX081": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX082": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX083": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX084": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX085": {
+    "kind": "pose_reference",
+    "label": "앉은 자세 · 동작 유형 도식"
+  },
+  "EX086": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX087": {
+    "kind": "pose_reference",
+    "label": "엎드린 자세 · 동작 유형 도식"
+  },
+  "EX088": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX089": {
+    "kind": "pose_reference",
+    "label": "서서 이동 동작 참고 · 동작 유형 도식"
+  },
+  "EX090": {
+    "kind": "pose_reference",
+    "label": "누워서 다리 움직임 · 동작 유형 도식"
+  },
+  "EX091": {
+    "kind": "pose_reference",
+    "label": "엎드린 동작 참고 · 동작 유형 도식"
+  },
+  "EX092": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  },
+  "EX093": {
+    "kind": "pose_reference",
+    "label": "선 자세 · 동작 유형 도식"
+  }
+}

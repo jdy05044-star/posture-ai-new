@@ -1,21 +1,31 @@
+import { useEffect, useState } from 'react'
+
 interface Props {
   /** 확인된 이미지 URL. null/undefined면 플레이스홀더를 보여준다. */
   url: string | null | undefined
   label: string
   variant?: 'thumb' | 'full'
+  caption?: string
 }
 
 /**
  * 운동 이미지 슬롯. /public/images/exercises/ 에 파일이 들어오면 자동으로 보이고, 없으면 플레이스홀더만 보인다.
  * 원자료(책)의 사진·그림은 저작권 확인 없이 쓰지 않으므로, 이 슬롯에는 사용 권리가 확인된 이미지만 넣는다.
  */
-export default function ExerciseImageSlot({ url, label, variant = 'thumb' }: Props) {
+export default function ExerciseImageSlot({ url, label, variant = 'thumb', caption }: Props) {
+  const [broken, setBroken] = useState(false)
+  useEffect(() => setBroken(false), [url])
   const box = variant === 'thumb' ? 'h-16 w-16 flex-none rounded-xl' : 'aspect-[4/3] w-full rounded-xl'
-  if (url) {
+  if (url && !broken) {
     return (
-      <div className={`overflow-hidden bg-clinical-50 ${box}`}>
-        <img src={url} alt={label} loading="lazy" className="h-full w-full object-cover" />
-      </div>
+      <figure className={`overflow-hidden bg-clinical-50 ${box}`}>
+        <img src={url} alt={`${label} 동작 참고 그림`} loading="lazy" onError={() => setBroken(true)} className={variant === 'thumb' ? 'h-full w-full object-cover' : 'h-[calc(100%-34px)] w-full object-contain'} />
+        {variant === 'full' && (
+          <figcaption className="px-2 py-1 text-center text-xs text-clinical-500">
+            {caption || '운동 참고 도식 · 정확한 수행은 아래 설명과 PT 지도를 확인하세요'}
+          </figcaption>
+        )}
+      </figure>
     )
   }
   return (

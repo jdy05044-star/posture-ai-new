@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import { useNavigate } from 'react-router-dom'
 import ExerciseImageSlot from '@/library/ExerciseImageSlot'
+import visualMeta from '@/library/exerciseVisualMeta.json'
 import EnrichmentSection from '@/library/EnrichmentSection'
 import { useResolvedImages } from '@/library/exerciseImages'
 import {
@@ -68,7 +69,7 @@ function ExerciseDetail({ ex, imageUrl, overlay, onChange }: DetailProps) {
 
   return (
     <div className="space-y-5 pb-6 pt-1 text-sm leading-relaxed text-clinical-600">
-      <ExerciseImageSlot url={imageUrl} label={ex.name} variant="full" />
+      <ExerciseImageSlot url={imageUrl} label={ex.name} variant="full" caption={(visualMeta as Record<string, {label: string}>)[ex.id]?.label} />
 
       <section>
         <h4 className="mb-1 font-semibold text-clinical-900">동작 설명</h4>
@@ -297,7 +298,7 @@ export default function ExerciseLibrary() {
       </p>
 
       <p className="mt-3 rounded-xl bg-clinical-100 px-4 py-3 text-sm leading-relaxed text-clinical-600">
-        PT 검수 전 자료입니다. 근육·목적·주의사항에는 앱용으로 편집한 내용이 섞여 있어 확정된 의료 판단이 아니며,
+        운동 그림은 AI 생성 참고 이미지 또는 자세 유형 도식입니다. 실제 동작을 정확히 대체하지 않습니다. 근육·목적·주의사항에는 앱용으로 편집한 내용이 섞여 있으며,
         자세 평가 결과의 자동 처방에는 사용되지 않습니다.
       </p>
 

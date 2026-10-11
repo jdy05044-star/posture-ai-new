@@ -1,4 +1,6 @@
 import type { ProgramExercise } from '@/types'
+import ExerciseImageSlot from '@/library/ExerciseImageSlot'
+import { exerciseVisualPath } from '@/exercises/exerciseVisuals'
 
 interface Props {
   exercise: ProgramExercise
@@ -34,6 +36,7 @@ export default function ProgramExerciseRow({
   return (
     <div className={`card p-3 ${exercise.requiresCaution ? 'border-alert-amber' : ''}`}>
       <div className="mb-2 flex items-start justify-between gap-2">
+        <ExerciseImageSlot url={exerciseVisualPath(exercise)} label={exercise.name} />
         <div>
           <p className="font-medium text-clinical-800">{exercise.name}</p>
           <p className="text-xs text-clinical-500">{exercise.purpose}</p>
