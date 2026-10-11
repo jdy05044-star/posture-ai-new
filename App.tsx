@@ -8,6 +8,7 @@ import Program from '@/pages/Program'
 import Compare from '@/pages/Compare'
 import Report from '@/pages/Report'
 import ExerciseLibrary from '@/pages/ExerciseLibrary'
+import ExerciseCards from '@/pages/ExerciseCards'
 import AssessmentTests from '@/pages/AssessmentTests'
 import RepeatMeasure from '@/pages/RepeatMeasure'
 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/compare" element={<Compare />} />
         <Route path="/report" element={<Report />} />
         <Route path="/library" element={<ExerciseLibrary />} />
+        <Route path="/exercise-cards" element={<ExerciseCards />} />
         <Route path="/tests" element={<AssessmentTests />} />
         <Route path="/repeat" element={<RepeatMeasure />} />
       </Routes>

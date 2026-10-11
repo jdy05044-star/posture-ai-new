@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import MusclePhotoToggle from '@/library/MusclePhotoToggle'
 
 export interface ExerciseCardData {
   name: string
@@ -16,6 +17,12 @@ export interface ExerciseCardData {
   /** 이 운동이 뽑힌 이유 (예: 어깨) */
   areaTag?: string | null
   image?: ReactNode
+  /** 확인된 동작 사진 URL. 있으면 카드 위쪽에 크게 보여준다. */
+  photo?: string | null
+  /** 동작 설명(순서대로) */
+  steps?: string[]
+  /** 라이브러리 운동 번호: 있으면 "근육 사진 보기" 토글이 붙는다 */
+  libId?: string
   rank?: number
   /** 근육 역할·느낌 안내 (라이브러리 운동에만, 출처 라벨 포함) */
   roles?: {
@@ -50,7 +57,7 @@ export default function ExerciseCard({ data }: { data: ExerciseCardData }) {
             {data.rank}
           </span>
         )}
-        {data.image}
+        {!data.photo && data.image}
         <div className="min-w-0 flex-1">
           <h4 className="text-base font-bold leading-snug text-clinical-900">{data.name}</h4>
           <div className="mt-1 flex flex-wrap items-center gap-1.5">
@@ -60,10 +67,28 @@ export default function ExerciseCard({ data }: { data: ExerciseCardData }) {
         </div>
       </div>
 
+      {data.photo && (
+        <img src={data.photo} alt={`${data.name} 동작 참고 사진`} loading="lazy" className="mt-3 max-h-52 w-full rounded-xl bg-clinical-50 object-contain" />
+      )}
+
       <p className="mt-3 line-clamp-2 text-sm text-clinical-600">
         <span className="font-semibold text-clinical-800">목적 </span>
         {data.purpose || NA}
       </p>
+
+      {data.steps && data.steps.length > 0 && (
+        <div className="mt-3 rounded-xl bg-mint-50 p-3">
+          <p className="mb-1 text-sm font-bold text-clinical-800">동작 설명</p>
+          <ol className="space-y-1">
+            {data.steps.slice(0, 4).map((st, i) => (
+              <li key={i} className="flex gap-2 text-sm leading-snug text-clinical-700">
+                <span className="flex h-5 w-5 flex-none items-center justify-center rounded-full bg-mint-500 text-xs font-bold text-white">{i + 1}</span>
+                {st}
+              </li>
+            ))}
+          </ol>
+        </div>
+      )}
 
       <div className="mt-3 grid grid-cols-3 gap-2">
         <Stat label="세트" value={data.sets} />
@@ -119,6 +144,12 @@ export default function ExerciseCard({ data }: { data: ExerciseCardData }) {
               {data.roles.faultCue[0]}
             </p>
           )}
+        </div>
+      )}
+
+      {data.libId && (
+        <div className="mt-3">
+          <MusclePhotoToggle libId={data.libId} name={data.name} muscles={data.muscles} />
         </div>
       )}
 

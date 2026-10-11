@@ -77,7 +77,10 @@ export default function ExercisePanel({ summary }: Props) {
       badge: fromLibrary ? { text: 'PT 승인', tone: 'mint' } : { text: '앱 기본 운동', tone: 'navy' },
       areaTag: a ? AREA_DISPLAY_LABEL[a] : '일반 자세 개선',
       image: <ExerciseImageSlot url={fromLibrary ? images[ex.id.slice(LIBRARY_ID_PREFIX.length)] : exerciseVisualPath(ex)} label={ex.name} />,
-      roles: fromLibrary ? rolesFor(ex.id.slice(LIBRARY_ID_PREFIX.length)) : undefined
+      roles: fromLibrary ? rolesFor(ex.id.slice(LIBRARY_ID_PREFIX.length)) : undefined,
+      photo: fromLibrary ? images[ex.id.slice(LIBRARY_ID_PREFIX.length)] : undefined,
+      steps: fromLibrary ? ex.executionSteps : undefined,
+      libId: fromLibrary ? ex.id.slice(LIBRARY_ID_PREFIX.length) : undefined
     }
   })
 
@@ -95,7 +98,10 @@ export default function ExercisePanel({ summary }: Props) {
       caution: ex.cautions,
       badge: approved ? { text: 'PT 승인', tone: 'mint' } : { text: 'PT 검수 전 · 참고용', tone: 'coral' },
       image: <ExerciseImageSlot url={images[ex.id]} label={ex.name} />,
-      roles: rolesFor(ex.id)
+      roles: rolesFor(ex.id),
+      photo: images[ex.id],
+      steps: ex.steps,
+      libId: ex.id
     }
   })
 
@@ -155,6 +161,9 @@ export default function ExercisePanel({ summary }: Props) {
       <div className="space-y-2">
         <button onClick={() => navigate('/program')} className="btn-primary w-full py-4 text-base">
           운동 프로그램 생성
+        </button>
+        <button onClick={() => navigate('/exercise-cards')} className="btn-secondary w-full py-3">
+          운동 소개 카드 보기 (사진 · 근육 · 방법)
         </button>
         <button onClick={() => navigate('/report')} className="btn-secondary w-full py-3">
           리포트 보기 / PDF 저장
